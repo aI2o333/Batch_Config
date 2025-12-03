@@ -1,0 +1,452 @@
+=>Fitting start from Thu Oct 16 18:01:47 2025
+=>This project aims to ::
+  pseudo fit 2g
+=>1) Project pool is "/share/home/symei/comp/pp-fit/optuna_rms/debug/br-fitting"
+=>2) Project batch type is "0" which to run all the jobs
+=>3) QC package employed is "rest"
+=>There are 1 <Macro-Path>s specified in br-fitting.ctl :
+  Macro-Path :   <PATH1> = /share/home/symei/comp/ae-data
+=>Loaded ConfigIO.BatcList :
+==----------------------------------------------------------------------------==
+Index        Name                        Direction    JobInput         JobType
+--------------------------------------------------------------------------------
+  0th           h  /share/home/symei/comp/ae-da...           h      energy|xdh
+  1th          br  /share/home/symei/comp/ae-da...          br      energy|xdh
+  2th         br2  /share/home/symei/comp/ae-da...         br2      energy|xdh
+  3th         hbr  /share/home/symei/comp/ae-da...         hbr      energy|xdh
+==----------------------------------------------------------------------------==
+=>Loaded ConfigIO.EngyList :
+==----------------------------------------------------------------------------==
+ Num. Ind. Sca. Ind. Sca. Ind. Sca.       Ref. Data  Weight
+--------------------------------------------------------------------------------
+    2    2 -1.0    1  2.0               49.53741130    1.00
+    3    3 -1.0    1  1.0    0  1.0     93.13507599    1.00
+==----------------------------------------------------------------------------==
+=>No first-excitation PT2 data for training
+=>No second-excitation PT2 data for training
+=>No polar data for training
+=>No nmr data for training
+=>No geom data for training
+=>Optimization job is rest_pseudo
+=>This batch runs for rest
+=>The batch type is serial
+=>Initial Guess
+  4.68155135E+01  8.22684686E+01  1.36608172E+01  2.68649624E+00  6.62295894E+01
+  2.31946069E+01  1.39253689E+00  1.64224954E+00  1.11563982E+01  2.40346037E+00
+ -6.73197387E+00  1.57181965E+01  4.95805922E+00  1.43245898E+00  2.74157260E+00
+  1.87450280E+01  6.22985681E+00  2.36566758E+00  1.48472167E+00  2.51661042E+00
+  8.86893481E-01  3.73540106E+00
+=>Optimization Algorithm employed is optuna_rms
+=>Pseudopotential fitting mod is all
+  Revised basis dir :/share/home/symei/TZVPP-debug/Br.json
+=>Optuna option employed is group
+=>Shrink factor employed is 0.6
+=>Number of trials employed is 2
+=>Number of startup trials employed is 1
+=>Testing parameters in this round
+  4.21539246E+01  1.04019379E+02  5.46620183E+00  2.04925688E+00  3.81553346E+01
+  1.18479517E+01  8.68263813E-01  1.33789615E+00  9.77435442E+00  2.51541375E+00
+ -7.38475037E+00  1.92117763E+01  3.19964732E+00  2.08242424E+00  1.18673113E+00
+  2.25795298E+01  5.61164173E+00  2.53227633E+00  8.44011303E-01  1.60489730E+00
+  1.20696756E+00  5.83437480E+00
+=>Pseudo basis [['42.15392456', '104.01937898', '5.46620183', '2.04925688']] is 
+  generated.
+=>Pseudo basis [['38.15533461', '11.84795166', '0.86826381', '1.33789615']] is 
+  generated.
+=>Pseudo basis [['9.77435442', '2.51541375']] is generated.
+=>Pseudo basis [['-7.38475037']] is generated.
+=>Pseudo basis ['19.21177632', '3.19964732', '2.08242424', '1.18673113'] is 
+  generated.
+=>Pseudo basis ['22.57952984', '5.61164173', '2.53227633', '0.84401130'] is 
+  generated.
+=>Pseudo basis ['1.60489730', '1.20696756'] is generated.
+=>Pseudo basis ['5.83437480'] is generated.
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>Error :: SCF doesn't sucess in br
+=>The SCF energy              :              NAN
+=>The (R)-xDH Energy          :    -605.70794589
+=>Error :: AI Correction result was not found in br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -1216.32452331
+=>The (R)-xDH Energy          :   -1211.81408599
+=>Error :: AI Correction result was not found in br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -608.73640290
+=>The (R)-xDH Energy          :    -606.44718799
+=>Error :: AI Correction result was not found in hbr
+=>AI Correction               :              NAN
+==----------------------------------------------------------------------------==
+=>        AD =     129.03317168;        wAD =     129.03317168
+=>       MAD =     129.03317168;       wMAD =     129.03317168
+=>       RMS =     147.42213659;       wRMS =     147.42213659
+==----------------------------------------------------------------------------==
+=>Testing parameters in this round
+  2.56784894E+01  9.57424010E+01  7.18688150E+00  1.64009635E+00  6.44262478E+01
+  2.18609841E+01  7.14963756E-01  1.15329053E+00  1.09491570E+01  3.20979556E+00
+ -5.60036347E+00  2.31677114E+01  4.06541659E+00  1.14088440E+00  1.96057973E+00
+  2.30628302E+01  3.66401725E+00  1.28222228E+00  9.96135953E-01  1.65902852E+00
+  1.29735968E+00  5.96436926E+00
+=>Pseudo basis [['25.67848937', '95.74240101', '7.18688150', '1.64009635']] is 
+  generated.
+=>Pseudo basis [['64.42624776', '21.86098414', '0.71496376', '1.15329053']] is 
+  generated.
+=>Pseudo basis [['10.94915695', '3.20979556']] is generated.
+=>Pseudo basis [['-5.60036347']] is generated.
+=>Pseudo basis ['23.16771138', '4.06541659', '1.14088440', '1.96057973'] is 
+  generated.
+=>Pseudo basis ['23.06283017', '3.66401725', '1.28222228', '0.99613595'] is 
+  generated.
+=>Pseudo basis ['1.65902852', '1.29735968'] is generated.
+=>Pseudo basis ['5.96436926'] is generated.
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>Error :: SCF doesn't sucess in br
+=>The SCF energy              :              NAN
+=>The (R)-xDH Energy          :    -572.55643483
+=>Error :: AI Correction result was not found in br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -1148.80205418
+=>The (R)-xDH Energy          :   -1145.24433732
+=>Error :: AI Correction result was not found in br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -574.98634328
+=>The (R)-xDH Energy          :    -573.19315226
+=>Error :: AI Correction result was not found in hbr
+=>AI Correction               :              NAN
+==----------------------------------------------------------------------------==
+=>        AD =      13.17875763;        wAD =      13.17875763
+=>       MAD =      19.78110346;       wMAD =      19.78110346
+=>       RMS =      23.76913349;       wRMS =      23.76913349
+==----------------------------------------------------------------------------==
+=>Initial guess moves to: [25.678489372165526, 95.74240101157949, 
+  7.186881497851289, 1.6400963473926775, 64.42624776231663, 21.860984144867402, 
+  0.714963755893568, 1.153290526121804, 10.94915695208198, 3.209795561759866, 
+  -5.600363466316868, 23.16771138181381, 4.065416590416465, 1.1408843973127811, 
+  1.960579728483515, 23.06283017309124, 3.6640172490895933, 1.2822222757979556, 
+  0.9961359528038369, 1.6590285195640173, 1.2973596828822813, 5.9643692613531]
+=>Corresponding MAD is: 23.769133491005988
+=>Shrink factor for next round is: 0.2799527923279743
+=>Number of trials for next round is: 25
+=>Number of startup trials for next round is: 5
+=>Round 1 finished.
+=>Testing parameters in this round
+  2.44854708E+01  1.07553271E+02  5.17535420E+00  1.45857853E+00  5.16838087E+01
+  1.68711730E+01  5.89369891E-01  1.05356387E+00  1.03162906E+01  3.27955632E+00
+ -5.85374319E+00  2.55703289E+01  3.39267619E+00  1.38242111E+00  1.44177440E+00
+  2.52640784E+01  3.49436774E+00  1.32435708E+00  7.95564615E-01  1.37859519E+00
+  1.51582022E+00  7.52812114E+00
+=>Pseudo basis [['24.48547079', '107.55327114', '5.17535420', '1.45857853']] is 
+  generated.
+=>Pseudo basis [['51.68380869', '16.87117303', '0.58936989', '1.05356387']] is 
+  generated.
+=>Pseudo basis [['10.31629056', '3.27955632']] is generated.
+=>Pseudo basis [['-5.85374319']] is generated.
+=>Pseudo basis ['25.57032891', '3.39267619', '1.38242111', '1.44177440'] is 
+  generated.
+=>Pseudo basis ['25.26407840', '3.49436774', '1.32435708', '0.79556461'] is 
+  generated.
+=>Pseudo basis ['1.37859519', '1.51582022'] is generated.
+=>Pseudo basis ['7.52812114'] is generated.
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -584.87829517
+=>The (R)-xDH Energy          :    -582.87003935
+=>Error :: AI Correction result was not found in br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -1169.97717223
+=>The (R)-xDH Energy          :   -1166.00713281
+=>Error :: AI Correction result was not found in br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -585.56650628
+=>The (R)-xDH Energy          :    -583.56432180
+=>Error :: AI Correction result was not found in hbr
+=>AI Correction               :              NAN
+==----------------------------------------------------------------------------==
+=>        AD =      73.78099384;        wAD =      73.78099384
+=>       MAD =      73.78099384;       wMAD =      73.78099384
+=>       RMS =      86.03863103;       wRMS =      86.03863103
+==----------------------------------------------------------------------------==
+=>Testing parameters in this round
+  2.29959900E+01  1.06052183E+02  8.70146207E+00  2.00246329E+00  4.94577070E+01
+  1.62189745E+01  5.82792845E-01  1.39746992E+00  8.48682458E+00  3.06801157E+00
+ -4.16457081E+00  2.35979225E+01  4.50217677E+00  1.02303808E+00  2.16530917E+00
+  2.73838540E+01  2.67578386E+00  1.46180674E+00  1.26879435E+00  1.88954943E+00
+  1.13787443E+00  6.93041285E+00
+=>Pseudo basis [['22.99598997', '106.05218274', '8.70146207', '2.00246329']] is 
+  generated.
+=>Pseudo basis [['49.45770698', '16.21897454', '0.58279284', '1.39746992']] is 
+  generated.
+=>Pseudo basis [['8.48682458', '3.06801157']] is generated.
+=>Pseudo basis [['-4.16457081']] is generated.
+=>Pseudo basis ['23.59792254', '4.50217677', '1.02303808', '2.16530917'] is 
+  generated.
+=>Pseudo basis ['27.38385395', '2.67578386', '1.46180674', '1.26879435'] is 
+  generated.
+=>Pseudo basis ['1.88954943', '1.13787443'] is generated.
+=>Pseudo basis ['6.93041285'] is generated.
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>Error :: SCF doesn't sucess in br
+=>The SCF energy              :              NAN
+=>The (R)-xDH Energy          :    -579.04706181
+=>Error :: AI Correction result was not found in br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -1162.37355067
+=>The (R)-xDH Energy          :   -1158.27372024
+=>Error :: AI Correction result was not found in br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -581.80230768
+=>The (R)-xDH Energy          :    -579.72151815
+=>Error :: AI Correction result was not found in hbr
+=>AI Correction               :              NAN
+==----------------------------------------------------------------------------==
+=>        AD =      40.12023328;        wAD =      40.12023328
+=>       MAD =      40.12023328;       wMAD =      40.12023328
+=>       RMS =      46.26577915;       wRMS =      46.26577915
+==----------------------------------------------------------------------------==
+=>Testing parameters in this round
+  1.99738595E+01  9.29491446E+01  8.83105962E+00  1.45057240E+00  5.67707491E+01
+  1.73325016E+01  5.22560486E-01  1.26877068E+00  9.18129481E+00  2.78844013E+00
+ -5.62678730E+00  1.73740505E+01  4.23412675E+00  9.15219011E-01  2.05861395E+00
+  2.56423114E+01  2.84820485E+00  1.22052106E+00  1.10456110E+00  1.57930970E+00
+  9.70446356E-01  6.08424472E+00
+=>Pseudo basis [['19.97385954', '92.94914464', '8.83105962', '1.45057240']] is 
+  generated.
+=>Pseudo basis [['56.77074906', '17.33250164', '0.52256049', '1.26877068']] is 
+  generated.
+=>Pseudo basis [['9.18129481', '2.78844013']] is generated.
+=>Pseudo basis [['-5.62678730']] is generated.
+=>Pseudo basis ['17.37405047', '4.23412675', '0.91521901', '2.05861395'] is 
+  generated.
+=>Pseudo basis ['25.64231136', '2.84820485', '1.22052106', '1.10456110'] is 
+  generated.
+=>Pseudo basis ['1.57930970', '0.97044636'] is generated.
+=>Pseudo basis ['6.08424472'] is generated.
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>Error :: SCF doesn't sucess in br
+=>The SCF energy              :              NAN
+=>The (R)-xDH Energy          :    -602.76410595
+=>Error :: AI Correction result was not found in br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -1209.65830784
+=>The (R)-xDH Energy          :   -1205.69153542
+=>Error :: AI Correction result was not found in br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -605.42184400
+=>The (R)-xDH Energy          :    -603.41102168
+=>Error :: AI Correction result was not found in hbr
+=>AI Correction               :              NAN
+==----------------------------------------------------------------------------==
+=>        AD =      26.37346302;        wAD =      26.37346302
+=>       MAD =      26.57627142;       wMAD =      26.57627142
+=>       RMS =      37.44139092;       wRMS =      37.44139092
+==----------------------------------------------------------------------------==
+=>Testing parameters in this round
+  2.80334517E+01  9.65405572E+01  8.97591972E+00  1.71957976E+00  7.89780101E+01
+  1.74236429E+01  5.70561677E-01  1.35178347E+00  1.03218654E+01  2.60837599E+00
+ -4.25983559E+00  2.11929711E+01  4.63632750E+00  1.28524910E+00  2.38134998E+00
+  2.46598103E+01  4.17882659E+00  1.17374286E+00  8.67815056E-01  2.02676696E+00
+  1.24512520E+00  7.51669500E+00
+=>Pseudo basis [['28.03345173', '96.54055725', '8.97591972', '1.71957976']] is 
+  generated.
+=>Pseudo basis [['78.97801011', '17.42364294', '0.57056168', '1.35178347']] is 
+  generated.
+=>Pseudo basis [['10.32186540', '2.60837599']] is generated.
+=>Pseudo basis [['-4.25983559']] is generated.
+=>Pseudo basis ['21.19297107', '4.63632750', '1.28524910', '2.38134998'] is 
+  generated.
+=>Pseudo basis ['24.65981030', '4.17882659', '1.17374286', '0.86781506'] is 
+  generated.
+=>Pseudo basis ['2.02676696', '1.24512520'] is generated.
+=>Pseudo basis ['7.51669500'] is generated.
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>Error :: SCF doesn't sucess in br
+=>The SCF energy              :              NAN
+=>The (R)-xDH Energy          :    -571.95907760
+=>Error :: AI Correction result was not found in br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -1147.60617947
+=>The (R)-xDH Energy          :   -1144.06060137
+=>Error :: AI Correction result was not found in br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -574.40711638
+=>The (R)-xDH Energy          :    -572.61056979
+=>Error :: AI Correction result was not found in hbr
+=>AI Correction               :              NAN
+==----------------------------------------------------------------------------==
+=>        AD =      21.25897618;        wAD =      21.25897618
+=>       MAD =      21.25897618;       wMAD =      21.25897618
+=>       RMS =      28.24061852;       wRMS =      28.24061852
+==----------------------------------------------------------------------------==
+=>Testing parameters in this round
+  2.80283743E+01  1.02266108E+02  5.63662889E+00  2.05286193E+00  6.26194474E+01
+  2.28204799E+01  6.78189797E-01  9.83479957E-01  1.34220727E+01  3.34221104E+00
+ -7.15920044E+00  2.46872837E+01  3.67081714E+00  1.15816878E+00  2.38424363E+00
+  2.12197535E+01  4.50212863E+00  1.37078539E+00  7.26089084E-01  2.05793248E+00
+  1.43602700E+00  7.62517079E+00
+=>Pseudo basis [['28.02837435', '102.26610759', '5.63662889', '2.05286193']] is 
+  generated.
+=>Pseudo basis [['62.61944739', '22.82047985', '0.67818980', '0.98347996']] is 
+  generated.
+=>Pseudo basis [['13.42207273', '3.34221104']] is generated.
+=>Pseudo basis [['-7.15920044']] is generated.
+=>Pseudo basis ['24.68728369', '3.67081714', '1.15816878', '2.38424363'] is 
+  generated.
+=>Pseudo basis ['21.21975353', '4.50212863', '1.37078539', '0.72608908'] is 
+  generated.
+=>Pseudo basis ['2.05793248', '1.43602700'] is generated.
+=>Pseudo basis ['7.62517079'] is generated.
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>Error :: SCF doesn't sucess in br
+=>The SCF energy              :              NAN
+=>Error :: The (R)-xDH result was not found in br
+=>The (R)-xDH Energy  get_geom_toml("br/geometry.in" , self.Proj, self.IOut)    
+      :              NAN
+=>Error :: AI Correction result was not found in br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -1133.70380320
+=>The (R)-xDH Energy          :   -1130.12470670
+=>Error :: AI Correction result was not found in br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -567.45001278
+=>The (R)-xDH Energy          :    -565.65078803
+=>Error :: AI Correction result was not found in hbr
+=>AI Correction               :              NAN
+==----------------------------------------------------------------------------==
+  An invalid result for the     0th reaction
+==----------------------------------------------------------------------------==
+==----------------------------------------------------------------------------==
+  An invalid result for the     1th reaction
+==----------------------------------------------------------------------------==
+==----------------------------------------------------------------------------==
+=>        AD =   10000.00000000;        wAD =   10000.00000000
+=>       MAD =   10000.00000000;       wMAD =   10000.00000000
+=>       RMS =   10000.00000000;       wRMS =   10000.00000000
+==----------------------------------------------------------------------------==
+=>Testing parameters in this round
+  3.01495140E+01  9.68588716E+01  8.72547081E+00  1.83306134E+00  7.79011415E+01
+  2.01479667E+01  5.22148483E-01  1.14611419E+00  1.27344593E+01  2.65158767E+00
+ -4.11100746E+00  2.44265772E+01  4.79014817E+00  1.37371964E+00  2.29686348E+00
+  2.89348572E+01  4.12338220E+00  1.25501384E+00  8.29760069E-01  1.69627074E+00
+  1.18100168E+00  6.11378756E+00
+=>Pseudo basis [['30.14951398', '96.85887163', '8.72547081', '1.83306134']] is 
+  generated.
+=>Pseudo basis [['77.90114150', '20.14796671', '0.52214848', '1.14611419']] is 
+  generated.
+=>Pseudo basis [['12.73445931', '2.65158767']] is generated.
+=>Pseudo basis [['-4.11100746']] is generated.
+=>Pseudo basis ['24.42657720', '4.79014817', '1.37371964', '2.29686348'] is 
+  generated.
+=>Pseudo basis ['28.93485717', '4.12338220', '1.25501384', '0.82976007'] is 
+  generated.
+=>Pseudo basis ['1.69627074', '1.18100168'] is generated.
+=>Pseudo basis ['6.11378756'] is generated.
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN

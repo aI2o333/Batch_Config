@@ -1,0 +1,39 @@
+[ctrl]
+     xc =                        "xygjos" 
+     frozen_core_postscf =       21
+     basis_path =                "/home/symei/def2-TZVPP-optuna-angm" # For serial type, path in your container should be used
+     auxbas_path =               "/home/symei/def2-SV(P)-JKFIT"# refer to option "bind" in "REST_Environment"
+     even_tempered_basis =       false
+     etb_start_atom_number =     1
+     etb_beta =                  1.0
+     initial_guess =             "sad"
+     chkfile_type =              "hdf5"
+     fchk =                      false
+     pruning =                   "nwchem"
+     radial_grid_method =        "treutler"
+     scf_acc_rho =               1.0e-8
+     scf_acc_eev =               1.0e-8
+     max_scf_cycle =             250
+
+    num_threads =           4
+    charge = 0.0000  
+    spin   = 1       
+    spin_polarization = false
+
+[geom]
+    name = "cc=cc"
+    unit = "angstrom"
+    position = '''
+    C       0.66605500       0.66158800      -0.00003800
+    H       1.16153000       1.62791300       0.00007100
+    C      -0.66605500       0.66158800      -0.00003800
+    H      -1.16153100       1.62791300       0.00007100
+    C       1.58691400      -0.52049900       0.00002800
+    C      -1.58691300      -0.52049900       0.00002800
+    H       1.05836300      -1.47183100       0.00056600
+    H       2.24095700      -0.50169000      -0.87613900
+    H       2.24175400      -0.50092900       0.87556500
+    H      -2.24095700      -0.50169000      -0.87613900
+    H      -1.05836300      -1.47183100       0.00056600
+    H      -2.24175300      -0.50092900       0.87556500
+    '''

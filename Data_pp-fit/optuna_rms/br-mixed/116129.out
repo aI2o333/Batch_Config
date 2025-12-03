@@ -1,0 +1,99 @@
+Sender: LSF System <lsfadmin@xc05n03>
+Subject: Job 116129: <o-mixed> in cluster <xdft1> Exited
+
+Job <o-mixed> was submitted from host <xc03n08> by user <symei> in cluster <xdft1> at Mon Sep 29 16:01:34 2025
+Job was executed on host(s) <4*xc05n03>, in queue <small>, as user <symei> in cluster <xdft1> at Mon Sep 29 16:01:36 2025
+</share/home/symei> was used as the home directory.
+</share/home/symei/comp/pp-fit/optuna_rms/br-mixed> was used as the working directory.
+Started at Mon Sep 29 16:01:36 2025
+Terminated at Tue Sep 30 10:09:36 2025
+Results reported at Tue Sep 30 10:09:36 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -q small      # 替换为实际队列名（如 normal、cpu、gpu等）
+#BSUB -J o-mixed         # 作业名称
+#BSUB -n 4              # 申请 8 个 CPU 核心
+#BSUB -R "span[ptile=16]" # 限制在单节点运行
+#BSUB -o %J.out         # 输出日志文件
+#BSUB -e %J.err         # 错误日志文件
+
+export ROOT_PATH=/share/home/symei/pseudo_fitting
+export FITTING_PATH=${ROOT_PATH}/DFT_Fit
+export IGOR_MODULES_PATH=${ROOT_PATH}/Modules
+
+nohup python $FITTING_PATH/DFT_Fit.py br-fitting.ctl
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   272476.00 sec.
+    Max Memory :                                 6214 MB
+    Average Memory :                             2596.41 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   17592186044415 MB
+    Max Processes :                              8
+    Max Threads :                                69
+    Run time :                                   65281 sec.
+    Turnaround time :                            65282 sec.
+
+The output (if any) follows:
+
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in cbr4
+Error :: SCF doesn't sucess in ring-c6br1
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in c-cbrcbr-c
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in c-cbrcbr-c
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in ch3br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in ring-c6br1
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+Error :: SCF doesn't sucess in br
+
+
+PS:
+
+Read file <116129.err> for stderr output of this job.
+

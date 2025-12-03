@@ -1,0 +1,113 @@
+/share/home/symei/.local/lib/python3.6/site-packages/optuna/samplers/_tpe/sampler.py:284: ExperimentalWarning: ``multivariate`` option is an experimental feature. The interface can change in the future.
+  ExperimentalWarning,
+/share/home/symei/.local/lib/python3.6/site-packages/optuna/samplers/_tpe/sampler.py:295: ExperimentalWarning: ``group`` option is an experimental feature. The interface can change in the future.
+  ExperimentalWarning,
+[32m[I 2025-09-25 14:49:34,390][0m A new study created in memory with name: no-name-a8abcbef-a640-4cb2-b2a3-6827ef92e3e0[0m
+[32m[I 2025-09-25 14:55:54,984][0m Trial 0 finished with value: 405.2629390328007 and parameters: {'c0': 4.438421544501541, 'c1': 3.2853978788174807}. Best is trial 0 with value: 405.2629390328007.[0m
+[32m[I 2025-09-25 15:02:18,249][0m Trial 1 finished with value: 783.6668681571338 and parameters: {'c0': 1.5073441144408397, 'c1': 1.816047599269801}. Best is trial 0 with value: 405.2629390328007.[0m
+[32m[I 2025-09-25 15:09:12,906][0m Trial 2 finished with value: 156.13695983194626 and parameters: {'c0': 2.53831022550753, 'c1': 1.0778641686469643}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 15:15:44,714][0m Trial 3 finished with value: 1298.9898050515142 and parameters: {'c0': 2.816046141294943, 'c1': 1.968005801345344}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 15:22:14,168][0m Trial 4 finished with value: 522.2035029425889 and parameters: {'c0': 4.29602166292821, 'c1': 2.647350912372641}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 15:28:36,704][0m Trial 5 finished with value: 340.2089711870124 and parameters: {'c0': 4.453695417402653, 'c1': 3.161994700964713}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 15:35:05,957][0m Trial 6 finished with value: 738.1493369266622 and parameters: {'c0': 2.9439456307824283, 'c1': 3.840081099447635}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 15:41:40,769][0m Trial 7 finished with value: 788.5748426148957 and parameters: {'c0': 1.699089021729884, 'c1': 3.11013761982973}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 15:48:13,133][0m Trial 8 finished with value: 1054.6563492556222 and parameters: {'c0': 4.440409759138134, 'c1': 2.717210006342213}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 15:54:29,350][0m Trial 9 finished with value: 594.4039438240692 and parameters: {'c0': 2.4935331795325633, 'c1': 1.4496482405205111}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 16:00:36,069][0m Trial 10 finished with value: 1441.0941963756316 and parameters: {'c0': 7.136190704964735, 'c1': 4.15696118666337}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 16:06:46,021][0m Trial 11 finished with value: 486.49352527303495 and parameters: {'c0': 3.7100749530321204, 'c1': 3.1869639979577133}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 16:13:18,438][0m Trial 12 finished with value: 739.3204219964358 and parameters: {'c0': 7.668011463000344, 'c1': 3.8980450199485346}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 16:20:07,405][0m Trial 13 finished with value: 291.8798528664587 and parameters: {'c0': 2.104445028919451, 'c1': 0.8905577173072221}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 16:30:39,365][0m Trial 14 finished with value: 2705.2920100091815 and parameters: {'c0': 2.7005361613570935, 'c1': 3.840169216605279}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 16:48:45,631][0m Trial 15 finished with value: 3186.876807024784 and parameters: {'c0': 2.1979693821999353, 'c1': 2.23357278987526}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 16:55:25,254][0m Trial 16 finished with value: 910.3717652208917 and parameters: {'c0': 8.241001499513708, 'c1': 2.627484599654248}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 17:02:03,763][0m Trial 17 finished with value: 2358.4312453462326 and parameters: {'c0': 6.370795887171083, 'c1': 1.862389477050373}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 17:08:54,146][0m Trial 18 finished with value: 665.9777516877189 and parameters: {'c0': 6.332998502083928, 'c1': 3.6871962393939595}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 17:15:27,813][0m Trial 19 finished with value: 1252.7807846268342 and parameters: {'c0': 1.6351160996338876, 'c1': 3.3902223045534465}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 17:22:17,400][0m Trial 20 finished with value: 1043.3252093401131 and parameters: {'c0': 5.497260833523921, 'c1': 0.8958852608554458}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 17:29:46,986][0m Trial 21 finished with value: 1870.7199055233057 and parameters: {'c0': 3.5841526288784933, 'c1': 0.9510438019118328}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 17:36:33,695][0m Trial 22 finished with value: 2506.6059011542206 and parameters: {'c0': 3.565428693875094, 'c1': 1.1801490303778788}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 17:46:40,608][0m Trial 23 finished with value: 9977.51526421651 and parameters: {'c0': 5.2686812670190575, 'c1': 1.3439474646542595}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 17:57:17,458][0m Trial 24 finished with value: 15986.269355221597 and parameters: {'c0': 3.2802005918962864, 'c1': 0.7814678560244476}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:03:56,741][0m Trial 25 finished with value: 243.81006573469668 and parameters: {'c0': 2.1421535288939024, 'c1': 1.5790996715837677}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:10:45,853][0m Trial 26 finished with value: 230.5637691568018 and parameters: {'c0': 2.13040880506016, 'c1': 1.5897355595292968}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:17:09,783][0m Trial 27 finished with value: 1294.7840379748689 and parameters: {'c0': 2.2456847590820566, 'c1': 1.6054090835857013}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:23:47,686][0m Trial 28 finished with value: 657.3248236654201 and parameters: {'c0': 3.24881965161741, 'c1': 1.1738057329855343}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:30:24,534][0m Trial 29 finished with value: 180.8758171578387 and parameters: {'c0': 4.010516556500103, 'c1': 2.1804300239859673}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:37:01,353][0m Trial 30 finished with value: 171.27188362931693 and parameters: {'c0': 4.1819239248803814, 'c1': 2.397410571469092}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:43:25,566][0m Trial 31 finished with value: 582.4341662453916 and parameters: {'c0': 3.976567377491328, 'c1': 2.3189737704476756}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:50:12,171][0m Trial 32 finished with value: 2058.7991826163507 and parameters: {'c0': 4.704112012382618, 'c1': 2.14272989202862}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 18:56:47,536][0m Trial 33 finished with value: 610.0305448350629 and parameters: {'c0': 5.043264120986611, 'c1': 2.402869435735726}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 19:03:20,864][0m Trial 34 finished with value: 840.7724785725655 and parameters: {'c0': 5.6645445500815, 'c1': 2.01021788454634}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 19:19:04,164][0m Trial 35 finished with value: 4554.540374926782 and parameters: {'c0': 4.076770254800222, 'c1': 2.902537024996785}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 19:25:37,307][0m Trial 36 finished with value: 1171.462701591039 and parameters: {'c0': 3.0082778291190486, 'c1': 1.8052910330213663}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 19:36:20,104][0m Trial 37 finished with value: 14646.617451877595 and parameters: {'c0': 3.2563459204949585, 'c1': 1.6690016067084061}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 19:43:53,889][0m Trial 38 finished with value: 16425.062433194937 and parameters: {'c0': 4.6421602168359355, 'c1': 2.05504490572923}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 19:51:07,403][0m Trial 39 finished with value: 1575.9302065609895 and parameters: {'c0': 2.57604712651885, 'c1': 1.2140564876397837}. Best is trial 2 with value: 156.13695983194626.[0m
+[32m[I 2025-09-25 19:57:46,304][0m Trial 40 finished with value: 150.7681560677858 and parameters: {'c0': 4.047057940574061, 'c1': 2.8778787284232674}. Best is trial 40 with value: 150.7681560677858.[0m
+[32m[I 2025-09-25 20:04:14,268][0m Trial 41 finished with value: 275.51494224849307 and parameters: {'c0': 4.074810136197434, 'c1': 2.5438607668346696}. Best is trial 40 with value: 150.7681560677858.[0m
+[32m[I 2025-09-25 20:11:37,155][0m Trial 42 finished with value: 3596.4765356860457 and parameters: {'c0': 1.798514161838059, 'c1': 2.967836966794407}. Best is trial 40 with value: 150.7681560677858.[0m
+[32m[I 2025-09-25 20:18:11,486][0m Trial 43 finished with value: 453.10703271319403 and parameters: {'c0': 4.840225848687963, 'c1': 2.743680402762955}. Best is trial 40 with value: 150.7681560677858.[0m
+[32m[I 2025-09-25 20:24:45,605][0m Trial 44 finished with value: 1418.9095545620037 and parameters: {'c0': 4.312257548494591, 'c1': 2.4049335420321265}. Best is trial 40 with value: 150.7681560677858.[0m
+[32m[I 2025-09-25 20:31:15,850][0m Trial 45 finished with value: 18.614465943262033 and parameters: {'c0': 2.863388365718945, 'c1': 1.433039390721207}. Best is trial 45 with value: 18.614465943262033.[0m
+[32m[I 2025-09-25 20:37:37,015][0m Trial 46 finished with value: 18.614465944059624 and parameters: {'c0': 3.827540559712835, 'c1': 3.3691864376898115}. Best is trial 45 with value: 18.614465943262033.[0m
+[32m[I 2025-09-25 20:44:07,530][0m Trial 47 finished with value: 18.614465921419747 and parameters: {'c0': 2.868878448435473, 'c1': 3.383884656012096}. Best is trial 47 with value: 18.614465921419747.[0m
+[32m[I 2025-09-25 20:50:30,007][0m Trial 48 finished with value: 18.614468372545318 and parameters: {'c0': 2.9624814074492933, 'c1': 3.413585831834084}. Best is trial 47 with value: 18.614465921419747.[0m
+[32m[I 2025-09-25 20:56:52,388][0m Trial 49 finished with value: 18.614468372545318 and parameters: {'c0': 2.8573791233700963, 'c1': 3.4605268926224975}. Best is trial 47 with value: 18.614465921419747.[0m
+[32m[I 2025-09-25 21:03:22,790][0m Trial 50 finished with value: 18.614465928966375 and parameters: {'c0': 2.970084473151009, 'c1': 3.4394772520127463}. Best is trial 47 with value: 18.614465921419747.[0m
+[32m[I 2025-09-25 21:09:53,496][0m Trial 51 finished with value: 18.614468349107845 and parameters: {'c0': 2.444274121018649, 'c1': 3.551496084163567}. Best is trial 47 with value: 18.614465921419747.[0m
+[32m[I 2025-09-25 21:16:26,736][0m Trial 52 finished with value: 18.614465928966375 and parameters: {'c0': 2.484606723824371, 'c1': 3.5550371167234966}. Best is trial 47 with value: 18.614465921419747.[0m
+[32m[I 2025-09-25 21:22:57,107][0m Trial 53 finished with value: 18.614465913873122 and parameters: {'c0': 2.5807748825730354, 'c1': 3.594666573557559}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 21:29:27,365][0m Trial 54 finished with value: 18.614468357452065 and parameters: {'c0': 2.6373947169638967, 'c1': 4.0256415189952515}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 21:35:44,970][0m Trial 55 finished with value: 18.614468372545318 and parameters: {'c0': 1.8283535265538098, 'c1': 3.6381604202543913}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 21:42:13,825][0m Trial 56 finished with value: 18.614465921419747 and parameters: {'c0': 3.6277068991975154, 'c1': 3.2575033083677547}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 21:48:48,571][0m Trial 57 finished with value: 18.614465944059624 and parameters: {'c0': 3.4028700333330955, 'c1': 4.246103175975968}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 21:55:14,930][0m Trial 58 finished with value: 18.614468364201098 and parameters: {'c0': 2.440426740787103, 'c1': 3.2157470798018566}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:01:42,025][0m Trial 59 finished with value: 18.614465921419747 and parameters: {'c0': 3.1216538063657664, 'c1': 3.763909201937406}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:08:07,957][0m Trial 60 finished with value: 18.614465921419747 and parameters: {'c0': 3.1399011783802333, 'c1': 3.7580800772732332}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:14:39,757][0m Trial 61 finished with value: 18.614468356654474 and parameters: {'c0': 3.5168756571663593, 'c1': 3.735018069363431}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:21:10,016][0m Trial 62 finished with value: 18.614465920622155 and parameters: {'c0': 3.1130560026914855, 'c1': 3.954012531896275}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:27:44,509][0m Trial 63 finished with value: 18.61446595161054 and parameters: {'c0': 3.0570994589819134, 'c1': 3.9545111254059813}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:34:09,304][0m Trial 64 finished with value: 18.61446595161054 and parameters: {'c0': 3.7623919526183567, 'c1': 4.061230369266404}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:40:34,039][0m Trial 65 finished with value: 18.614468357452065 and parameters: {'c0': 1.9324234230812816, 'c1': 3.7706730991044535}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:46:59,959][0m Trial 66 finished with value: 18.614465921419747 and parameters: {'c0': 3.0174059464621417, 'c1': 3.0916243468742413}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:53:17,830][0m Trial 67 finished with value: 18.614468380096234 and parameters: {'c0': 3.186712490419512, 'c1': 3.061753159267422}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 22:59:30,040][0m Trial 68 finished with value: 18.614468371747723 and parameters: {'c0': 1.5561032020732926, 'c1': 3.3009020174315933}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:05:50,220][0m Trial 69 finished with value: 18.614465943262033 and parameters: {'c0': 3.67806830663387, 'c1': 3.8453556381753513}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:12:12,167][0m Trial 70 finished with value: 18.614465921419747 and parameters: {'c0': 2.6816611579808636, 'c1': 3.5945020610237517}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:18:28,383][0m Trial 71 finished with value: 18.61446834990544 and parameters: {'c0': 2.732212041869614, 'c1': 3.571274181561285}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:24:46,356][0m Trial 72 finished with value: 18.614465935715405 and parameters: {'c0': 3.350163272959169, 'c1': 3.255691926991062}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:31:04,395][0m Trial 73 finished with value: 18.614468380096234 and parameters: {'c0': 3.099603268957828, 'c1': 3.9294152190809344}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:37:25,175][0m Trial 74 finished with value: 18.614465944059624 and parameters: {'c0': 2.383311612370578, 'c1': 3.107138515373211}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:43:42,578][0m Trial 75 finished with value: 18.61446595161054 and parameters: {'c0': 2.735440628042968, 'c1': 3.664393599365341}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:50:19,597][0m Trial 76 finished with value: 18.614468364998693 and parameters: {'c0': 2.2271588011634975, 'c1': 4.107846117091583}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-25 23:56:45,542][0m Trial 77 finished with value: 18.614468372545318 and parameters: {'c0': 3.4413426710190618, 'c1': 3.7687519153334574}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:03:23,850][0m Trial 78 finished with value: 18.614465944059624 and parameters: {'c0': 1.99232738170741, 'c1': 4.206367225921911}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:09:41,127][0m Trial 79 finished with value: 18.614468372545318 and parameters: {'c0': 3.1433246173226137, 'c1': 3.5180455929291226}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:16:06,367][0m Trial 80 finished with value: 18.61446595161054 and parameters: {'c0': 2.726805885663676, 'c1': 3.9834260183301367}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:22:38,801][0m Trial 81 finished with value: 18.614468371747723 and parameters: {'c0': 2.9079413648225176, 'c1': 3.3418547118378945}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:28:54,610][0m Trial 82 finished with value: 18.61446834990544 and parameters: {'c0': 2.351770280122701, 'c1': 3.8436084233722063}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:35:09,261][0m Trial 83 finished with value: 18.614465944059624 and parameters: {'c0': 3.3036167924086772, 'c1': 3.4561905533921617}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:41:24,942][0m Trial 84 finished with value: 18.61446592816878 and parameters: {'c0': 3.606705251408139, 'c1': 3.6306026412327954}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:47:49,097][0m Trial 85 finished with value: 18.614465944059624 and parameters: {'c0': 3.5778271355071185, 'c1': 3.6606238962533637}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 00:54:08,793][0m Trial 86 finished with value: 18.61446595161054 and parameters: {'c0': 2.563158355869046, 'c1': 3.012344779038014}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:00:27,877][0m Trial 87 finished with value: 18.614465944059624 and parameters: {'c0': 3.8631441424399693, 'c1': 3.615889544089045}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:06:43,054][0m Trial 88 finished with value: 18.614468364201098 and parameters: {'c0': 7.287731010150614, 'c1': 3.7630313022556856}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:12:58,658][0m Trial 89 finished with value: 18.614468357452065 and parameters: {'c0': 3.110623059730432, 'c1': 3.2090540198571786}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:19:19,228][0m Trial 90 finished with value: 18.614465943262033 and parameters: {'c0': 4.49566054130732, 'c1': 3.8750456923135523}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:25:37,828][0m Trial 91 finished with value: 18.614468349107845 and parameters: {'c0': 2.5796740014094492, 'c1': 3.510933418725878}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:32:00,230][0m Trial 92 finished with value: 18.614465944059624 and parameters: {'c0': 2.9282348589454337, 'c1': 3.442199091424836}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:38:17,880][0m Trial 93 finished with value: 18.61446595081295 and parameters: {'c0': 3.397842590650369, 'c1': 3.145238831129119}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:44:38,977][0m Trial 94 finished with value: 18.614465944059624 and parameters: {'c0': 2.80726353371501, 'c1': 3.3109227969284905}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:50:59,653][0m Trial 95 finished with value: 18.614465928966375 and parameters: {'c0': 2.9912207436095506, 'c1': 3.6975932065106467}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 01:57:16,683][0m Trial 96 finished with value: 18.614465928966375 and parameters: {'c0': 2.309403117450408, 'c1': 3.5771734803784425}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 02:03:31,875][0m Trial 97 finished with value: 18.614468372545318 and parameters: {'c0': 3.662989077840161, 'c1': 2.818705706844473}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 02:09:49,005][0m Trial 98 finished with value: 18.614468364998693 and parameters: {'c0': 2.0943235973870618, 'c1': 3.374604101263786}. Best is trial 53 with value: 18.614465913873122.[0m
+[32m[I 2025-09-26 02:16:06,623][0m Trial 99 finished with value: 18.61446834990544 and parameters: {'c0': 3.2315504114385747, 'c1': 3.484189659375023}. Best is trial 53 with value: 18.614465913873122.[0m
+Traceback (most recent call last):
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 715, in <module>
+    main()
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 700, in main
+    run_optimization(MainFit)                               #  Run optimization based on MainFit
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 588, in run_optimization
+    print_List(FitClass.IOut,f"Round {round_id+1}, best MAD = {study.best_value}")
+TypeError: print_List() missing 1 required positional argument: 'IPrint'

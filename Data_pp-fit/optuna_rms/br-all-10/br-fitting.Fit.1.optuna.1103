@@ -1,0 +1,84 @@
+=>Initial guess moves to: [19.821738590006763, 209.6566366944128, 
+  0.3471497034482492, 0.08797229407271386, 10.765134686293093, 
+  37.080460906956446, 7.6898865676838914, 0.2656269163610795]
+=>Corresponding optuna_ is: 2.686755955167912
+=>Shrink factor for next round is: 0.2456333366092267
+=>Number of trials for next round is: 50.0
+=>Number of startup trials for next round is: 7
+=>Round 1 finished.
+=>Testing parameters in this round
+  1.90137188E+01  2.32349469E+02  2.61897669E-01  7.94295316E-02  8.89698488E+00
+  2.96543399E+01  6.50464510E+00  2.45473572E-01
+--
+=>Initial guess moves to: [18.74505270318691, 221.76165479268678, 
+  0.28031802603418576, 0.07936406317459806, 8.78362941468013, 
+  39.46302930972971, 6.015295948293871, 0.2669029481161507]
+=>Corresponding optuna_ is: 2.6201072439803887
+=>Shrink factor for next round is: 0.2
+=>Number of trials for next round is: 50.0
+=>Number of startup trials for next round is: 7
+=>Round 2 finished.
+=>Testing parameters in this round
+  1.81228819E+01  2.41305464E+02  2.24267245E-01  7.30889871E-02  7.54252328E+00
+  3.30280077E+01  5.26040088E+00  2.50414829E-01
+--
+=>Initial guess moves to: [20.17848442807774, 264.83661703359013, 
+  0.2841137720503291, 0.0635410545376048, 9.48398970760784, 43.28446738142383, 
+  4.812583234849365, 0.21511379779500597]
+=>Corresponding optuna_ is: 2.5747411782510854
+=>Shrink factor for next round is: 0.2
+=>Number of trials for next round is: 50.0
+=>Number of startup trials for next round is: 7
+=>Round 3 finished.
+=>Testing parameters in this round
+  1.95087364E+01  2.88176614E+02  2.27304016E-01  5.85170558E-02  8.14392431E+00
+  3.62263047E+01  4.20862370E+00  2.01824990E-01
+--
+=>Initial guess moves to: [18.990128465139794, 315.90418169310965, 
+  0.25875065451345236, 0.061447471071710974, 8.621237538106573, 
+  47.57070778320842, 4.288906911257618, 0.2213893153048172]
+=>Corresponding optuna_ is: 2.5823868523335873
+=>Shrink factor for next round is: 0.2
+=>Number of trials for next round is: 50.0
+=>Number of startup trials for next round is: 7
+=>Round 4 finished.
+=>Testing parameters in this round
+  1.83598233E+01  3.43744753E+02  2.07012361E-01  5.65890057E-02  7.40307699E+00
+  3.98136112E+01  3.75066661E+00  2.07712833E-01
+--
+=>Initial guess moves to: [20.287282492054512, 355.1907379923593, 
+  0.27280991662362847, 0.04968648668566123, 9.73486454074953, 
+  48.69360833978349, 3.678086604345492, 0.18357957501663602]
+=>Corresponding optuna_ is: 2.5564703312296047
+=>Shrink factor for next round is: 0.2
+=>Number of trials for next round is: 50.0
+=>Number of startup trials for next round is: 7
+=>Round 5 finished.
+=>Testing parameters in this round
+  1.96139233E+01  3.86493626E+02  2.18260414E-01  4.57579267E-02  8.35935112E+00
+  4.07534064E+01  3.21650176E+00  1.72238817E-01
+--
+=>Initial guess moves to: [19.09251916841791, 423.68098749810133, 
+  0.24845590544487817, 0.04804939067332024, 8.849290456290612, 
+  53.51548842751739, 3.277859371522164, 0.1889351442514764]
+=>Corresponding optuna_ is: 2.5445145944032883
+=>Shrink factor for next round is: 0.2
+=>Number of trials for next round is: 50.0
+=>Number of startup trials for next round is: 7
+=>Round 6 finished.
+=>Testing parameters in this round
+  1.84588156E+01  4.61019907E+02  1.98776091E-01  4.42502709E-02  7.59890657E+00
+  4.47890087E+01  2.86650141E+00  1.77263542E-01
+--
+=>Initial guess moves to: [20.789418807861903, 501.5732857753714, 
+  0.28769546856177636, 0.04545352365760838, 8.540903446124885, 
+  60.970423244264296, 2.7578902875198024, 0.17431503593339703]
+=>Corresponding optuna_ is: 2.5865372787698586
+=>Shrink factor for next round is: 0.2
+=>Number of trials for next round is: 50.0
+=>Number of startup trials for next round is: 7
+=>Round 7 finished.
+=>Testing parameters in this round
+  2.00993931E+01  5.45776838E+02  2.30169537E-01  4.18596512E-02  7.33409391E+00
+  5.10283079E+01  2.41178632E+00  1.63546601E-01
+

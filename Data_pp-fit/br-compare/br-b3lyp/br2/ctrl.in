@@ -1,0 +1,29 @@
+[ctrl]
+     xc =                        "b3lyp" 
+     frozen_core_postscf =       21
+     basis_path =                "/home/symei/def2-TZVPP-mixed" # For serial type, path in your container should be used
+     auxbas_path =               "/home/symei/def2-SV(P)-JKFIT"# refer to option "bind" in "REST_Environment"
+     even_tempered_basis =       false
+     etb_start_atom_number =     1
+     etb_beta =                  1.0
+     initial_guess =             "sad"
+     chkfile_type =              "hdf5"
+     fchk =                      false
+     pruning =                   "nwchem"
+     radial_grid_method =        "treutler"
+     scf_acc_rho =               1.0e-7
+     scf_acc_eev =               1.0e-7
+     max_scf_cycle =            400 
+
+    num_threads =           4
+    charge = 0.0000  
+    spin   = 1       
+    spin_polarization = false
+
+[geom]
+    name = "br2"
+    unit = "angstrom"
+    position = '''
+    Br       0.00000000       0.00000000       1.15797900
+    Br       0.00000000       0.00000000      -1.15797900
+    '''

@@ -1,0 +1,303 @@
+=>Fitting start from Wed Sep 10 16:35:12 2025
+=>This project aims to ::
+  batch
+=>1) Project pool is "/share/home/symei/comp/pp-fit/br-fitting-fmin/br-fitting"
+=>2) Project batch type is "2" which to run the job, if no log and chk exist
+=>3) QC package employed is "rest"
+=>There are 1 <Macro-Path>s specified in br-fitting.ctl :
+  Macro-Path :   <PATH1> = /share/home/symei/comp/ae-data
+=>Loaded ConfigIO.BatcList :
+==----------------------------------------------------------------------------==
+Index        Name                        Direction    JobInput         JobType
+--------------------------------------------------------------------------------
+  0th           h  /share/home/symei/comp/ae-da...           h      energy|xdh
+  1th          br  /share/home/symei/comp/ae-da...          br      energy|xdh
+  2th         br2  /share/home/symei/comp/ae-da...         br2      energy|xdh
+  3th         ch4  /share/home/symei/comp/ae-da...         ch4      energy|xdh
+  4th       ch3br  /share/home/symei/comp/ae-da...       ch3br      energy|xdh
+  5th      ch2br2  /share/home/symei/comp/ae-da...      ch2br2      energy|xdh
+  6th       chbr3  /share/home/symei/comp/ae-da...       chbr3      energy|xdh
+  7th        cbr4  /share/home/symei/comp/ae-da...        cbr4      energy|xdh
+  8th     ring-c6  /share/home/symei/comp/ae-da...     ring-c6      energy|xdh
+  9th  ring-c6br1  /share/home/symei/comp/ae-da...  ring-c6br1      energy|xdh
+ 10th         ccc  /share/home/symei/comp/ae-da...         ccc      energy|xdh
+ 11th      cccbr1  /share/home/symei/comp/ae-da...      cccbr1      energy|xdh
+ 12th         hbr  /share/home/symei/comp/ae-da...         hbr      energy|xdh
+ 13th         c=c  /share/home/symei/comp/ae-da...         c=c      energy|xdh
+ 14th      cbrcbr  /share/home/symei/comp/ae-da...      cbrcbr      energy|xdh
+ 15th        cc=c  /share/home/symei/comp/ae-da...        cc=c      energy|xdh
+ 16th    c-cbrcbr  /share/home/symei/comp/ae-da...    c-cbrcbr      energy|xdh
+ 17th       cc=cc  /share/home/symei/comp/ae-da...       cc=cc      energy|xdh
+ 18th  c-cbrcbr-c  /share/home/symei/comp/ae-da...  c-cbrcbr-c      energy|xdh
+ 19th        nabr  /share/home/symei/comp/ae-da...        nabr      energy|xdh
+ 20th        brcl  /share/home/symei/comp/ae-da...        brcl      energy|xdh
+ 21th          cl  /share/home/symei/comp/ae-da...          cl      energy|xdh
+ 22th          na  /share/home/symei/comp/ae-da...          na      energy|xdh
+ 23th         h2o  /share/home/symei/comp/ae-da...         h2o      energy|xdh
+ 24th        hobr  /share/home/symei/comp/ae-da...        hobr      energy|xdh
+ 25th           p  /share/home/symei/comp/ae-da...           p      energy|xdh
+ 26th        pbr3  /share/home/symei/comp/ae-da...        pbr3      energy|xdh
+==----------------------------------------------------------------------------==
+=>Loaded ConfigIO.EngyList :
+==----------------------------------------------------------------------------==
+ Num. Ind. Sca. Ind. Sca. Ind. Sca. Ind. Sca.       Ref. Data  Weight
+--------------------------------------------------------------------------------
+    2    2 -1.0    1  2.0                         49.04805189    1.00
+    4    3 -1.0    2 -1.0    4  1.0   12  1.0     -7.51768878    1.00
+    4    4 -1.0    2 -1.0    5  1.0   12  1.0     -5.53740665    1.00
+    4    5 -1.0    2 -1.0    6  1.0   12  1.0     -2.74997886    1.00
+    4    6 -1.0    2 -1.0    7  1.0   12  1.0      1.10427296    1.00
+    4    8 -1.0    2 -1.0    9  1.0   12  1.0    -14.18858017    1.00
+    4   10 -1.0    2 -1.0   11  1.0   12  1.0    -11.20253405    1.00
+    4    2 -1.0   23 -1.0   12  1.0   24  1.0     25.94392147    1.00
+    3   13 -1.0    2 -1.0   14  1.0              -33.83409642    1.00
+    3   15 -1.0    2 -1.0   16  1.0              -31.63512574    1.00
+    3   17 -1.0    2 -1.0   18  1.0              -33.98755267    1.00
+    3   12 -1.0    1  1.0    0  1.0               92.94027198    1.00
+    3   20 -1.0    1  1.0   21  1.0               52.49541996    1.00
+    3   19 -1.0    1  1.0   22  1.0              104.91984030    1.00
+    3   25 -1.0    1 -3.0   26  1.0             -191.20211646    1.00
+==----------------------------------------------------------------------------==
+=>No first-excitation PT2 data for training
+=>No second-excitation PT2 data for training
+=>No polar data for training
+=>No nmr data for training
+=>No geom data for training
+=>Optimization job is rest_pseudo
+=>This batch runs for rest
+=>The batch type is serial
+=>Initial Guess
+  5.38758640E+01  4.62940200E+00
+=>Optimization Algorithm employed is batch
+=>Testing parameters in this round
+  5.38758640E+01  4.62940200E+00
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The (R)-xDH Energy          :      -0.49881886
+=>Error :: AI Correction result was not found in h
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -14.60626662
+=>The (R)-xDH Energy          :     -14.56569285
+=>Error :: AI Correction result was not found in br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -29.28740362
+=>The (R)-xDH Energy          :     -29.20976877
+=>Error :: AI Correction result was not found in br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -40.53917555
+=>The (R)-xDH Energy          :     -40.41035682
+=>Error :: AI Correction result was not found in ch4
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -54.57336888
+=>The (R)-xDH Energy          :     -54.41969827
+=>Error :: AI Correction result was not found in ch3br
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -68.61120180
+=>The (R)-xDH Energy          :     -68.42453652
+=>Error :: AI Correction result was not found in ch2br2
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -82.64881319
+=>The (R)-xDH Energy          :     -82.43033859
+=>Error :: AI Correction result was not found in chbr3
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -96.68286264
+=>The (R)-xDH Energy          :     -96.43467538
+=>Error :: AI Correction result was not found in cbr4
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -235.97180635
+=>The (R)-xDH Energy          :    -235.26971955
+=>Error :: AI Correction result was not found in ring-c6
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -250.01530048
+=>The (R)-xDH Energy          :    -249.32293303
+=>Error :: AI Correction result was not found in ring-c6br1
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -119.19537711
+=>The (R)-xDH Energy          :    -118.83184285
+=>Error :: AI Correction result was not found in ccc
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -133.23475932
+=>The (R)-xDH Energy          :    -132.86339526
+=>Error :: AI Correction result was not found in cccbr1
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -15.24562175
+=>The (R)-xDH Energy          :     -15.20309794
+=>Error :: AI Correction result was not found in hbr
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -78.62540448
+=>The (R)-xDH Energy          :     -78.38345142
+=>Error :: AI Correction result was not found in c=c
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -107.94619770
+=>The (R)-xDH Energy          :    -107.65060889
+=>Error :: AI Correction result was not found in cbrcbr
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -117.96017591
+=>The (R)-xDH Energy          :    -117.60010612
+=>Error :: AI Correction result was not found in cc=c
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -147.27342102
+=>The (R)-xDH Energy          :    -146.87166334
+=>Error :: AI Correction result was not found in c-cbrcbr
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -157.29178523
+=>The (R)-xDH Energy          :    -156.81410951
+=>Error :: AI Correction result was not found in cc=cc
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -186.60754854
+=>The (R)-xDH Energy          :    -186.09781117
+=>Error :: AI Correction result was not found in c-cbrcbr-c
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -177.01356586
+=>The (R)-xDH Energy          :    -176.66947667
+=>Error :: AI Correction result was not found in nabr
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -474.85871226
+=>The (R)-xDH Energy          :    -474.34153382
+=>Error :: AI Correction result was not found in brcl
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -460.16702573
+=>The (R)-xDH Energy          :    -459.63342101
+=>Error :: AI Correction result was not found in cl
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -162.29127871
+=>The (R)-xDH Energy          :    -161.92082185
+=>Error :: AI Correction result was not found in na
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -76.46670518
+=>The (R)-xDH Energy          :     -76.27932120
+=>Error :: AI Correction result was not found in h2o
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -90.46008916
+=>The (R)-xDH Energy          :     -90.24490828
+=>Error :: AI Correction result was not found in hobr
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -341.28064913
+=>The (R)-xDH Energy          :    -340.81096435
+=>Error :: AI Correction result was not found in p
+=>AI Correction               :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -385.39619154
+=>The (R)-xDH Energy          :    -384.86608358
+=>Error :: AI Correction result was not found in pbr3
+=>AI Correction               :              NAN
+=>Batch corresponds to these parameters ::
+  5.38758640E+01  4.62940200E+00
+==----------------------------------------------------------------------------==
+=>        AD =      -1.17823408;        wAD =      -1.17823408
+=>       MAD =       9.58996363;       wMAD =       9.58996363
+=>       RMS =      14.51000558;       wRMS =      14.51000558
+==----------------------------------------------------------------------------==
+=>Statistic result of energy :
+==----------------------------------------------------------------------------==
+                        Name       Reference    Calc. Result    Deviation Weight
+--------------------------------------------------------------------------------
+                1*2th->2*1th     49.04805189     49.18616245         0.14   1.00
+      1*3th+1*2th->1*4th+...     -7.51768878     -1.67584295         5.84   1.00
+      1*4th+1*2th->1*5th+...     -5.53740665      1.14996121         6.69   1.00
+      1*5th+1*2th->1*6th+...     -2.74997886      0.54515258         3.30   1.00
+      1*6th+1*2th->1*7th+...      1.10427296      1.46462886         0.36   1.00
+      1*8th+1*2th->1*9th+...    -14.18858017    -29.20597422       -15.02   1.00
+      1*10th+1*2th->1*11t...    -11.20253405    -15.61343932        -4.41   1.00
+      1*2th+1*23th->1*12t...     25.94392147     25.78046032        -0.16   1.00
+        1*13th+1*2th->1*14th    -33.83409642    -36.01198113        -2.18   1.00
+        1*15th+1*2th->1*16th    -31.63512574    -38.77286863        -7.14   1.00
+        1*17th+1*2th->1*18th    -33.98755267    -46.39363232       -12.41   1.00
+         1*12th->1*1th+1*0th     92.94027198     86.96424826        -5.98   1.00
+        1*20th->1*1th+1*21th     52.49541996     89.36995305        36.87   1.00
+        1*19th->1*1th+1*22th    104.91984030    114.81046724         9.89   1.00
+        1*25th+3*1th->1*26th   -191.20211646   -224.67410786       -33.47   1.00
+--------------------------------------------------------------------------------
+        AD =        -1.17823408
+       MAD =         9.58996363
+       RMS =         3.74646733
+       wAD =        -1.17823408
+      wMAD =         9.58996363
+      wRMS =         3.74646733
+==----------------------------------------------------------------------------==
+=>Total job time:     347.41(wall)
+=>Fitting end at Wed Sep 10 16:40:59 2025
+=>----------------------------------------------------------------------------==
+  #Filename:  DFT_Fit
+  #Author  :  Igor Ying Zhang, Xin Xu
+  #Version :  0.3(20100731)
+  #Purpose :  DFT optimization using several algorithms

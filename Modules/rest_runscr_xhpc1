@@ -1,0 +1,12 @@
+#BSUB -J <jobname>
+#BSUB -n <ntasks>
+#BSUB -R span[ptile=<ntaskspernode>]
+#BSUB -q <qname>
+
+#BSUB -o <jobname>-%J.out
+
+
+export LD_LIBRARY_PATH="share/apps/intel2020u4/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64:/share/apps/GCC/gcc12/lib64:/share/apps/rust/libxc:/share/apps/rust/libcint/build:/share/apps/rust/OpenBLAS-ifort:/share/apps/rust/rest/external_libs:/share/apps/rust/HDF5/lib:$LD_LIBRARY_PATH"
+/share/apps/rust/rest/rest.avx512 > <joblog> 
+
+rm RUNNING

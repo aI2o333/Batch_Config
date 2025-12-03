@@ -1,0 +1,15 @@
+/share/home/symei/.local/lib/python3.6/site-packages/optuna/samplers/_tpe/sampler.py:284: ExperimentalWarning: ``multivariate`` option is an experimental feature. The interface can change in the future.
+  ExperimentalWarning,
+/share/home/symei/.local/lib/python3.6/site-packages/optuna/samplers/_tpe/sampler.py:295: ExperimentalWarning: ``group`` option is an experimental feature. The interface can change in the future.
+  ExperimentalWarning,
+[32m[I 2025-10-16 16:00:05,287][0m A new study created in memory with name: no-name-f3f47d77-0a2c-47ef-b217-12fb3d356f62[0m
+Traceback (most recent call last):
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 796, in <module>
+    main()
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 781, in main
+    run_optimization(MainFit)                               #  Run optimization based on MainFit
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 665, in run_optimization
+    study = run_optuna(FitClass,n_trials=n_t, shrink_factor=s_factor, n_startup_trials=n_startup_t)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 636, in run_optuna
+    study.optimize(objective, n_trials=n_t)
+UnboundLocalError: local variable 'n_t' referenced before assignment

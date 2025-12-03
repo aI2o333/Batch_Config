@@ -1,0 +1,581 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: xygjos
+Print level:                1
+The number of threads used for parallelism:      8
+The spheric-GTO basis set is taken from /home/symei/TZVPP-10-o-all
+The spheric-GTO auxiliary basis set is taken from /home/symei/def2-SV(P)-JKFIT
+Charge:   0; Spin:   2
+Spin polarization: On
+Input molecular structure (in Angstrom): ----------
+Na       0.00000000      0.00000000      0.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-8 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      250
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+=========================================================
+the scf functional for 'xygjos' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+the post-scf functional 'xygjos' is employed, which contains
+The density functional 'Slater exchange' belongs to the 'LDA' family and is defined in the reference(s):
+(0): P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+(1): F. Bloch.,  Z. Phys. 57, 545 (1929)
+The density functional 'Becke 88' belongs to the 'GGA' family and is defined in the reference(s):
+(0): A. D. Becke.,  Phys. Rev. A 38, 3098 (1988)
+The density functional 'Vosko, Wilk & Nusair (VWN5_RPA)' belongs to the 'LDA' family and is defined in the reference(s):
+(0): S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+The density functional 'Lee, Yang & Parr' belongs to the 'GGA' family and is defined in the reference(s):
+(0): C. Lee, W. Yang, and R. G. Parr.,  Phys. Rev. B 37, 785 (1988)
+(1): B. Miehlich, A. Savin, H. Stoll, and H. Preuss.,  Chem. Phys. Lett. 157, 200 (1989)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 12, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 46,final natm: 2
+numbasis: 32, num_auxbas: 112
+Molecule_name: na
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.10315853 with the total number of basis functions:     32
+Grid size: 16888
+
+=======================
+Generating SAD for atom: Na
+=======================
+SAD generation for Na complete.
+Initial guess energy using single atom density (SAD):                      NaN
+The total energy:                  NaN Ha by the initial guess
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    1 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    2 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    3 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    4 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    5 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    6 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    7 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    8 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after    9 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   10 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   11 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   12 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   13 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   14 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   15 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   16 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   17 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   18 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   19 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   20 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   21 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   22 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   23 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   24 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   25 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   26 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   27 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   28 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   29 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   30 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   31 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   32 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   33 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   34 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   35 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   36 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   37 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   38 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   39 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   40 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   41 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   42 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   43 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   44 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   45 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   46 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   47 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   48 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   49 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   50 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   51 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   52 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   53 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   54 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   55 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   56 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   57 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   58 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   59 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   60 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   61 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   62 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   63 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   64 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   65 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   66 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   67 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   68 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   69 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   70 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   71 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   72 iterations (in       0.03 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   73 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   74 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   75 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   76 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   77 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   78 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   79 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   80 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   81 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   82 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   83 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   84 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   85 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   86 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   87 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   88 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   89 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   90 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   91 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   92 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   93 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   94 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   95 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   96 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   97 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   98 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after   99 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  100 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  101 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  102 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  103 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  104 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  105 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  106 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  107 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  108 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  109 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  110 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  111 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  112 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  113 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  114 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  115 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  116 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  117 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  118 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  119 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  120 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  121 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  122 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  123 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  124 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  125 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  126 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  127 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  128 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  129 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  130 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  131 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  132 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  133 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  134 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  135 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  136 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  137 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  138 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  139 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  140 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  141 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  142 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  143 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  144 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  145 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  146 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  147 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  148 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  149 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  150 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  151 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  152 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  153 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  154 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  155 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  156 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  157 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  158 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  159 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  160 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  161 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  162 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  163 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  164 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  165 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  166 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  167 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  168 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  169 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  170 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  171 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  172 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  173 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  174 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  175 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  176 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  177 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  178 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  179 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  180 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  181 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  182 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  183 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  184 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  185 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  186 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  187 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  188 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  189 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  190 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  191 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  192 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  193 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  194 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  195 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  196 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  197 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  198 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  199 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  200 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  201 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  202 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  203 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  204 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  205 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  206 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  207 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  208 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  209 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  210 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  211 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  212 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  213 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  214 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  215 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  216 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  217 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  218 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  219 iterations (in       0.02 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  220 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  221 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  222 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  223 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  224 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  225 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  226 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  227 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  228 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  229 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  230 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  231 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  232 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  233 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  234 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  235 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  236 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  237 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  238 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  239 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  240 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  241 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  242 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  243 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  244 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  245 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  246 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  247 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  248 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  249 iterations (in       0.01 seconds).
+SCF Change: DM (       NaN,       NaN); eev        NaN Ha; etot        NaN Ha
+Energy:                NaN Ha with <S^2> =    NaN and <2S+1> =    NaN after  250 iterations (in       0.01 seconds).
+SCF does not converge within 251 iterations
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :              NaN,              NaN,              NaN
+----------------------------------------------------------------------
+Fifth-rung correlation energy :                  NaN Ha
+E[XYGJOS]=:              NaN Ha, Ex[HF]:              NaN Ha, Ec[PT2  ]:              NaN Ha
+Mulliken population analysis:
+  0-Na :        NaN
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :                NaN Ha
+The (R)-xDH energy    :                NaN Ha
+Detailed time report:
+Overall   |:    3.883 s for the whole job
+SCF       |:    3.831 s for the scf procedure
+PT2       |:    0.052 s for the PT2 evaluation

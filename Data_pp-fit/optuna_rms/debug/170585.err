@@ -1,0 +1,18 @@
+/share/home/symei/.local/lib/python3.6/site-packages/optuna/samplers/_tpe/sampler.py:284: ExperimentalWarning: ``multivariate`` option is an experimental feature. The interface can change in the future.
+  ExperimentalWarning,
+/share/home/symei/.local/lib/python3.6/site-packages/optuna/samplers/_tpe/sampler.py:295: ExperimentalWarning: ``group`` option is an experimental feature. The interface can change in the future.
+  ExperimentalWarning,
+[32m[I 2025-10-16 15:53:57,284][0m A new study created in memory with name: no-name-58a45fc1-8db3-4914-b0db-7d3a58aa1cd5[0m
+[32m[I 2025-10-16 15:54:13,536][0m Trial 0 finished with value: 147.423463020297 and parameters: {'c0': 42.153924558144766, 'c1': 104.01937897938072, 'c2': 5.466201832169184, 'c3': 2.049256878763158, 'c4': 38.155334605974076, 'c5': 11.847951664156982, 'c6': 0.8682638127085884, 'c7': 1.3378961532929043, 'c8': 9.77435441991313, 'c9': 2.5154137471972997, 'c10': -7.384750366719752, 'c11': 19.21177631566435, 'c12': 3.1996473241333394, 'c13': 2.0824242407033466, 'c14': 1.1867311288110616, 'c15': 22.579529841433274, 'c16': 5.611641726350889, 'c17': 2.5322763271749964, 'c18': 0.8440113033322992, 'c19': 1.604897295891392, 'c20': 1.2069675578853885, 'c21': 5.834374798873668}. Best is trial 0 with value: 147.423463020297.[0m
+[32m[I 2025-10-16 15:54:29,794][0m Trial 1 finished with value: 23.76919840137269 and parameters: {'c0': 25.678489372165526, 'c1': 95.74240101157949, 'c2': 7.186881497851289, 'c3': 1.6400963473926775, 'c4': 64.42624776231663, 'c5': 21.860984144867402, 'c6': 0.714963755893568, 'c7': 1.153290526121804, 'c8': 10.94915695208198, 'c9': 3.209795561759866, 'c10': -5.600363466316868, 'c11': 23.16771138181381, 'c12': 4.065416590416465, 'c13': 1.1408843973127811, 'c14': 1.960579728483515, 'c15': 23.06283017309124, 'c16': 3.6640172490895933, 'c17': 1.2822222757979556, 'c18': 0.9961359528038369, 'c19': 1.6590285195640173, 'c20': 1.2973596828822813, 'c21': 5.9643692613531}. Best is trial 1 with value: 23.76919840137269.[0m
+[32m[I 2025-10-16 15:55:00,087][0m Trial 2 finished with value: 44.6369771278725 and parameters: {'c0': 25.538846560556514, 'c1': 67.70507851223306, 'c2': 7.090813240817772, 'c3': 1.3824574052211027, 'c4': 67.75465617802996, 'c5': 31.67298323519429, 'c6': 0.5705890256346137, 'c7': 1.246435443558802, 'c8': 14.524985116260337, 'c9': 3.3597852849536927, 'c10': -3.5165960085310832, 'c11': 22.763422221460683, 'c12': 5.244549544693772, 'c13': 1.3975406168692077, 'c14': 2.525709924438176, 'c15': 29.218452815873263, 'c16': 4.118318072270511, 'c17': 1.2967141540950378, 'c18': 0.782956360620584, 'c19': 2.2783361880221085, 'c20': 1.0480965268240936, 'c21': 4.3254137831082575}. Best is trial 1 with value: 23.76919840137269.[0m
+Traceback (most recent call last):
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 796, in <module>
+    main()
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 781, in main
+    run_optimization(MainFit)                               #  Run optimization based on MainFit
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 665, in run_optimization
+    study = run_optuna(FitClass,n_trials=n_t, shrink_factor=s_factor, n_startup_trials=n_startup_t)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 646, in run_optuna
+    n_t = int(n_t * np.exp(-(40-mad)/40))
+UnboundLocalError: local variable 'n_t' referenced before assignment

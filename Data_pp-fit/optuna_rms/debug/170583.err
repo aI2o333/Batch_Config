@@ -1,0 +1,50 @@
+/share/home/symei/.local/lib/python3.6/site-packages/optuna/samplers/_tpe/sampler.py:284: ExperimentalWarning: ``multivariate`` option is an experimental feature. The interface can change in the future.
+  ExperimentalWarning,
+/share/home/symei/.local/lib/python3.6/site-packages/optuna/samplers/_tpe/sampler.py:295: ExperimentalWarning: ``group`` option is an experimental feature. The interface can change in the future.
+  ExperimentalWarning,
+[32m[I 2025-10-16 15:17:18,541][0m A new study created in memory with name: no-name-821d6b2d-5ff6-43cd-b411-5134afb3350f[0m
+[33m[W 2025-10-16 15:17:18,648][0m Trial 0 failed because of the following error: KeyError('ecp_potentials',)[0m
+Traceback (most recent call last):
+  File "/share/home/symei/.local/lib/python3.6/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 629, in objective
+    return calc_statistic(C, FitClass)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 51, in calc_statistic
+    return calc_statistic_pseudo(C, FitClass)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 378, in calc_statistic_pseudo
+    generate_ecp(C,FitClass.PseudoType,FitClass.AngM,FitClass.PseudoMod,FitClass.WrittenDir)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 180, in generate_ecp
+    generate_ecp_all(C_array, ptype, AngM, path)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 345, in generate_ecp_all
+    for parameter in data['ecp_potentials']:
+KeyError: 'ecp_potentials'
+Traceback (most recent call last):
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 796, in <module>
+    main()
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 781, in main
+    run_optimization(MainFit)                               #  Run optimization based on MainFit
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 665, in run_optimization
+    study = run_optuna(FitClass,n_trials=n_t, shrink_factor=s_factor, n_startup_trials=n_startup_t)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 631, in run_optuna
+    study.optimize(objective, n_trials=n_trials)
+  File "/share/home/symei/.local/lib/python3.6/site-packages/optuna/study/study.py", line 428, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/share/home/symei/.local/lib/python3.6/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/share/home/symei/.local/lib/python3.6/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/share/home/symei/.local/lib/python3.6/site-packages/optuna/study/_optimize.py", line 234, in _run_trial
+    raise func_err
+  File "/share/home/symei/.local/lib/python3.6/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 629, in objective
+    return calc_statistic(C, FitClass)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 51, in calc_statistic
+    return calc_statistic_pseudo(C, FitClass)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 378, in calc_statistic_pseudo
+    generate_ecp(C,FitClass.PseudoType,FitClass.AngM,FitClass.PseudoMod,FitClass.WrittenDir)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 180, in generate_ecp
+    generate_ecp_all(C_array, ptype, AngM, path)
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 345, in generate_ecp_all
+    for parameter in data['ecp_potentials']:
+KeyError: 'ecp_potentials'

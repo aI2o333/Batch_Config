@@ -1,4 +1,4 @@
-#!/bin/env python2
+#!/bin/env python3
 # Module     :: my_io
 # Authors    :: Igor Ying Zhang and Xin Xu
 # Purpose    :: Private input and output formats
@@ -107,6 +107,9 @@
 #       specifing the CPU number for special Aims jobs
 
 
+import unicodedata
+
+
 def print_Error(IOut, Info):
     '''Report the error information "Info", and abort the process'''
     '''INPUT ARGUMENTS    ::'''
@@ -115,8 +118,7 @@ def print_Error(IOut, Info):
     from sys import exit
     IOut.write('*****\n*%s\n*****\n' % Info)
     print(Info)
-    exit()
-    return
+    exit(1)
 
 
 def print_String(IOut, PString, IPrint, Info=''):
@@ -164,7 +166,7 @@ def print_String(IOut, PString, IPrint, Info=''):
         else:
             IOut.write('=>%s\n  %s\n' % (Info, PString))
     elif IPrint == 2:   # Print in highline style
-        NL = PL/NN
+        NL = int(PL / NN)
         if PL == NL*NN:
             NL = NL-1
         if NL > 0:
@@ -191,7 +193,7 @@ def print_String(IOut, PString, IPrint, Info=''):
             IOut.write('==%s==\n  %s\n==%s==\n'
                        % ('-'*(NN-2), PString, '-'*(NN-2)))
     elif IPrint == 3:    # Print string without prompt
-        NL = PL / NN     # of "=>"
+        NL = int(PL / NN)     # of "=>"
         if PL == NL*NN:
             NL = NL - 1
         if NL > 0:
@@ -356,6 +358,8 @@ def print_List_free(IOut, PList, IPrint, FormList, Info=''):
                     PString = PString + repr(item) + '\n'
     elif IPrint == 2:
         try:
+            #print(PList[0])
+            #print(FormList[1])
             PString = PString + FormList[1] % tuple(PList[0]) + '\n'
         except ValueError:
             PString += repr(PList[0]) + '\n'
@@ -445,7 +449,7 @@ def print_SList(IOut, SList, Info=''):
     return (AD, MAD, RMS, wAD, wMAD, wRMS)
 
 
-def print_Matrix_numpy(IOut, PMatrix, IPrint, Info=''):
+def print_Matrix_numpy(IOut, PMatrix, Info=''):
     '''Print Matrix'''
     from numpy import array
 
@@ -540,7 +544,7 @@ def read_Matrix_headed(IOut, FileName, Info=''):
             % FileName
         print_Error(IOut, tmpString)
     else:
-        rf = file(FileName, 'r')
+        rf = open(FileName, 'r')
     if len(Info) != 0:
         p1 = compile(Info)
         TmpString = rf.read().strip()
@@ -556,7 +560,7 @@ def read_Matrix_headed(IOut, FileName, Info=''):
     TmpList = [x.strip() for x in rf.read().split('\n')]
     for i in range(TmpList.count('')):
         TmpList.remove('')
-    p1 = compile('=>')
+    p1 = compile(b'=>')
     for line in TmpList:
         item = [x.strip() for x in line.split()]
         rep = p1.match(item[0])
@@ -807,7 +811,7 @@ class ConfigIO:
             pass
         else:
             try:
-                self.f = open(self.FileName, 'r')
+                self.f = open(self.FileName, 'rb')
             except IOError:
                 print_Error(self.IOut, 'Error in open config file')
 
@@ -830,6 +834,7 @@ class ConfigIO:
         #     qchem
         #     fhi-aims
         #     xyg3_fit
+        #     orca
         #     existing components
         self.ProjTool = 'gaussian'
         self.PathList = []  # Macro-Path environment
@@ -839,6 +844,12 @@ class ConfigIO:
         self.OptionList = []      # 1) Job control keywords
         self.MachineList = []     # 2) Machine statements
         self.ExOvList = []        # 3) Extra overlay statements
+
+        #Input info. for ORCA Job
+        self.InpuList = []
+        self.xyzfilepath = ''
+        self.inpname = ''
+        self.parallel = ''      #queue, total procs, span, machine number, whether running
 
         # Input info. for Qchem Job
         self.RemList = []         # 1) Job control in $rem
@@ -858,6 +869,9 @@ class ConfigIO:
         self.BatchType = 'series'
         self.BatchCmd = ''
         self.BatchScriptName = 'Aims_Environment'
+        
+        # Input info. for REST Job
+        self.RESTCfg = 'igor'     # Version of the rest excutable used
 
         # Number of batch jobs
         self.NBatc = 0
@@ -868,8 +882,23 @@ class ConfigIO:
 
         self.InitGuess = []       # Initial guess for DFT Fitting
         self.OptAlgo = 'leastsq'
+        
+        # for optuna algorithm
+        self.OptunaOption='simple'  # Optuna optimization option
+        self.ShrinkFactor = 0.5     # Shrink factor for optuna method
+        self.NTrials = 80         # Number of trials for optuna method
+        self.NStartup_trials = 15  # Number of startup trials for optuna method
 
         self.Result = []          # Deviations for DFT Fitting
+
+        # for pseudo fitting
+        self.AngM = -10086          # Number of angular momentum
+        self.PseudoList = []
+        self.PseudoMod = 'need __pseudo_property__ part'
+        self.WrittenDir = '/need_a_dir/'
+        self.RescalePos = []
+        self.ManualPos = []
+        self.RescaleStat = False
 
         # Number of training energy
         self.NEngy = 0
@@ -898,6 +927,12 @@ class ConfigIO:
         self.GeomList = []
         return
 
+#    def __del__(self):
+#        try:
+#            self.f.close()
+#        except AttributeError:
+#            pass
+
     def __del__(self):
         if self.FileName is None:
             pass
@@ -917,7 +952,7 @@ class ConfigIO:
         # ================================#
         #  Now obtain project description #
         # ================================#
-        p1 = compile('__title__ *::')
+        p1 = compile(b'__title__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
@@ -926,7 +961,7 @@ class ConfigIO:
             self.f.readline()
             TmpLine = self.f.readline().strip()
             while len(TmpLine) != 0:
-                self.Title.append(TmpLine)
+                self.Title.append(TmpLine.decode('utf-8'))
                 TmpLine = self.f.readline().strip()
         if len(self.Title) != 0:
             print_List(self.IOut, self.Title, 2, 'This project aims to ::')
@@ -937,14 +972,15 @@ class ConfigIO:
         ProjCtrlInfo = ['to run all the jobs',
                         'to fetch results from existed file',
                         'to run the job, if no log and chk exist']
-        p1 = compile('__project__ *::')
+        p1 = compile(b'__project__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).end()
             self.f.seek(LocPos)
+            line = self.f.readline().decode('utf-8')
             # Split the keywords by ignoring the possible annotation
-            TmpList = self.f.readline().split('#')[0].split()
+            TmpList = line.split('#')[0].strip().split()
             if len(TmpList) == 0:
                 self.ProjDir = ''
                 self.ProjCtrl = 0
@@ -952,29 +988,38 @@ class ConfigIO:
             elif len(TmpList) == 1:
                 try:
                     self.ProjDir = ''
-                    self.ProjCtrl = int(TmpList[1])
+                    self.ProjCtrl = int(TmpList[0])
                     self.ProjTool = 'gaussian'
                 except ValueError:
-                    if TmpList[1].lower() == 'gaussian' \
-                            or TmpList[1].lower() == 'qchem' \
-                            or TmpList[1].lower() == 'aims':
+                    if TmpList[0].lower() == 'gaussian' \
+                            or TmpList[0].lower() == 'xdh4gau' \
+                            or TmpList[0].lower() == 'qchem' \
+                            or TmpList[0].lower() == 'aims'\
+                            or TmpList[0].lower() == 'rest'\
+                            or TmpList[0].lower() == 'orca':
                         self.ProjDir = ''
                         self.ProjCtrl = 0
-                        self.ProjTool = TmpList[1].lower()
+                        self.ProjTool = TmpList[0].lower()
                     else:
-                        self.ProjDir = TmpList[1].strip()
+                        self.ProjDir = TmpList[0].strip()
                         self.ProjCtrl = 0
                         self.ProjTool = 'gaussian'
             elif len(TmpList) == 2:
                 if TmpList[1].lower() == 'gaussian' or\
+                        TmpList[1].lower() == 'xdh4gau' or\
                         TmpList[1].lower() == 'qchem' or\
-                        TmpList[1].lower() == 'aims':
+                        TmpList[1].lower() == 'aims'or\
+                        TmpList[1].lower() == 'rest'or\
+                        TmpList[1].lower() == 'orca':
                     self.ProjDir = ''
                     self.ProjCtrl = int(TmpList[0])
                     self.ProjTool = TmpList[1].lower()
                 elif TmpList[0].lower() == 'gaussian' or\
+                        TmpList[0].lower() == 'xdh4gau' or\
                         TmpList[0].lower() == 'qchem' or\
-                        TmpList[0].lower() == 'aims':
+                        TmpList[0].lower() == 'aims' or\
+                        TmpList[0].lower() == 'rest' or\
+                        TmpList[0].lower() == 'orca':
                     print_Error(self.IOut, 'Error "__project__" statement (2)')
                 else:
                     self.ProjDir = TmpList[0]
@@ -1034,26 +1079,26 @@ class ConfigIO:
         # ===================================#
         #  Now obtain <MacroPath> environment#
         # ===================================#
-        p1 = compile('__macro_path__ *::')
+        p1 = compile(b'__macro_path__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
             self.f.readline().strip()
-            TmpString = self.f.readline().strip()
-            while TmpString[0] == '#':
-                TmpString = self.f.readline().strip()
+            TmpString = self.f.readline().strip().decode('utf-8')
+            while TmpString.lstrip()[0] == '#':
+                TmpString = self.f.readline().strip().decode('utf-8')
             TmpLine = \
                 tuple([x.strip() for x in
                       TmpString.replace(',', '  ').replace('=', '  ').
                       replace('\'', '  ').replace('"', '  ').
                       split()])
-            while len(TmpLine) == 2:
+            while len(TmpLine) == 2: # read <PATH2>, <PATH3>, ...
                 self.PathList.append(TmpLine)
-                TmpString = self.f.readline().strip()
-                while len(TmpString) != 0 and TmpString[0] == '#':
-                    TmpString = self.f.readline().strip()
+                TmpString = self.f.readline().strip().decode('utf-8')
+                while len(TmpString) != 0 and TmpString.lstrip()[0] == '#':
+                    TmpString = self.f.readline().strip().decode('utf-8')
                 TmpLine = \
                     tuple([x.strip() for x in
                           TmpString.replace(',', '  ').replace('=', '  ').
@@ -1062,7 +1107,7 @@ class ConfigIO:
             tmpString = 'There are %d <Macro-Path>s specified in %s :' \
                 % (len(self.PathList), self.FileName)
             print_String(self.IOut, tmpString, 1)
-            for macro, path in self.PathList:
+            for macro, path in self.PathList: # to cut off the long path and print it
                 if len(macro) >= 9:
                     macro = macro[:6]+'...'
                 if len(path) >= 53:
@@ -1075,12 +1120,12 @@ class ConfigIO:
     def get_GauIOCmd(self):
         '''Obtain MachineList and OptionList for GausIO class'''
         from re import compile
-        from io import StringIO
+        from io import StringIO, BytesIO
         from copy import deepcopy
         from my_io import print_String
         from my_io import print_List
         from gaussian_manage import GauIO
-        p1 = compile('__gaussian__ *::')
+        p1 = compile(b'__gaussian__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
@@ -1092,7 +1137,8 @@ class ConfigIO:
             self.f.readline()
             LocPos = self.f.tell()
             TmpGau = GauIO(self.IOut, fn=None, bugctrl=0)
-            TmpGau.f = StringIO(TmpFile[LocPos:])
+            # TmpGau.f = StringIO(unicodedata(TmpFile[LocPos:]))  primary code, may have problem for unicodedata is only a module, not a function
+            TmpGau.f = StringIO(TmpFile[LocPos:].decode('utf-8'))
             TmpGau.get_MachAndOpt()
             TmpGau.KickOptionList = self.KickOptionList[:]
             TmpGau.ctrl_Option()
@@ -1100,10 +1146,36 @@ class ConfigIO:
             self.MoreOptionDict = deepcopy(TmpGau.MoreOptionDict)
             self.MachineList = TmpGau.MachineList[:]
             self.ExOvList = TmpGau.ExOvList[:]
+            print((self.OptionList,self.MachineList))
         else:
             if self.IPrint >= 2:
                 tmpString = 'No machine and option lists are specified'
                 print_String(self.IOut, tmpString, 1)
+        return
+
+    def get_ORCAIOCmd(self):
+        from re import compile
+        from copy import deepcopy
+        from orca_manage import ORCAIO
+        p1 = compile(b'__orca__ *::')
+        self.f.seek(0)
+        TmpFile = self.f.read().lower()
+        if p1.search(TmpFile):
+            LocPos = p1.search(TmpFile).start()
+            self.f.seek(LocPos)
+            self.f.readline()
+            LocPos = self.f.tell()
+            line=self.f.readline().strip().decode('utf-8')
+            while line[0] != '*': 
+                self.InputList.append(line)
+                line = self.f.readline().strip().decode('utf-8')
+            self.InputList.append(line)
+            if len(self.InputList)==0:
+                print_Error(self.IOut,
+                    'Error occurs in reading option keywords from' +\
+                    ' "%s". Please make it valid ' % self.FileName)
+            self.parallel = self.InputList[0]
+            TmpORCA = ORCAIO(self.IOut,fn=None,bugctrl=2)
         return
 
     def get_QcmIOCmd(self):
@@ -1113,13 +1185,14 @@ class ConfigIO:
         from io import StringIO
         from my_io import print_String
         from qchem_manage import QChemIO
-        p1 = compile('__qchem__ *::')
+        p1 = compile(b'__qchem__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            tmpList = self.f.readline().split("::")
+            line = self.f.readline().strip().decode('utf-8')
+            tmpList = line.split("::")
             if len(tmpList) == 2:
                 tmpList = tmpList[1].split('#')[0].split()
                 if len(tmpList) ==1:
@@ -1142,19 +1215,145 @@ class ConfigIO:
                     print_String(self.IOut,
                         'This batch run series qchem',1)
             LocPos = self.f.tell()
-            p2 = compile('$end')
+            p2 = compile(b'$end')
             EndPos = 0
             for iterm in p2.finditer(self.f.read()):
                 tmpPos = iterm.end()
                 if tmpPos > EndPos:
                     EndPos = tmpPos
             TmpQchem = QChemIO(self.IOut,fn=None,bugctrl=0)
-            TmpQchem.f = StringIO(TmpFile[LocPos:LocPos+EndPos])
+            TmpQchem.f = StringIO(TmpFile[LocPos:LocPos+EndPos].decode('utf-8'))
             TmpQchem.get_Input()
             self.InpuDict = deepcopy(TmpQchem.InpuDict)
         else:
             if self.IPrint >= 2:
                 print_String(self.IOut, 'No Q-Chem inputs are specified', 1)
+        return
+
+    def get_RESTIOCmd(self):
+        '''Obtain keywords for FHI-aims' jobs:'''
+        '''   1) __rest__ '''
+        '''   2) __rest_basis__ '''
+        '''   3) __rest_special_nproc__ '''
+        '''   4) __rest_batch_type__ '''
+        from re import compile, MULTILINE
+        from my_io import print_Error, print_String
+        p1 = compile(b'^ *__rest__ *::', MULTILINE)
+        self.f.seek(0)
+        TmpFile = self.f.read()
+        if p1.search(TmpFile):
+            LocPos = p1.search(TmpFile.lower()).start()
+            self.f.seek(LocPos)
+            line = self.f.readline().strip().decode('utf-8')
+            tmpList = line.split("::")
+            if len(tmpList) == 2:
+                tmpList = tmpList[1].split('#')[0].split()
+                if len(tmpList) == 1:
+                    try:
+                        self.Procs = int(tmpList[0])
+                        self.RESTCfg = 'igor'
+                    except ValueError:
+                        self.Procs = 1
+                        self.RESTCfg = 'igor'
+                elif len(tmpList) == 2:
+                    try:
+                        self.Procs = int(tmpList[0])
+                        self.RESTCfg = tmpList[1].strip()
+                    except ValueError:
+                        self.Procs = 1
+                        self.RESTCfg = 'igor'
+                else:
+                    print_Error(self.IOut,
+                                'Error :: Unknown input for __rest__')
+            if self.IPrint >= 1:
+                print_String(self.IOut, 'This batch runs for rest', 1)
+            LocPos = self.f.tell()
+            p2 = compile(b'end rest')
+            if p2.search(TmpFile.lower()):
+                EndPos = p2.search(TmpFile.lower()).start()
+            else:
+                print_Error(self.IOut,
+                            "Error :: No stop sign for rest\'s ctrl.in")
+            ff = open('%s/ctrl.in' % self.ProjDir, 'w')
+            ff.write('[ctrl]\n')
+            p3 = compile(b'num_threads')
+            p4 = compile(b'charge')
+            p5 = compile(b'spin')
+            for xline in TmpFile[LocPos:EndPos].split(b"\n"):
+                if p3.match(xline.strip().lower()):
+                    #ff.write("    num_threads =           %i\n" %self.Procs)
+                    pass
+                elif p4.match(xline.strip().lower()) or p5.match(xline.strip().lower()):
+                    pass
+                else:
+                    #ff.write("%s\n" %xline)
+                    ff.write(xline.decode('utf-8') + '\n')  
+            #ff.write(TmpFile[LocPos:EndPos])
+            ff.write("    num_threads =           %i\n" %self.Procs)
+            ff.close()
+        else:
+            if self.IPrint >= 2:
+                print_String(self.IOut,
+                             'No REST\'s ctrl.in is specified',
+                             1)
+
+        p1 = compile(b'^ *__rest_batch_type__ *::', MULTILINE)
+        if p1.search(TmpFile):#read the infor for batch type, length range from 1 to 4
+            LocPos = p1.search(TmpFile.lower()).start()
+            self.f.seek(LocPos)
+            line = self.f.readline().strip().decode('utf-8')
+            tmpList = line.split("#")[0].split("::")
+            if len(tmpList) == 2:
+                tmpList = tmpList[1].split('#')[0].split()
+                if len(tmpList) == 1:
+                    self.BatchType = tmpList[-1].strip().lower()
+                    if self.BatchType == 'queue':
+                        self.BatchCmd = 'brun'
+                        self.BatchScriptName = 'rest_runscr'
+                        self.BatchQueueName = 'default'
+                    elif self.BatchType == 'serial':
+                        self.BatchScriptName = 'REST_Environment'
+                elif len(tmpList) == 2:
+                    self.BatchType = tmpList[-2].strip().lower()
+                    if self.BatchType == 'queue':
+                        self.BatchCmd = tmpList[-1].strip()
+                        self.BatchScriptName = 'rest_runscr'
+                        self.BatchQueueName = 'default'
+                    elif self.BatchType == 'serial':
+                        self.BatchScriptName = tmpList[-1].strip()
+                    else:
+                        print_Error(self.IOut, 
+                                    'Error :: Unknown BathType for rest_batch_type')
+                elif len(tmpList) == 3:
+                    self.BatchType = tmpList[-3].strip().lower()
+                    if self.BatchType == 'queue':
+                        self.BatchCmd = tmpList[-2].strip()
+                        self.BatchScriptName = tmpList[-1].strip()
+                        self.BatchQueueName = 'default'
+                    elif self.BatchType == 'serial':
+                        self.BatchScriptName = tmpList[-1].strip()
+                    else:
+                        print_Error(self.IOut, 
+                                    'Error :: Unknown BathType for rest_batch_type')
+                elif len(tmpList) == 4:
+                    self.BatchType = tmpList[-4].strip().lower()
+                    if self.BatchType == 'queue':
+                        self.BatchCmd = tmpList[-3].strip()
+                        self.BatchScriptName = tmpList[-2].strip()
+                        self.BatchQueueName = tmpList[-1].strip()
+                    elif self.BatchType == 'serial':
+                        self.BatchScriptName = tmpList[-1].strip()
+                    else:
+                        print_Error(self.IOut, 
+                                    'Error :: Unknown BathType for rest_batch_type')
+                else:
+                    print_Error(self.IOut,
+                                'Error :: Unknown input for rest_batch_type')
+                print_String(self.IOut, 'The batch type is %s'
+                             % self.BatchType, 1)
+            else:
+                print_Error(self.IOut,
+                            'Error :: Unknown input for rest_batch_type')
         return
 
     def get_AimIOCmd(self):
@@ -1165,13 +1364,14 @@ class ConfigIO:
         '''   4) __aims_batch_type__ '''
         from re import compile, MULTILINE
         from my_io import print_Error, print_String
-        p1 = compile('^ *__aims__ *::', MULTILINE)
+        p1 = compile(b'^ *__aims__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile.lower()).start()
             self.f.seek(LocPos)
-            tmpList = self.f.readline().split("::")
+            line = self.f.readline().strip().decode('utf-8')
+            tmpList = line.split("::")
             if len(tmpList) == 2:
                 tmpList = tmpList[1].split('#')[0].split()
                 if len(tmpList) == 1:
@@ -1213,14 +1413,14 @@ class ConfigIO:
             if self.IPrint >= 1:
                 print_String(self.IOut, 'This batch runs for aims', 1)
             LocPos = self.f.tell()
-            p2 = compile('end aims')
+            p2 = compile(b'end aims')
             if p2.search(TmpFile.lower()):
                 EndPos = p2.search(TmpFile.lower()).start()
             else:
                 print_Error(self.IOut,
                             "Error :: No stop sign for aims\'s control.in")
             ff = open('%s/control.in' % self.ProjDir, 'w')
-            ff.write(TmpFile[LocPos:EndPos])
+            ff.write(TmpFile[LocPos:EndPos].decode('utf-8'))
             ff.close()
         else:
             if self.IPrint >= 2:
@@ -1228,23 +1428,25 @@ class ConfigIO:
                              'No Aims\'s control.in is specified',
                              1)
 
-        p1 = compile('^ *__aims_basis__ *::', MULTILINE)
+        p1 = compile(b'^ *__aims_basis__ *::', MULTILINE)
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile.lower()).start()
             self.f.seek(LocPos)
-            tmpList = self.f.readline().split("#")[0].split("::")
+            line = self.f.readline().strip().decode('utf-8')
+            tmpList = line.split("#")[0].split("::")
             self.BasisDir = tmpList[-1].strip()
             print_String(self.IOut,
                          'Basis sets are loading from %s' % self.BasisDir,
                          1)
 
-        p1 = compile('^ *__aims_special_nproc__ *::', MULTILINE)
+        p1 = compile(b'^ *__aims_special_nproc__ *::', MULTILINE)
         if p1.search(TmpFile):
             for p1result in p1.finditer(TmpFile.lower()):
                 LocPos = p1result.start()
                 self.f.seek(LocPos)
                 try:
-                    tmpList = self.f.readline().split("#")[0].split("::")
+                    line = self.f.readline().strip().decode('utf-8')
+                    tmpList = line.split("#")[0].split("::")
                     try:
                         tmpList = [int(x) for x in tmpList[-1].split()]
                         nprocs = tmpList[0]
@@ -1256,11 +1458,13 @@ class ConfigIO:
                         pass
                 except:
                     pass
-        p1 = compile('^ *__aims_batch_type__ *::', MULTILINE)
+
+        p1 = compile(b'^ *__aims_batch_type__ *::', MULTILINE)
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile.lower()).start()
             self.f.seek(LocPos)
-            tmpList = self.f.readline().split("#")[0].split("::")
+            line = self.f.readline().strip().decode('utf-8')
+            tmpList = line.split("#")[0].split("::")
             if len(tmpList) == 2:
                 tmpList = tmpList[1].split('#')[0].split()
                 if len(tmpList) == 1:
@@ -1321,7 +1525,7 @@ class ConfigIO:
         from io import StringIO
         from my_io import print_String
         from cp2k_manage import CP2KIO
-        p1 = compile('^ *__cp2k__ *::', MULTILINE)
+        p1 = compile(b'^ *__cp2k__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read()
         if p1.search(TmpFile):
@@ -1329,14 +1533,14 @@ class ConfigIO:
             self.f.seek(LocPos)
             self.f.readline()
             LocPos = self.f.tell()
-            p2 = compile('&[Ee][Nn][Dd]')
+            p2 = compile(b'&[Ee][Nn][Dd]')
             EndPos = 0
             for iterm in p2.finditer(self.f.read().lower()):
                 tmpPos = iterm.end()
                 if tmpPos > EndPos:
                     EndPos = tmpPos
             TmpCP2K = CP2KIO(self.IOut,fn=None,bugctrl=2)
-            TmpCP2K.f = StringIO(TmpFile[LocPos:LocPos+EndPos])
+            TmpCP2K.f = StringIO(TmpFile[LocPos:LocPos+EndPos].decode('utf-8'))
             TmpCP2K.get_Input()
             self.InpuDict = deepcopy(TmpCP2K.InpuDict)
         else:
@@ -1346,6 +1550,129 @@ class ConfigIO:
                              1)
         return
 
+    def get_PseudoCoeff(self):
+        '''Obtain the pseudo-coefficients for the fitting'''
+        '''by the keywords __pseudo_property__ '''
+        '''we get coefficients/gaussian exponential and angular moentum'''
+        from re import compile, MULTILINE
+        from my_io import print_Error
+        from my_io import print_List_free
+        
+        p1 = compile(b'__pseudo_mod__ *::')
+        self.f.seek(0)
+        TmpFile = self.f.read().lower()
+        try:
+            LocPos = p1.search(TmpFile).start()
+        except:
+            return
+        self.f.seek(LocPos)
+        line = self.f.readline().decode('utf-8')
+        TmpLine = line.split('#')[0].strip()
+        self.PseudoMod = TmpLine.split('::')[1].strip().lower()
+        tmpPrint = f'Pseudopotential fitting mod is {self.PseudoMod}'
+        print_String(self.IOut, tmpPrint, 1)
+
+        p3 = compile(b'__basis_dir__ *::')
+        self.f.seek(0)
+        TmpFile = self.f.read().lower()
+        if p3.search(TmpFile):
+            LocPos = p3.search(TmpFile).start()
+            self.f.seek(LocPos)
+            TmpString = self.f.readline().strip().decode('utf-8')
+            while TmpString.lstrip()[0] == '#':
+                TmpString = self.f.readline().strip().decode('utf-8')
+            self.WrittenDir = TmpString.split('::')[1].strip()
+        else:
+            print_Error(self.IOut,
+                'Error in finding basis_dir '+\
+                ' \"ConfigIO.get_PseudoCoeff\"')
+            return
+        print_String(self.IOut, f'Revised basis dir :{self.WrittenDir}', 3)
+
+        p2 = compile(b'^ *__pseudo_property__ *::', MULTILINE)
+        self.f.seek(0)  #self.f = open(self.FileName, 'rb')
+        TmpFile = self.f.read().lower()
+        try:
+            LocPos = p2.search(TmpFile).start()
+        except: 
+            return
+        self.f.seek(LocPos)
+        line = self.f.readline().strip().decode('utf-8')
+        TmpLine = line.split('#')[0].strip() #To ignore annotations
+        try:
+            TmpList = TmpLine.split('::')[1].strip().split()
+            self.AngM = int(TmpList[1])          # get the angular momentum
+            self.PseudoType = TmpList[0].lower()     
+        except ValueError:
+            print_Error(self.IOut,
+                'Error in accessing to pseudo_property'+\
+                ' \"ConfigIO.get_PseudoCoeff\"')
+            
+        p4 = compile(b'__coeff position__ *::')
+        p5 = compile(r'[,\s]+')
+        p6 = compile(b'__gexp position__ *::')
+        if self.PseudoMod == 'manual':    
+            self.f.seek(0)
+            match_p4 = p4.search(TmpFile)
+            self.f.seek(0)
+            match_p6 = p6.search(TmpFile)
+            
+            if match_p4:
+                LocPos_c = match_p4.start()
+                try:
+                    self.f.seek(LocPos_c)
+                    line = self.f.readline().decode('utf-8')
+                    TmpLine = line.split('#')[0].strip()
+                    TmpList = TmpLine.split('::')[1].strip()
+                    self.CoeffPos = [int(x) for x in p5.split(TmpList) if x]
+                    print_String(self.IOut, f"Manual coeff position set to {self.CoeffPos}", 1)
+                    if not self.CoeffPos:
+                        print_String(self.IOut, 'Manual coeff position has not been filled in, set to default []',1)
+                except ValueError:
+                    print_Error(self.IOut, 'Do not type correct manual coeff position form')
+                except Exception as e:
+                    print_Error(self.IOut, 'Error in accessing to manual coeff position ')
+            
+            if match_p6:
+                LocPos_g = match_p6.start()
+                try:
+                    self.f.seek(LocPos_g)
+                    line = self.f.readline().decode('utf-8')
+                    TmpLine = line.split('#')[0].strip()
+                    TmpList = TmpLine.split('::')[1].strip()
+                    self.GexpPos = [int(x) for x in p5.split(TmpList) if x]
+                    print_String(self.IOut, f"Manual gexp position set to {self.GexpPos}", 1)
+                    if not self.GexpPos:
+                        print_String(self.IOut, 'Manual gexp position has not been filled in, set to default []',1)
+                except ValueError:
+                    print_Error(self.IOut, 'Do not type correct manual gexp position form')
+                except Exception as e:
+                    print_Error(self.IOut, 'Error in accessing to manual gexp position ')
+            
+
+        #self.f.seek(0)
+        #TmpFile = self.f.read().lower()
+        #if self.PseudoMod == 'manual':    
+        #    try:
+        #        LocPos = p4.search(TmpFile).start()
+        #    except:
+        #        print_String(self.IOut, 'Have not set manual position ',1)
+        #        return
+        #    try:
+        #        self.f.seek(LocPos)
+        #        line = self.f.readline().decode('utf-8')
+        #        TmpLine = line.split('#')[0].strip()
+        #        TmpList = TmpLine.split('::')[1].strip()
+        #        self.ManualPos = [int(x) for x in p5.split(TmpList) if x]
+        #        if not self.ManualPos:
+        #            print_String(self.IOut, 'Manual mod position has not been filled in, set to default []',1)
+        #    except ValueError:
+        #        print_Error(self.IOut, 'Do not type correct manual position form')
+        #    except Exception as e:
+        #        print_Error(self.IOut, 'Error in accessing to manual position ')
+       
+        return
+            
     def get_Batch(self):
         '''Obtain the batch job list'''
         from os.path import isfile, isdir
@@ -1353,18 +1680,20 @@ class ConfigIO:
         from copy import deepcopy
         from my_io import print_Error
         from my_io import print_List_free
-        p1 = compile('^ *__batch__ *::', MULTILINE)
+        p1 = compile(b'^ *__batch__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()
+            line = self.f.readline().strip().decode('utf-8')
+            TmpLine = line.split('#')[0].strip() 
         else:
             print_Error(self.IOut,
                 'Error in accessing to batch set '+\
                 ' \"ConfigIO.get_Batch\"')
             return
+
         try:
             self.NBatc=int(TmpLine.split('::')[1])
         except ValueError:
@@ -1373,31 +1702,32 @@ class ConfigIO:
                 ' \"ConfigIO.get_Batch\"')
 
         for i in range(self.NBatc):
-            TmpLine = self.f.readline().strip()
+            TmpLine = self.f.readline().strip().decode('utf-8')
             if len(TmpLine) == 0:
                 print_Error(self.IOut,
                 'Interlude of blank line in Batch is forbidden')
             while TmpLine[0]=='#':                                   # To ignore annotations
-                TmpLine = self.f.readline().strip()
+                TmpLine = self.f.readline().strip().decode('utf-8')
                 if len(TmpLine) == 0:
                     print_Error(self.IOut,
                     'Interlude of blank line in Batch is forbidden')
             TmpLine = TmpLine.split('#')[0].strip()                  # To ignore annotations
 
-            self.BatcList.append(TmpLine.split())
+            self.BatcList.append(TmpLine.split())                    # self.BatcList contains the batch list
 
             for macro, path in self.PathList:                        # Handle Macro-Path
                 self.BatcList[i][1] = self.BatcList[i][1].\
                     replace(macro,path)
 
             if len(self.BatcList[i]) == 3:
-                self.BatcList[i][3].append('energy')
+                self.BatcList[i].append('energy')
             elif len(self.BatcList[i]) !=4:
                 print_List(self.IOut,self.BatcList[i],3)
                 print_Error(self.IOut,
                     'Error in BatcList obtaining '+\
                     '\"ConfigIO.get_Batch\"')
-            if (self.BatcList[i][2]!='XYG3_Comp'):                   # Manage for read components
+            if (not (self.BatcList[i][2]!='XYG3_Comp' or \
+                self.BatcList[i][2]!='SISSO_Prep')):                   # Manage for read components
                 if isfile('%s/%s'
                     %(self.BatcList[i][1],self.BatcList[i][2])) or\
                    isdir('%s/%s'
@@ -1446,13 +1776,14 @@ class ConfigIO:
         #=====================================#
         #Obtain info. of energy evaluation set#
         #=====================================#
-        p1 = compile('^ *__energy__ *::', MULTILINE)
+        p1 = compile(b'^ *__energy__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()    # To ignore annotations
+            line = self.f.readline().strip().decode('utf-8')
+            TmpLine = line.split('#')[0]    # To ignore annotations
             TmpLine = TmpLine.split('::')[1].strip().\
                 replace(',','   ').replace('=','   ')
             if len(TmpLine.split()) ==1:
@@ -1473,13 +1804,13 @@ class ConfigIO:
                         ' \"ConfigIO.get_TrainSet\"')
 
             for i in range(self.NEngy):
-                TmpLine = self.f.readline().strip()                  # To ignore annotations
+                TmpLine = self.f.readline().strip().decode('utf-8')      # To ignore annotations
                 if len(TmpLine) == 0:
                     print_Error(self.IOut,
                     'Interlude of blank line is forbidden'+\
                         ' \"ConfigIO.get_TrainSet\"')
                 while TmpLine[0]=='#':
-                    TmpLine = self.f.readline().strip()
+                    TmpLine = self.f.readline().strip().decode('utf-8')
                     if len(TmpLine) == 0:
                         print_Error(self.IOut,
                         'Interlude of blank line is forbidden'+\
@@ -1499,8 +1830,8 @@ class ConfigIO:
                         + 'with the number of the following molecules' \
                         + ' \"ConfigIO.get_TrainSet\"')
                 for l in range(self.EngyList[i][0]):
+                    k = l*2 + 1                                    # To judge if the reactant exists in the batch list
                     for j in range(self.NBatc):
-                        k = l*2 + 1
                         if self.EngyList[i][k].strip().lower() ==\
                             self.BatcList[j][0].strip().lower():
                             self.EngyList[i][k]=j
@@ -1568,13 +1899,14 @@ class ConfigIO:
         #=====================================#
         #Obtain info. of PT21 evaluation set  #
         #=====================================#
-        p1 = compile('^ *__pt21__ *::', MULTILINE)
+        p1 = compile(b'^ *__pt21__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()    # To ignore annotations
+            line = self.f.readline().decode('utf-8')
+            TmpLine =line.split('#')[0].strip()    # To ignore annotations
             TmpLine = TmpLine.split('::')[1].strip().\
                 replace(',','   ').replace('=','   ')
             if len(TmpLine.split()) ==1:
@@ -1598,9 +1930,9 @@ class ConfigIO:
                 if len(TmpLine) == 0:
                     print_Error(self.IOut,
                     'Interlude of blank line is forbidden')
-                TmpLine = self.f.readline().strip()                  # To ignore annotations
+                TmpLine = self.f.readline().strip().decode('utf-8')                  # To ignore annotations
                 while TmpLine[0]=='#':
-                    TmpLine = self.f.readline().strip()
+                    TmpLine = self.f.readline().strip().decode('utf-8')
                     if len(TmpLine) == 0:
                         print_Error(self.IOut,
                         'Interlude of blank line is forbidden')
@@ -1687,13 +2019,14 @@ class ConfigIO:
         #=====================================#
         #Obtain info. of PT22 evaluation set  #
         #=====================================#
-        p1 = compile('^ __pt22__ *::', MULTILINE)
+        p1 = compile(b'^ __pt22__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()    # To ignore annotations
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()    # To ignore annotations
             TmpLine = TmpLine.split('::')[1].strip().\
                 replace(',','   ').replace('=','   ')
             if len(TmpLine.split()) ==1:
@@ -1717,9 +2050,9 @@ class ConfigIO:
                 if len(TmpLine) == 0:
                     print_Error(self.IOut,
                     'Interlude of blank line is forbidden')
-                TmpLine = self.f.readline().strip()                  # To ignore annotations
+                TmpLine = self.f.readline().strip().decode('utf-8')                  # To ignore annotations
                 while TmpLine[0]=='#':
-                    TmpLine = self.f.readline().strip()
+                    TmpLine = self.f.readline().strip().decode('utf-8')
                     if len(TmpLine) == 0:
                         print_Error(self.IOut,
                         'Interlude of blank line is forbidden')
@@ -1812,13 +2145,14 @@ class ConfigIO:
                     'yz':  8,
                    'xxx':  9,'yyy': 10,'zzz': 11,'xyy': 12,'xxy': 13,
                    'xxz': 14,'xzz': 15,'yzz': 16,'yyz': 17,'xyz': 18}
-        p1 = compile('^ *__polar__ *::', MULTILINE)
+        p1 = compile(b'^ *__polar__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()        # To ignore annotations
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()        # To ignore annotations
             TmpLine = TmpLine.split('::')[1].strip().\
                 replace(',','   ').replace('=','   ')
             if len(TmpLine.split()) ==1:
@@ -1850,12 +2184,12 @@ class ConfigIO:
                         'Error in obtaining the lenght of RespList'+\
                         '\"ConfigIO.get_TrainSet\"')
             for i in range(self.NResp):
-                TmpLine = self.f.readline().strip()
+                TmpLine = self.f.readline().strip().decode('utf-8')   
                 if len(TmpLine) == 0:
                     print_Error(self.IOut,
                     'Interlude of blank line is forbidden')
                 while TmpLine[0]=='#':                               # To ignore annotations
-                    TmpLine = self.f.readline().strip()
+                    TmpLine = self.f.readline().strip().decode('utf-8')
                     if len(TmpLine) == 0:
                         print_Error(self.IOut,
                         'Interlude of blank line is forbidden')
@@ -1884,8 +2218,7 @@ class ConfigIO:
                         '\"ConfigIO.get_TrainSet\"')
                 for j in range(self.RespList[i][0]):
                     k = 2 + j*3
-                    if not RespIndex.has_key\
-                        (self.RespList[i][k].lower()):
+                    if self.RespList[i][k].lower() not in RespIndex:
                         print_Error(self.IOut,
                             'Error in elec. resp. direction (%s)'
                             % self.RespList[i][k] +\
@@ -1937,13 +2270,14 @@ class ConfigIO:
         #=========================================#
         #Obtain the training set of NMR properties#
         #=========================================#
-        p1 = compile('^ *__nmr__ *::', MULTILINE)
+        p1 = compile(b'^ *__nmr__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()    # To ignore annotation
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()    # To ignore annotation
             try:
                 self.NNMR = int(TmpLine.split('::')[1])
             except ValueError:
@@ -1951,12 +2285,12 @@ class ConfigIO:
                     'Error in obtaining the length of NMRList'+\
                     '\"ConfigIO.get_TrainSet\"')
             for i in range(self.NNMR):
-                TmpLine = self.f.readline().strip()                  # To ignore annotations
+                TmpLine = self.f.readline().strip().decode('utf-8')                  # To ignore annotations
                 if len(TmpLine) == 0:
                     print_Error(self.IOut,
                     'Interlude of blank line is forbidden')
                 while TmpLine[0]=='#':
-                    TmpLine = self.f.readline().strip()
+                    TmpLine = self.f.readline().strip().decode('utf-8')
                     if len(TmpLine) == 0:
                         print_Error(self.IOut,
                         'Interlude of blank line is forbidden')
@@ -1979,14 +2313,15 @@ class ConfigIO:
         # =========================================#
         #  Obtain the training set of Geom. Info. #
         # =========================================#
-        p1 = compile('^ __geom__ *::', MULTILINE)
+        p1 = compile(b'^ __geom__ *::', MULTILINE)
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
             # To ignore annotation
-            TmpLine = self.f.readline().split('#')[0].strip()
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
             TmpLine = TmpLine.split('::')[1].replace(',', '   ')
             TmpLine = TmpLine.replace('=','   ').strip()
             try:
@@ -2008,12 +2343,12 @@ class ConfigIO:
             except:
                 pass
             for i in range(self.NGeom):
-                TmpLine = self.f.readline().strip()
+                TmpLine = self.f.readline().strip().decode('utf-8')
                 if len(TmpLine) == 0:
                     print_Error(self.IOut,
                     'Interlude of blank line is forbidden')
                 while TmpLine[0]=='#':                               # To ignore annotations
-                    TmpLine = self.f.readline().strip()
+                    TmpLine = self.f.readline().strip().decode('utf-8')
                     if len(TmpLine) == 0:
                         print_Error(self.IOut,
                         'Interlude of blank line is forbidden')
@@ -2155,6 +2490,7 @@ class ConfigIO:
             # except: pass
             tmpJob =\
                 gaum.GauIO(self.IOut,job[2],self.IPrint)
+            #print(tmpJob)
             tmpJob.get_MachAndOpt()
             tmpJob.ctrl_Option()
             tmpJob.get_TCSGR()
@@ -2202,7 +2538,9 @@ class ConfigIO:
                     tmpJob.OptionList.append('geom=allcheck')
                 elif tmpJob.MoreOptionDict['checkpoint']==1:
                     tmpJob.OptionList.append('geom=checkpoint')
+            #print(tmpJob.OptionList)
             tmpJob.ctrl_Option()
+            #print(tmpJob.OptionList)
             if tmpJob.MoreOptionDict['extraoverlay']==1:             # Get ExtraOverlay list
                 tmpJob.ExOvList = self.ExOvList[:]
                 ExtFlag = True
@@ -2287,31 +2625,51 @@ class ConfigIO:
                     job[4]['energy'].append(tmpJob.EngyReal)
                 else:
                     tmpJob.form_Inp()
+                    if self.ProjTool =='gaussian':
+                        tmpiop = 0
+                    elif self.ProjTool =='xdh4gau': 
+                        tmpiop = 4
                     if self.ProjCtrl == 0:                             # Control batch manner
-                        tmpJob.run_GauJob()                          #
+                        tmpJob.run_GauJob(iop=tmpiop)                          #
                     elif self.ProjCtrl == 1:                           #
                         pass                                         #
                     elif self.ProjCtrl == 2:                           #
-                        if isfile('%s.chk' % tmpJob.ChkName) and\
-                        isfile('Job_%s.log' % tmpJob.JobName):       #
-                            if self.IPrint >= 2:                       #
-                                print_String(self.IOut,              #
-                                    'bypass the job of %s'           #
-                                    % tmpJob.JobName,1)              #
-                            pass                                     #
-                        else:                                        #
-                            if ExtFlag == False:                     #
-                                tmpJob.run_GauJob(iop=0)             #
-                            elif ExtFlag == True:                    #
-                                tmpJob.run_GauJob(iop=1)             #======================
-
-                    Result =\
-                        gaum.ChkHandle(self.IOut,tmpJob,self.IPrint)
-                    Result.collect_EngyReal()
-                    job[4]['energy'].append(Result.EngyReal)
+                        if self.ProjTool == 'gaussian':
+                            if isfile('%s.chk' % tmpJob.ChkName) and\
+                            isfile('Job_%s.log' % tmpJob.JobName):       #
+                                if self.IPrint >= 2:                       #
+                                    print_String(self.IOut,              #
+                                        'bypass the job of %s'           #
+                                        % tmpJob.JobName,1)              #
+                                pass                                     #
+                            else:                                        #
+                                # It is needed for old version of R5DFT
+                                #if ExtFlag == False:                     #
+                                #    tmpJob.run_GauJob(iop=0)             #
+                                #elif ExtFlag == True:                    #
+                                #    tmpJob.run_GauJob(iop=1)             #======================
+                                tmpJob.run_GauJob(iop=tmpiop)             #======================
+                        elif self.ProjTool == 'xdh4gau':
+                            if isfile('Job_%s.xDH' % tmpJob.JobName):       #
+                                if self.IPrint >= 2:                       #
+                                    print_String(self.IOut,              #
+                                        'bypass the job of %s'           #
+                                        % tmpJob.JobName,1)              #
+                                pass                                     #
+                            else:                                        #
+                                tmpJob.run_GauJob(iop=tmpiop)             #======================
+                    if self.ProjTool =='gaussian':
+                        Result =\
+                            gaum.ChkHandle(self.IOut,tmpJob,self.IPrint)
+                        Result.collect_EngyReal()
+                        job[4]['energy'].append(Result.EngyReal)
+                        del Result
+                    elif self.ProjTool =='xdh4gau':
+                        tmpJob.get_xDH4Gau_Result(iop=0)
+                        job[4]['energy'].append(tmpJob.EngyReal)
+                        
                     #if tmpJob.MoreOptionDict['%chk']==1:             # Do not save chk
                     #    remove('%s.chk' % tmpJob.ChkName)
-                    del Result
             #----------------------------#
             # For geometry optimization  #
             #----------------------------#
@@ -2436,6 +2794,83 @@ class ConfigIO:
                 pass
         return
 
+    def run_ORCABatch(self):
+        from os import chdir
+        from os import getpid
+        from os import system
+        from os import listdir
+        from os.path import isfile
+        import orca_manage as orca
+        for job in self.BatcList:
+            self.IOut.flush()
+
+            strf = job[3].strip().lower()
+            FlagSCF = strf.find('energy') != -1 or \
+                  strf.find('scf') != -1  # To collect energy result
+            FlagDisp = strf.find('dispersion') != -1
+
+            # FlagPT21 = strf.find('pt21') != -1  # To collect 1st contr for PT2
+            # FlagPT22 = strf.find('pt22') != -1  # To collect 2nd contr for PT2
+            #
+            # FlagxMP2 = strf.find('xmp2') != -1  # To collect xMP2 energy
+
+            if len(self.ProjDir) == 0:  # Enter project workdir
+                chdir(job[1])
+            else:
+                chdir(self.ProjDir)
+                if isfile(job[2]):  # Bypass input copy
+                    pass
+                else:
+                    system('cp %s/%s ./' % (job[1], job[2]))
+
+            tmpJob = \
+                orca.ORCAIO(self.IOut, job[2], self.IPrint)
+            tmpJob.get_InputLines()
+            tmpJob.xyzfilepath = job[1]
+
+            # ======================================================#
+            #       NOW RUN BATCH JOBS BASED ON self.BatcList       #
+            # ======================================================#
+
+            # ------------------------------------#
+            # For single-point energy calculation #
+            # ------------------------------------#
+            if self.IPrint >= 1:
+                print_String(self.IOut, 'This is a batch job for energy ' +
+                             'calculation', 1)
+            tmpJob.form_Input()
+            self.inpname = 'Job_' + self.JobName + '.inp'
+
+            if self.ProjCtrl == 0:                                   # Control
+                tmpJob.run_Job(self.inpname,self.parallel)         # batch
+            elif self.ProjCtrl == 1:                                 # manner
+                pass                                                 #
+            elif self.ProjCtrl == 2:                                 #
+                if isfile('Job_%s.log' % tmpJob.JobName):            #
+                    if self.IPrint >= 2:                             #
+                        tmpString = 'bypass the job of %s' % tmpJob.JobName
+                        print_String(self.IOut, tmpString, 1)        #
+                    pass                                             #
+                else:                                                #
+                    tmpJob.run_Job(self.inpname,self.parallel)       #
+            if FlagSCF:
+                tmpJob.get_Result(0)
+                job[4]['energy'] = [tmpJob.SinglePointReal]
+            if FlagDisp:
+                tmpJob.get_Result(1)
+                job[4]['energy'] = [tmpJob.Dispersion]
+
+            # if FlagPT21:
+            #     tmpJob.get_Result(1)
+            #     job[4]['pt21'] = [tmpJob.PT21Real]
+            # if FlagPT22:
+            #     tmpJob.get_Result(2)
+            #     job[4]['pt22'] = [tmpJob.PT22Real]
+            # if FlagxMP2:
+            #     tmpJob.get_Result(3)
+            #     job[4]['xmp2'] = [tmpJob.xMP2Real]
+        return
+
     def run_QcmBatch(self):
         '''Batch Q-Chem jobs and collect result based on job flag'''
         from os              import chdir
@@ -2542,7 +2977,7 @@ class ConfigIO:
         from my_io import print_String
         import aims_manage as aims
         List_Procs = [self.Procs]*self.NBatc
-        for procs, indices in self.Special_Procs.iteritems():
+        for procs, indices in self.Special_Procs.items():
             for index in indices:
                 try:
                     List_Procs[index] = procs
@@ -2558,7 +2993,7 @@ class ConfigIO:
             job_special_procs = List_Procs[job_index]
 
             job_NPN = self.NPN
-            if job_NPN < job_special_procs:
+            if job_NPN > job_special_procs:
                 job_NPN = job_special_procs
 
             job_index += 1
@@ -2569,12 +3004,12 @@ class ConfigIO:
             # To collect energy result
             FlagSCF = strf.find('energy') != -1 or strf.find('scf') != -1
             FlagRPA = strf.find('rpa') != -1
-            # FlagDHD = strf.find('dhd') != -1
             FlagSOX = strf.find('sosex') != -1
             FlagMP2 = strf.find('mp2') != -1
             FlagCMP2 = strf.find('cmp2') != -1
             FlagSCPT2 = strf.find('scpt2') != -1
             FlagDHDF = strf.find('dhdf') != -1
+            FlagDHRDF = strf.find('dhrdf') != -1
             FlagCDHDF = strf.find('cdhdf') != -1
             FlagWRPA = strf.find('wrpa') != -1
             FlagHLG = strf.find('hlg') != -1
@@ -2586,6 +3021,7 @@ class ConfigIO:
             FlagOSRPA = strf.find('osrpa') != -1
             FlagSCSRPA = strf.find('scsrpa') != -1
             FlagDHRPA = strf.find('dhrpa') != -1
+            FlagCCSDT = strf.find('ccsdt') != -1
             if FlagSCPT2:
                 FlagCMP2 = False
                 FlagMP2 = False
@@ -2600,10 +3036,10 @@ class ConfigIO:
                 chdir(job[1])
             else:
                 chdir(self.ProjDir)
-                if isdir(job[2]):   # Bypass input copy
-                    pass
-                else:
-                    system('cp -r %s/%s ./' % (job[1], job[2]))
+                #if isdir(job[2]):   # Bypass input copy
+                #    pass
+                #else:
+                system('cp -r %s/%s ./' % (job[1], job[2]))
             # try: del tmpJob # Reinitialize tmpJob
             # except: pass
             tmpJob = aims.AimsIO(self.IOut, job[2], self.IPrint, InitGuess=self.InitGuess)
@@ -2772,18 +3208,161 @@ class ConfigIO:
             if FlagDHRPA:
                 tmpJob.get_Result(19)
                 try:
-                    g1, g2, g3, g4 = self.InitGuess[-4:]
+                    #print_String(self.IOut, '%16.8f%16.8f%16.8f%16.8f%16.8f%16.8f' 
+                    #        % tuple([tmpJob.Energy['Enoxc'],
+                    #                 tmpJob.Energy['Exx'],
+                    #                 tmpJob.Energy['ExPBE'],
+                    #                 tmpJob.Energy['EcPBE'],
+                    #                 tmpJob.Energy['EcosRPA'],
+                    #                 tmpJob.Energy['EcssRPA']]),
+                    #        1) 
+                    #g1, g2 = self.InitGuess[-2:]
                     job[4]['energy'] = [tmpJob.Energy['Enoxc']+\
-                            g1*tmpJob.Energy['Exx']+\
-                            (1.0-g1)*tmpJob.Energy['ExPBE']+\
-                            g2*tmpJob.Energy['EcPBE']+\
-                            g3*tmpJob.Energy['EcosRPA']+\
-                            g4*tmpJob.Energy['EcssRPA']]
+                            0.55*tmpJob.Energy['Exx']+\
+                            0.45*tmpJob.Energy['ExPBE']+\
+                            0.50*tmpJob.Energy['EcPBE']+\
+                            0.60*tmpJob.Energy['EcosRPA']+\
+                            0.00*tmpJob.Energy['EcssRPA']]
                     print_String(self.IOut,
                                  'dhRPA total energy           : %16.8f'
                                  % job[4]['energy'][0], self.IPrint)
                 except:
                     job[4]['energy'] = ['NAN']
+            if FlagCCSDT:
+                tmpJob.get_Result(20)
+                try:
+                    job[4]['energy'] = [tmpJob.Energy['ccsdt']]
+                except:
+                    job[4]['energy'] = ['NAN']
+            if FlagDHRDF:
+                tmpJob.get_Result(21)
+                job[4]['DHRDF'] = [tmpJob.Energy['DHRDF']]
+                job[4]['energy'] = [tmpJob.Energy['DHRDF']]
+        return FlagLogTot
+
+    def run_RESTBatch(self):
+        '''Batch REST jobs and collect result based on job flag'''
+        from os import chdir, system
+        from os.path import isfile, isdir
+        from my_io import print_String
+        import rest_manage as rest 
+        List_Procs = [self.Procs]*self.NBatc
+        #for procs, indices in self.Special_Procs.iteritems():
+        #    for index in indices:
+        #        try:
+        #            List_Procs[index] = procs
+        #        except ValueError:
+        #            print_String(self.IOut, 'Warning: Error in ' +
+        #                         'loading nprocs for special jobs', 1)
+        #            pass
+        #if self.IPrint>0:
+        #    print_List(self.IOut, List_Procs, 3, 'NProcs for REST jobs')
+        job_index = 0
+        FlagLogTot = True
+        for job in self.BatcList:
+            job_special_procs = List_Procs[job_index]
+
+            job_NPN = self.NPN
+            if job_NPN > job_special_procs:
+                job_NPN = job_special_procs
+
+            job_index += 1
+
+            self.IOut.flush()  # Flush Output file
+
+            strf = job[3].strip().lower()
+            # To collect energy result
+            FlagSCF = strf.find('energy') != -1 or strf.find('scf') != -1
+            FlagXDH = strf.find('xdh') != -1
+            FlagRPA = strf.find('rpa') != -1
+            if len(self.ProjDir) == 0:   # Enter project workdir
+                chdir(job[1])
+            else:
+                chdir(self.ProjDir)
+                #if isdir(job[2]):   # Bypass input copy
+                #    pass
+                #else:
+                system('cp -r %s/%s ./' % (job[1], job[2]))
+            # try: del tmpJob # Reinitialize tmpJob
+            # except: pass
+            tmpJob = rest.RESTIO(self.IOut, job[2], self.IPrint, InitGuess=None)
+            #if len(self.add_CMD) != 0:
+            #    tmpJob.add_CMD = self.add_CMD[:]
+            # tmpJob.qchem2aims(job[2])
+            # tmpJob.BasisDir = self.BasisDir
+            tmpJob.Proj = job[2]
+            print_String(self.IOut, f"Basis set dir: {tmpJob.BasisDir}", 1)
+
+            # ======================================================#
+            #        NOW RUN BATCH JOBS BASED ON self.BatcList      #
+            # ======================================================#
+
+            # ------------------------------------#
+            #  For single-point energy calculation#
+            # ------------------------------------#
+            FlagLog = True
+            if self.IPrint >= 1:
+                print_String(self.IOut,
+                             'This is a batch job for energy ' +
+                             'calculation', 1)
+            tmpJob.form_Control()
+
+
+            if self.ProjCtrl == 0:
+                if self.BatchType == 'queue':
+                    #print(tmpJob.Proj,job_NPN,job_special_procs)
+                    FlagLog = \
+                        tmpJob.run_Job(job_special_procs,
+                                           self.RESTCfg,
+                                           self.BatchScriptName,
+                                           self.BatchCmd,
+                                           self.BatchQueueName
+                                           )
+                elif self.BatchType == 'serial':
+                    #print_Error(self.IOut, "Serial mode is not yet implemented")
+                    FlagLog = \
+                        tmpJob.run_Job_serial(job_special_procs)
+                elif self.ProjCtrl == 1:
+                # NOTE: it has been out of date because of introducing 
+                #       a new flag FlagLog for parsing the results
+                    pass
+            elif self.ProjCtrl == 2:
+                if isfile('%s.log' % tmpJob.Proj):
+                    if self.IPrint >= 2:
+                        print_String(self.IOut,
+                                     'bypass the job of %s'
+                                     % tmpJob.Proj, 1)
+                    pass
+                else:
+                    if self.BatchType == 'queue':
+                        FlagLog = \
+                            tmpJob.run_Job(job_special_procs,
+                                               self.RESTCfg,
+                                               self.BatchScriptName,
+                                               self.BatchCmd,
+                                               self.BatchQueueName
+                                               )
+                    elif self.BatchType == 'serial':
+                        FlagLog = \
+                            tmpJob.run_Job_serial()
+            # To determine if we can proceed to the next batch
+            FlagLogTot = FlagLogTot and FlagLog
+            if not FlagLog:
+                continue
+            if FlagSCF:
+                tmpJob.get_Result(0)
+                # To determine which type of total energy
+                #   is stored in job[4]['energy']
+                job[4]['energy'] = [tmpJob.Energy['SCF']]
+            if FlagXDH:
+                tmpJob.get_Result(1)
+                job[4]['xDH'] = [tmpJob.Energy['xDH']]
+                job[4]['energy'] = [tmpJob.Energy['xDH']]
+            if FlagRPA:
+                tmpJob.get_Result(2)
+                job[4]['RPA'] = [tmpJob.Energy['RPA']]
+                job[4]['energy'] = [tmpJob.Energy['RPA']]
+
         return FlagLogTot
 
     def run_CP2Batch(self):
@@ -3302,13 +3881,14 @@ class ConfigIO:
         # Get XYG3 components from "__xyg3 components__ ::"\
         from re import compile
         from my_io import print_Error
-        p1 = compile('__xyg3 components__ *::')
+        p1 = compile(b'__xyg3 components__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()
+            line = self.f.readline().strip().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
         else:
             print_Error(self.IOut,
                         'Error in accessing to xyg3 components set ' +
@@ -3320,13 +3900,13 @@ class ConfigIO:
             print_Error(self.IOut, 'Error in obtain the molecular number' +
                         ' in the XYG3 components \"ConfigIO.get_XYG3Comp\"')
         for i in range(self.NComp):
-            TmpLine = self.f.readline().strip()   # To ignore blank line
+            TmpLine = self.f.readline().strip().decode('utf-8')   # To ignore blank line
             if len(TmpLine) == 0:
                 print_Error(self.IOut,
                             'Interlude of blank line is forbidden' +
                             ' \"ConfigIO.get_XYG3Comp\"')
             while TmpLine[0] == '#':
-                TmpLine = self.f.readline().strip()
+                TmpLine = self.f.readline().strip().decode('utf-8')
                 if len(TmpLine) == 0:
                     print_Error(self.IOut,
                                 'Interlude of blank line is forbidden')
@@ -3364,38 +3944,107 @@ class ConfigIO:
                         ' \"ConfigIO.get_XYG3Comp\"'
                     print_Error(self.IOut, tmpString)
 
+    def get_Rescale(self): # This part is to rescale the pseudo parameters
+        # if want to apply it to other situation, you may need to revise it
+        from re import compile
+        from my_io import print_Error, print_String
+
+        p_mod = compile(b'__rescale option__ *::')
+        p1 = compile(b'__rescale position__ *::')
+        p2 = compile(r'[,\s]+')
+        self.f.seek(0)
+        TmpFile = self.f.read().lower()
+        try:
+            LocPos = p_mod.search(TmpFile).start()
+        except:
+            return
+        self.f.seek(LocPos)
+        line = self.f.readline().decode('utf-8')
+        TmpLine = line.split('#')[0].strip()
+        TmpList = TmpLine.split('::')[1].strip()
+        self.RescaleMod = TmpList.lower()
+        
+        if len(self.RescaleMod) == 0:
+            return
+        else:
+            self.RescaleStat = True
+            import rescaling_func as res
+        
+        if self.RescaleMod[:4] == 'auto':
+            print_String(self.IOut, "Auto rescaling has not complete yet", 1)
+        elif self.RescaleMod[:3] == "all" or self.RescaleMod[:4] == "angm":
+            for i in range(len(self.InitGuess)):
+                if i < len(self.InitGuess)/2:
+                    self.InitGuess[i] = res.func_all(self.InitGuess[i])
+                else:
+                    self.InitGuess[i] = res.func_positive(self.InitGuess[i])
+        elif self.RescaleMod[:5] == 'coeff':
+            for i in range(len(self.InitGuess)):
+                self.InitGuess[i] = res.func_all(self.InitGuess[i])
+        elif self.RescaleMod[:4] == 'gexp':
+            for i in range(len(self.InitGuess)):
+                self.InitGuess[i] = res.func_positive(self.InitGuess[i])
+        elif self.RescaleMod[:6] == 'manual':
+            try:
+                LocPos = p1.search(TmpFile).start()
+                self.f.seek(LocPos)
+                line = self.f.readline().decode('utf-8')
+                TmpLine = line.split('#')[0].strip()
+                TmpList = TmpLine.split('::')[1].strip()
+                self.RescalePos = [int(x) for x in p2.split(TmpList) if x]
+            except AttributeError:
+                print_String(self.IOut, 'No rescale position is specified',1)
+            except ValueError:
+                print_Error(self.IOut, 'Do not type correct position form' +
+                            ' \"ConfigIO.get_Rescale\"')
+            except Exception as e:
+                print_Error(self.IOut, 'Error in accessing to rescale position ' +
+                            ' \"ConfigIO.get_Rescale\"')
+            for i in range(len(self.RescalePos)):
+                self.InitGuess[self.RescalePos[i]-1] = res.func_all(self.InitGuess[self.RescalePos[i]-1])
+        
+        print_String(self.IOut,f"Rescale parameter: {self.InitGuess}",1)
+        
+        return
+    
+
     def get_OptInit(self):
         '''Obtain initial parameters "InitPara" by "__initial guess__ ::'''
         from re import compile
-        from my_io import print_List
+        from my_io import print_List, print_Error, print_String
 
-        p1 = compile('__initial guess__ *::')
-        p2 = compile(', *| +')
+        p1 = compile(b'__initial guess__ *::')
+        p2 = compile(r'[,\s]+')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
         else:
             print_Error(self.IOut, 'Error in accessing to initial guess set ' +
                         ' \"ConfigIO.get_OptInit\"')
             return
-        TmpLine = self.f.readline().strip()
-        while len(TmpLine) != 0:
+        TmpLine = self.f.readline().strip().decode('utf-8')
+        while TmpLine != 'end' and len(TmpLine) != 0: 
             while TmpLine[0] == '#':
-                TmpLine = self.f.readline().strip()
+                TmpLine = self.f.readline().strip().decode('utf-8')
             else:
                 TmpList = p2.split(TmpLine.split('#')[0].strip())
-            for init in TmpList:
-                try:
-                    self.InitGuess.append(float(init))
-                except ValueError:
-                    print_Error(self.IOut, 'Error in obtain the ' +
-                                'initial guess for OPT' +
-                                ' \"ConfigIO.get_OptInit\"')
-            TmpLine = self.f.readline().strip()
+            try:
+                numbers = [float(x) for x in TmpList if x]
+                for x in numbers: 
+                    self.InitGuess.append(x)
+            except ValueError:
+                print_Error(self.IOut, 'Error in obtain the ' +
+                            'initial guess for OPT' +
+                            ' \"ConfigIO.get_OptInit\"')
+            TmpLine = self.f.readline().strip().decode('utf-8')
+        
         print_List(self.IOut, self.InitGuess, 4, 'Initial Guess')
+
+        self.get_Rescale()
         return
 
     def get_OptAlgo(self):
@@ -3405,13 +4054,14 @@ class ConfigIO:
         from re import compile
         from my_io import print_String
 
-        p1 = compile('__optimization algorithm__ *::')
+        p1 = compile(b'__optimization algorithm__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
         else:
             tmpString = 'Error in accessing to optimization algorithm ' +\
                 ' \"ConfigIO.get_OptAlgo\"'
@@ -3420,6 +4070,156 @@ class ConfigIO:
         self.OptAlgo = TmpLine.split('::')[1].strip()
         tmpPrint = 'Optimization Algorithm employed is %s' % self.OptAlgo
         print_String(self.IOut, tmpPrint, 1)
+        
+        return
+
+    def get_OptunaInfo(self):
+        from re import compile
+        
+        p2 = compile(b'__optuna_option__ *::')
+        self.f.seek(0)
+        TmpFile = self.f.read().lower()
+        try:
+            LocPos = p2.search(TmpFile).start()
+            self.f.seek(LocPos)
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
+            self.OptunaOption = TmpLine.split('::')[1].strip()
+            if not self.OptunaOption:
+                print_String(self.IOut,
+                             f'Optuna option has not been filled in, set to default  {self.OptunaOption}',1)
+            tmpPrint = 'Optuna option employed is %s' % self.OptunaOption
+            print_String(self.IOut, tmpPrint, 1)
+        except AttributeError:
+            tmpPrint = 'No Optuna option is specified, set to default %s' % self.OptunaOption
+            print_String(self.IOut, tmpPrint, 1)
+        except Exception as e:
+            print_Error(self.IOut, 'Error in accessing to optuna option ' +
+                        ' \"ConfigIO.get_OptunaInfo\"')
+        
+        p1 = compile(b'__shrink_factor__ *::')
+        self.f.seek(0)
+        TmpFile = self.f.read().lower()
+        try:
+            LocPos = p1.search(TmpFile).start()
+            self.f.seek(LocPos)
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
+            self.ShrinkFactor = float(TmpLine.split('::')[1].strip())
+            if not self.ShrinkFactor:
+                print_String(self.IOut,
+                             f'Shrink factor has not been filled in, set to default {self.ShrinkFactor}',1)
+            tmpPrint = 'Shrink factor employed is %s' % self.ShrinkFactor
+            print_String(self.IOut, tmpPrint, 1)
+        except AttributeError:
+            tmpPrint = 'No Shrink factor is specified, set to default %s' % self.ShrinkFactor
+            print_String(self.IOut, tmpPrint, 1)
+        except ValueError:
+            print_Error(self.IOut, 'Shrink factor is of wrong type' +
+                        ' \"ConfigIO.get_OptunaInfo\"')
+        except Exception as e:
+            print_Error(self.IOut, 'Error in accessing to shrink factor ' +
+                        ' \"ConfigIO.get_OptunaInfo\"')
+            
+        p3 = compile(b'__n_trials__ *::')
+        self.f.seek(0)
+        TmpFile = self.f.read().lower()
+        try:
+            LocPos = p3.search(TmpFile).start()
+            self.f.seek(LocPos)
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
+            self.NTrials = int(TmpLine.split('::')[1].strip())
+            if not self.NTrials:
+                print_String(self.IOut,
+                             f'Number of trials has not been filled in, set to default {self.NTrials}',1)
+            tmpPrint = 'Number of trials employed is %s' % self.NTrials
+            print_String(self.IOut, tmpPrint, 1)
+        except AttributeError:
+            tmpPrint = 'No Number of trials is specified, set to default %s' % self.NTrials
+            print_String(self.IOut, tmpPrint, 1)
+        except ValueError:
+            print_Error(self.IOut, 'Number of trials is of wrong type' +
+                        ' \"ConfigIO.get_OptunaInfo\"')
+        except Exception as e:
+            print_Error(self.IOut, 'Error in accessing to number of trials ' +
+                        ' \"ConfigIO.get_OptunaInfo\"')
+            
+        p4 = compile(b'__n_startup_trials__ *::')
+        self.f.seek(0)
+        TmpFile = self.f.read().lower()
+        try:
+            LocPos = p4.search(TmpFile).start()
+            self.f.seek(LocPos)
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
+            self.NStartup_trials = int(TmpLine.split('::')[1].strip())
+            if not self.NStartup_trials:
+                print_String(self.IOut,
+                             f'Number of startup trials has not been filled in, set to default {self.NStartup_trials}',1)
+            tmpPrint = f'Number of startup trials employed is {self.NStartup_trials}'
+            print_String(self.IOut, tmpPrint, 1)
+        except AttributeError:
+            tmpPrint = f'No Number of startup trials is specified, set to default {self.NStartup_trials}'
+            print_String(self.IOut, tmpPrint, 1)
+        except ValueError:
+            print_Error(self.IOut, 'Number of startup trials is of wrong type' +
+                        ' \"ConfigIO.get_OptunaInfo\"')
+        except Exception as e:
+            print_Error(self.IOut, 'Error in accessing to number of startup trials ' +
+                        ' \"ConfigIO.get_OptunaInfo\"')
+        
+        return
+
+    def get_CmaInfo(self):
+        from re import compile
+        from my_io import print_Error, print_String
+        import numpy as np
+
+        self.LowerBounds = [None]* len(self.InitGuess)
+        if self.RescaleStat == False or self.RescaleMod == "auto":
+            if self.PseudoMod[:5] == "mixed":
+                if self.PseudoType == "gexp":
+                    self.LowerBounds = [0.1]* len(self.InitGuess)
+            elif self.PseudoMod[:4] == "angm":
+                self.LowerBounds = [None if i<len(self.InitGuess)/2 \
+                                else 0.1 for i in range(len(self.InitGuess))]
+            elif self.PseudoMod[:3] == "all":
+                self.LowerBounds = [-10.0 if i<len(self.InitGuess)/2 \
+                                else 0.1 for i in range(len(self.InitGuess))]
+            elif self.PseudoMod[:6] == "manual":
+                self.LowerBounds = [None if i < len(self.CoeffPos)\
+                                else 0.1 for i in range(len(self.InitGuess))]
+        #elif self.RescaleMod == "all":
+        #    self.LowerBounds = [np.log(0.1)]* len(self.InitGuess)
+        print_String(self.IOut,f'CMA-ES Lower Bounds : {self.LowerBounds}',1)
+
+        self.UpperBounds = [None]* len(self.InitGuess)
+        if self.RescaleStat == False or self.RescaleMod == "auto":
+            if self.PseudoMod[:5] == "mixed":
+                if self.PseudoType == "gexp":
+                    self.UpperBounds = [100.0]* len(self.InitGuess)
+            elif self.PseudoMod[:4] == "angm":
+                self.UpperBounds = [500.0 if i<len(self.InitGuess)/2 \
+                                else 100.0 for i in range(len(self.InitGuess))]
+            elif self.PseudoMod[:3] == "all":
+                self.UpperBounds = [500.0 if i<len(self.InitGuess)/2 \
+                                else 100.0 for i in range(len(self.InitGuess))]
+            elif self.PseudoMod[:6] == "manual":
+                self.UpperBounds = [500.0 if i < len(self.CoeffPos)\
+                                else 100.0 for i in range(len(self.InitGuess))]
+        self.CmaStds = [] 
+        for guess in self.InitGuess:
+            abs_guess = abs(guess)
+            if abs_guess < 1.0:
+                self.CmaStds.append(0.05)
+            elif abs_guess < 10.0:
+                self.CmaStds.append(0.1*abs_guess)
+            else:
+                self.CmaStds.append(np.log(abs_guess)/2.3 + 0.025*(abs_guess-10.0))
+        #self.CmaStds = [0.25] * len(self.InitGuess)
+        print_String(self.IOut,f'CMA-ES Standard Deviations : {self.CmaStds}',1)
+
         return
 
     def get_OptFunc(self):
@@ -3432,13 +4232,14 @@ class ConfigIO:
         from my_io import print_List, print_Error
         from os.path import isfile
 
-        p1 = compile('__optimization function__ *::')
+        p1 = compile(b'__optimization function__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
         else:
             print_Error(self.IOut, 'Error in accessing to the ' +
                         'function for optimizing' +
@@ -3447,13 +4248,13 @@ class ConfigIO:
         tmpCode = []
 
         try:
-            NCode = int(TmpLine.split('::')[1].strip())
-            for i in range(NCode):  # Loading optimized function
-                tmpCode.append(self.f.readline())
+            NCode = int(TmpLine.split('::')[1].strip())          # NCode can be the number of lines
+            for i in range(NCode):                               # Loading optimized function
+                tmpCode.append(self.f.readline().decode('utf-8'))
         except ValueError:
-            NCode = TmpLine.split('::')[1].strip()
-            if isfile(NCode):  # Check the existence of module file
-                tf = file(NCode, 'r')  # and load it
+            NCode = TmpLine.split('::')[1].strip()               # NCode can also be a module name
+            if isfile(NCode):                                    # Check the existence of module file and load it
+                tf = open(NCode, 'r')
                 tmpCode = tf.readlines()
                 tf.close()
             else:
@@ -3462,7 +4263,7 @@ class ConfigIO:
                     ' \"ConfigIO.get_OptFunc\"'
                 print_Error(self.IOut, tmpString)
 
-        tmpF = file('opt_func.py', 'w')  # Generate opt function module
+        tmpF = open('opt_func.py', 'w')  # Generate opt function module
         for tmpString in tmpCode:
             tmpF.write(tmpString)
         tmpF.close()
@@ -3524,13 +4325,16 @@ class ConfigIO:
                 except ValueError:
                     print(C)
                     print(index)
-                    print(self.CompDict[index])
+                    print((self.CompDict[index]))
                     exit()
             job[4]['energy'] = [TmpResult]
             index += 1
         return
 
     def get_OptResu(self, iop=1):
+        # =======================================#
+        # Result.append = E_calc - E_ref
+        # =======================================#
         # =======================================#
         # Analysis results according to the training set
         # =======================================#
@@ -3557,8 +4361,8 @@ class ConfigIO:
             # scale result by self.SEngy
             TmpCalc = my_product(TmpCalc, self.SEngy)
             TmpDev = my_substract(TmpCalc, TmpRef)
-            # TmpPrint += '%16.8f%16.8f' %(TmpCalc, TmpRef)
-            # print_String(self.IOut,TmpPrint,1)
+            #TmpPrint += '%16.8f%16.8f' %(TmpCalc, TmpRef)  #new added
+            #print_String(self.IOut,TmpPrint,1)
             self.Result.append(TmpDev)
         if iop == 2:
             FormList = ['  %16.8f', '  %16s']
@@ -3637,13 +4441,14 @@ class ConfigIO:
         from re import compile
         from my_io import print_String
 
-        p1 = compile('__optimization job__ *::')
+        p1 = compile(b'__optimization job__ *::')
         self.f.seek(0)
         TmpFile = self.f.read().lower()
         if p1.search(TmpFile):
             LocPos = p1.search(TmpFile).start()
             self.f.seek(LocPos)
-            TmpLine = self.f.readline().split('#')[0].strip()
+            line = self.f.readline().decode('utf-8')
+            TmpLine = line.split('#')[0].strip()
         else:
             print_Error(self.IOut,
                         'Error in accessing to optimization job ' +

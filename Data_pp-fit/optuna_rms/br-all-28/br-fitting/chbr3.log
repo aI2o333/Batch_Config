@@ -1,0 +1,717 @@
+=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: xygjos
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/symei/TZVPP-28-o-all
+The pruning method is nwchem
+The radial grid generation method is treutler
+ERI Type: ri_v
+Turn on the basis pair symmetry for RI 3D-tensors
+The spheric-GTO auxiliary basis set is taken from /home/symei/def2-SV(P)-JKFIT
+Spin polarization: Off
+Charge:   0; Spin:   1
+min_num_angular_points: 110
+max_num_angular_points: 590
+hardness: 3
+Grid generation level: 3
+Even tempered basis generation: false
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-8 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      250
+The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+Initial guess is prepared by (sad).
+It is a finite cluster calculation
+the scf functional for 'xygjos' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+the post-scf functional 'xygjos' is employed, which contains
+The density functional 'Slater exchange' belongs to the 'LDA' family and is defined in the reference(s):
+(0): P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+(1): F. Bloch.,  Z. Phys. 57, 545 (1929)
+The density functional 'Becke 88' belongs to the 'GGA' family and is defined in the reference(s):
+(0): A. D. Becke.,  Phys. Rev. A 38, 3098 (1988)
+The density functional 'Vosko, Wilk & Nusair (VWN5_RPA)' belongs to the 'LDA' family and is defined in the reference(s):
+(0): S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+The density functional 'Lee, Yang & Parr' belongs to the 'GGA' family and is defined in the reference(s):
+(0): C. Lee, W. Yang, and R. G. Parr.,  Phys. Rev. B 37, 785 (1988)
+(1): B. Miehlich, A. Savin, H. Stoll, and H. Preuss.,  Chem. Phys. Lett. 157, 200 (1989)
+<start_mo> for the frozen-core post-SCF methods 15 is larger than the number of ecp orbitals 15. Take the <start_mo> -= ecp_orbitals
+Libxc version used in REST: 7.0.0
+nbas: 65, natm: 5 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 276,final natm: 10
+numbasis: 189, num_auxbas: 891
+Molecule_name: chbr3
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:     449.16660610 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00057163 with the total number of basis functions:    189
+Grid size: 86638
+Generate SAD of C
+Generate SAD of H
+Generate SAD of Br
+Initial guess HF energy:   -1161.1326698628718077
+The total energy:     -1149.9977870839 Ha by the initial guess
+Energy:   -1106.0594251005 Ha after    1 iterations (in       0.41 seconds).
+SCF Change: DM  1.25506e0; eev  6.09754e1 Ha; etot  1.97245e2 Ha
+Energy:    -908.8148732849 Ha after    2 iterations (in       0.42 seconds).
+SCF Change: DM 2.44980e-1; eev  2.53222e1 Ha; etot -2.08599e2 Ha
+Energy:   -1117.4134335458 Ha after    3 iterations (in       0.40 seconds).
+SCF Change: DM 2.56277e-1; eev  1.67583e1 Ha; etot  2.65066e1 Ha
+Energy:   -1090.9068399746 Ha after    4 iterations (in       0.40 seconds).
+SCF Change: DM 1.94047e-1; eev  7.07108e0 Ha; etot  1.29665e2 Ha
+Energy:    -961.2420089190 Ha after    5 iterations (in       0.39 seconds).
+SCF Change: DM 1.10669e-1; eev  3.56189e0 Ha; etot -1.55488e2 Ha
+Energy:   -1116.7304601393 Ha after    6 iterations (in       0.41 seconds).
+SCF Change: DM 1.57372e-1; eev 9.73555e-1 Ha; etot -3.96025e0 Ha
+Energy:   -1120.6907132926 Ha after    7 iterations (in       0.43 seconds).
+SCF Change: DM 1.54784e-1; eev  1.68668e0 Ha; etot -2.08337e1 Ha
+Energy:   -1141.5243714916 Ha after    8 iterations (in       0.43 seconds).
+SCF Change: DM 1.36321e-1; eev  3.72220e0 Ha; etot -1.00322e1 Ha
+Energy:   -1151.5566166367 Ha after    9 iterations (in       0.45 seconds).
+SCF Change: DM 1.00197e-1; eev  1.38519e0 Ha; etot  3.66453e0 Ha
+Energy:   -1147.8920828791 Ha after   10 iterations (in       0.43 seconds).
+SCF Change: DM 2.06898e-2; eev  1.69299e0 Ha; etot  1.62475e0 Ha
+Energy:   -1146.2673320531 Ha after   11 iterations (in       0.41 seconds).
+SCF Change: DM 9.70637e-3; eev  1.24707e0 Ha; etot -2.07035e0 Ha
+Energy:   -1148.3376869169 Ha after   12 iterations (in       0.42 seconds).
+SCF Change: DM 1.27850e-2; eev 9.76186e-1 Ha; etot -1.33129e0 Ha
+Energy:   -1149.6689719568 Ha after   13 iterations (in       0.43 seconds).
+SCF Change: DM 9.97295e-3; eev 9.94003e-1 Ha; etot -6.92370e-1 Ha
+Energy:   -1150.3613422009 Ha after   14 iterations (in       0.42 seconds).
+SCF Change: DM 9.48585e-2; eev  2.15648e0 Ha; etot 3.11245e-1 Ha
+Energy:   -1150.0500976735 Ha after   15 iterations (in       0.43 seconds).
+SCF Change: DM 4.54058e-2; eev  1.67985e0 Ha; etot -5.46485e-1 Ha
+Energy:   -1150.5965830233 Ha after   16 iterations (in       0.42 seconds).
+SCF Change: DM 1.75694e-1; eev  1.28032e1 Ha; etot 2.22858e-1 Ha
+Energy:   -1150.3737245358 Ha after   17 iterations (in       0.44 seconds).
+SCF Change: DM 1.63430e-1; eev  1.01659e1 Ha; etot  6.15189e1 Ha
+Energy:   -1088.8548387784 Ha after   18 iterations (in       0.39 seconds).
+SCF Change: DM 1.08689e-1; eev  4.76059e0 Ha; etot -9.40669e0 Ha
+Energy:   -1098.2615265317 Ha after   19 iterations (in       0.41 seconds).
+SCF Change: DM 1.33066e-1; eev  6.16760e0 Ha; etot -5.33500e1 Ha
+Energy:   -1151.6115467724 Ha after   20 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.61154677,   -1149.62814118)
+SCF Change: DM 1.17967e-1; eev  5.05247e0 Ha; etot  1.98341e0 Ha
+Energy:   -1149.6281411825 Ha after   21 iterations (in       0.40 seconds).
+SCF Change: DM 1.11161e-1; eev  4.54881e0 Ha; etot -1.80967e0 Ha
+Energy:   -1151.4378098889 Ha after   22 iterations (in       0.39 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.43780989,   -1149.64340367)
+SCF Change: DM 1.08398e-1; eev  3.74527e0 Ha; etot  1.79441e0 Ha
+Energy:   -1149.6434036734 Ha after   23 iterations (in       0.39 seconds).
+SCF Change: DM 1.05074e-1; eev  3.69993e0 Ha; etot -2.66502e0 Ha
+Energy:   -1152.3084190725 Ha after   24 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.30841907,   -1148.73554531)
+SCF Change: DM 5.76734e-2; eev  3.15773e0 Ha; etot  3.57287e0 Ha
+Energy:   -1148.7355453134 Ha after   25 iterations (in       0.41 seconds).
+SCF Change: DM 5.20990e-2; eev  2.74931e0 Ha; etot -4.84511e0 Ha
+Energy:   -1153.5806515860 Ha after   26 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.58065159,   -1148.36512534)
+SCF Change: DM 3.71933e-2; eev  2.37916e0 Ha; etot  5.21553e0 Ha
+Energy:   -1148.3651253443 Ha after   27 iterations (in       0.43 seconds).
+SCF Change: DM 9.54187e-2; eev  8.81388e0 Ha; etot -1.14885e0 Ha
+Energy:   -1149.5139760860 Ha after   28 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1149.51397609,   -1142.51321441)
+SCF Change: DM 9.91246e-2; eev  8.81847e0 Ha; etot  7.00076e0 Ha
+Energy:   -1142.5132144075 Ha after   29 iterations (in       0.41 seconds).
+SCF Change: DM 9.46749e-2; eev  3.29557e0 Ha; etot -7.44362e0 Ha
+Energy:   -1149.9568319381 Ha after   30 iterations (in       0.39 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1149.95683194,   -1149.35214641)
+SCF Change: DM 9.72593e-2; eev  3.12092e0 Ha; etot 6.04686e-1 Ha
+Energy:   -1149.3521464127 Ha after   31 iterations (in       0.35 seconds).
+SCF Change: DM 9.68846e-2; eev  7.63468e0 Ha; etot -1.29432e0 Ha
+Energy:   -1150.6464696649 Ha after   32 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.64646966,   -1146.18580897)
+SCF Change: DM 1.09533e-1; eev  7.29803e0 Ha; etot  4.46066e0 Ha
+Energy:   -1146.1858089734 Ha after   33 iterations (in       0.38 seconds).
+SCF Change: DM 1.84188e-1; eev  9.22111e0 Ha; etot -5.64334e0 Ha
+Energy:   -1151.8291454412 Ha after   34 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.82914544,   -1145.59532023)
+SCF Change: DM 2.29182e-1; eev  9.16079e0 Ha; etot  6.23383e0 Ha
+Energy:   -1145.5953202292 Ha after   35 iterations (in       0.37 seconds).
+SCF Change: DM 1.15375e-1; eev  2.38128e0 Ha; etot -7.18476e0 Ha
+Energy:   -1152.7800806900 Ha after   36 iterations (in       0.36 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.78008069,   -1151.85140762)
+SCF Change: DM 1.02061e-1; eev  2.35962e0 Ha; etot 9.28673e-1 Ha
+Energy:   -1151.8514076204 Ha after   37 iterations (in       0.36 seconds).
+SCF Change: DM 2.79831e-2; eev  1.14667e0 Ha; etot -2.62704e0 Ha
+Energy:   -1154.4784459108 Ha after   38 iterations (in       0.34 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.47844591,   -1151.71216163)
+SCF Change: DM 2.21603e-2; eev  1.13002e0 Ha; etot  2.76628e0 Ha
+Energy:   -1151.7121616348 Ha after   39 iterations (in       0.36 seconds).
+SCF Change: DM 1.12776e-1; eev  2.12172e0 Ha; etot -2.03400e0 Ha
+Energy:   -1153.7461606070 Ha after   40 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.74616061,   -1147.55119769)
+SCF Change: DM 1.09363e-1; eev  2.17132e0 Ha; etot  6.19496e0 Ha
+Energy:   -1147.5511976881 Ha after   41 iterations (in       0.39 seconds).
+SCF Change: DM 1.60910e-2; eev  1.14969e0 Ha; etot -4.79651e0 Ha
+Energy:   -1152.3477062931 Ha after   42 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.34770629,   -1150.57445532)
+SCF Change: DM 1.67624e-2; eev  1.37261e0 Ha; etot  1.77325e0 Ha
+Energy:   -1150.5744553159 Ha after   43 iterations (in       0.37 seconds).
+SCF Change: DM 1.06108e-1; eev  1.83824e0 Ha; etot -2.10618e0 Ha
+Energy:   -1152.6806367884 Ha after   44 iterations (in       0.34 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.68063679,   -1151.64661009)
+SCF Change: DM 1.52208e-1; eev  1.20896e0 Ha; etot  1.03403e0 Ha
+Energy:   -1151.6466100932 Ha after   45 iterations (in       0.41 seconds).
+SCF Change: DM 1.01182e-1; eev  1.24979e0 Ha; etot -6.32451e-1 Ha
+Energy:   -1152.2790612792 Ha after   46 iterations (in       0.39 seconds).
+SCF Change: DM 1.13453e-1; eev  1.31724e0 Ha; etot -1.17367e0 Ha
+Energy:   -1153.4527318983 Ha after   47 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.45273190,   -1152.43681528)
+SCF Change: DM 1.05044e-1; eev  1.45091e0 Ha; etot  1.01592e0 Ha
+Energy:   -1152.4368152822 Ha after   48 iterations (in       0.41 seconds).
+SCF Change: DM 2.95963e-2; eev  1.05597e0 Ha; etot -6.04995e-1 Ha
+Energy:   -1153.0418105335 Ha after   49 iterations (in       0.38 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.04181053,   -1152.76199585)
+SCF Change: DM 2.18013e-2; eev  1.06699e0 Ha; etot 2.79815e-1 Ha
+Energy:   -1152.7619958454 Ha after   50 iterations (in       0.36 seconds).
+SCF Change: DM 2.04563e-2; eev 7.16583e-1 Ha; etot -2.11679e-1 Ha
+Energy:   -1152.9736749831 Ha after   51 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.97367498,   -1152.71026467)
+SCF Change: DM 1.56062e-2; eev 6.25053e-1 Ha; etot 2.63410e-1 Ha
+Energy:   -1152.7102646661 Ha after   52 iterations (in       0.36 seconds).
+SCF Change: DM 1.09807e-1; eev  7.28628e0 Ha; etot -3.69806e-1 Ha
+Energy:   -1153.0800710290 Ha after   53 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.08007103,   -1146.63902576)
+SCF Change: DM 1.48469e-1; eev  5.77790e0 Ha; etot  6.44105e0 Ha
+Energy:   -1146.6390257566 Ha after   54 iterations (in       0.41 seconds).
+SCF Change: DM 1.51135e-1; eev  1.67953e0 Ha; etot -5.44608e0 Ha
+Energy:   -1152.0851094938 Ha after   55 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.08510949,   -1150.72240940)
+SCF Change: DM 1.39339e-1; eev  1.94946e0 Ha; etot  1.36270e0 Ha
+Energy:   -1150.7224093951 Ha after   56 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.72240940,   -1149.91300416)
+SCF Change: DM 1.29187e-1; eev  2.22481e0 Ha; etot 8.09405e-1 Ha
+Energy:   -1149.9130041586 Ha after   57 iterations (in       0.40 seconds).
+SCF Change: DM 5.70119e-2; eev  3.54607e0 Ha; etot -3.47003e0 Ha
+Energy:   -1153.3830328653 Ha after   58 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.38303287,   -1147.24409841)
+SCF Change: DM 5.87697e-2; eev  3.30024e0 Ha; etot  6.13893e0 Ha
+Energy:   -1147.2440984133 Ha after   59 iterations (in       0.37 seconds).
+SCF Change: DM 2.08112e-2; eev  2.43883e0 Ha; etot -3.33548e0 Ha
+Energy:   -1150.5795740947 Ha after   60 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.57957409,   -1146.09401592)
+SCF Change: DM 2.09668e-2; eev  2.24456e0 Ha; etot  4.48556e0 Ha
+Energy:   -1146.0940159232 Ha after   61 iterations (in       0.42 seconds).
+SCF Change: DM 3.10570e-2; eev  1.70797e0 Ha; etot -4.23060e0 Ha
+Energy:   -1150.3246146562 Ha after   62 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.32461466,   -1148.92273031)
+SCF Change: DM 1.98114e-2; eev  1.64634e0 Ha; etot  1.40188e0 Ha
+Energy:   -1148.9227303082 Ha after   63 iterations (in       0.42 seconds).
+SCF Change: DM 1.75422e-2; eev  2.11772e0 Ha; etot -1.30191e0 Ha
+Energy:   -1150.2246416243 Ha after   64 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.22464162,   -1149.96281758)
+SCF Change: DM 1.32297e-1; eev  3.81641e0 Ha; etot 2.61824e-1 Ha
+Energy:   -1149.9628175782 Ha after   65 iterations (in       0.41 seconds).
+SCF Change: DM 2.27696e-1; eev  9.90914e0 Ha; etot -5.91528e0 Ha
+Energy:   -1155.8781000120 Ha after   66 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.87810001,   -1128.72076952)
+SCF Change: DM 1.26197e-1; eev  9.83574e0 Ha; etot  2.71573e1 Ha
+Energy:   -1128.7207695214 Ha after   67 iterations (in       0.42 seconds).
+SCF Change: DM 1.18064e-1; eev  2.22943e0 Ha; etot -2.74220e1 Ha
+Energy:   -1156.1427310624 Ha after   68 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1156.14273106,   -1151.53348677)
+SCF Change: DM 1.37008e-1; eev  1.84250e0 Ha; etot  4.60924e0 Ha
+Energy:   -1151.5334867687 Ha after   69 iterations (in       0.42 seconds).
+SCF Change: DM 1.00031e-1; eev  2.09549e0 Ha; etot -4.34129e0 Ha
+Energy:   -1155.8747814769 Ha after   70 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.87478148,   -1151.67097890)
+SCF Change: DM 5.95319e-2; eev  1.67839e0 Ha; etot  4.20380e0 Ha
+Energy:   -1151.6709789012 Ha after   71 iterations (in       0.41 seconds).
+SCF Change: DM 6.21253e-2; eev  1.78143e0 Ha; etot -4.92482e0 Ha
+Energy:   -1156.5957986703 Ha after   72 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1156.59579867,   -1151.84629578)
+SCF Change: DM 3.31069e-2; eev  1.38253e0 Ha; etot  4.74950e0 Ha
+Energy:   -1151.8462957796 Ha after   73 iterations (in       0.42 seconds).
+SCF Change: DM 1.23522e-1; eev  9.03362e0 Ha; etot -2.28547e0 Ha
+Energy:   -1154.1317665296 Ha after   74 iterations (in       0.39 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.13176653,   -1126.99087884)
+SCF Change: DM 7.24589e-2; eev  8.87580e0 Ha; etot  2.71409e1 Ha
+Energy:   -1126.9908788408 Ha after   75 iterations (in       0.40 seconds).
+SCF Change: DM 1.57661e-1; eev  2.20922e0 Ha; etot -2.73456e1 Ha
+Energy:   -1154.3365101423 Ha after   76 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.33651014,   -1147.71940841)
+SCF Change: DM 1.35438e-1; eev  2.22959e0 Ha; etot  6.61710e0 Ha
+Energy:   -1147.7194084094 Ha after   77 iterations (in       0.44 seconds).
+SCF Change: DM 1.03345e-1; eev  1.61780e0 Ha; etot -6.02611e0 Ha
+Energy:   -1153.7455137854 Ha after   78 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.74551379,   -1150.38753115)
+SCF Change: DM 1.01073e-1; eev  1.66997e0 Ha; etot  3.35798e0 Ha
+Energy:   -1150.3875311476 Ha after   79 iterations (in       0.42 seconds).
+SCF Change: DM 2.88950e-2; eev  1.03410e0 Ha; etot -2.65989e0 Ha
+Energy:   -1153.0474207128 Ha after   80 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.04742071,   -1152.10334766)
+SCF Change: DM 2.30416e-2; eev  1.08017e0 Ha; etot 9.44073e-1 Ha
+Energy:   -1152.1033476580 Ha after   81 iterations (in       0.37 seconds).
+SCF Change: DM 2.59241e-2; eev  1.86936e0 Ha; etot -4.89478e-1 Ha
+Energy:   -1152.5928253660 Ha after   82 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.59282537,   -1150.61796358)
+SCF Change: DM 2.02866e-2; eev  1.78540e0 Ha; etot  1.97486e0 Ha
+Energy:   -1150.6179635809 Ha after   83 iterations (in       0.39 seconds).
+SCF Change: DM 9.44353e-2; eev  7.62539e0 Ha; etot -1.57803e0 Ha
+Energy:   -1152.1959898797 Ha after   84 iterations (in       0.38 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.19598988,   -1142.79183381)
+SCF Change: DM 1.41225e-1; eev  6.12580e0 Ha; etot  9.40416e0 Ha
+Energy:   -1142.7918338090 Ha after   85 iterations (in       0.41 seconds).
+SCF Change: DM 1.31889e-1; eev  2.26870e0 Ha; etot -8.81467e0 Ha
+Energy:   -1151.6065057077 Ha after   86 iterations (in       0.36 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.60650571,   -1146.09426485)
+SCF Change: DM 1.54916e-1; eev  3.43381e0 Ha; etot  5.51224e0 Ha
+Energy:   -1146.0942648538 Ha after   87 iterations (in       0.40 seconds).
+SCF Change: DM 9.99011e-2; eev  4.24080e0 Ha; etot -6.41612e0 Ha
+Energy:   -1152.5103855302 Ha after   88 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.51038553,   -1149.47521853)
+SCF Change: DM 9.62465e-2; eev  3.62203e0 Ha; etot  3.03517e0 Ha
+Energy:   -1149.4752185279 Ha after   89 iterations (in       0.40 seconds).
+SCF Change: DM 8.90414e-2; eev  2.79661e0 Ha; etot -3.93091e0 Ha
+Energy:   -1153.4061299286 Ha after   90 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.40612993,   -1149.57503199)
+SCF Change: DM 5.82323e-2; eev  2.49617e0 Ha; etot  3.83110e0 Ha
+Energy:   -1149.5750319893 Ha after   91 iterations (in       0.38 seconds).
+SCF Change: DM 1.12266e-1; eev  1.71393e0 Ha; etot -4.80980e0 Ha
+Energy:   -1154.3848323799 Ha after   92 iterations (in       0.36 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.38483238,   -1152.47072373)
+SCF Change: DM 9.86707e-2; eev  1.50352e0 Ha; etot  1.91411e0 Ha
+Energy:   -1152.4707237260 Ha after   93 iterations (in       0.36 seconds).
+SCF Change: DM 3.92856e-2; eev  2.12150e0 Ha; etot -8.83992e-1 Ha
+Energy:   -1153.3547158855 Ha after   94 iterations (in       0.35 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.35471589,   -1150.61754048)
+SCF Change: DM 2.80997e-2; eev  1.75351e0 Ha; etot  2.73718e0 Ha
+Energy:   -1150.6175404769 Ha after   95 iterations (in       0.37 seconds).
+SCF Change: DM 1.11268e-1; eev  6.45604e0 Ha; etot -2.35040e0 Ha
+Energy:   -1152.9679446832 Ha after   96 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.96794468,   -1144.63961651)
+SCF Change: DM 3.14224e-2; eev  6.04106e0 Ha; etot  8.32833e0 Ha
+Energy:   -1144.6396165142 Ha after   97 iterations (in       0.41 seconds).
+SCF Change: DM 1.26442e-1; eev  6.95740e0 Ha; etot -6.74297e0 Ha
+Energy:   -1151.3825820570 Ha after   98 iterations (in       0.38 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.38258206,   -1139.54655698)
+SCF Change: DM 1.26669e-1; eev  7.18755e0 Ha; etot  1.18360e1 Ha
+Energy:   -1139.5465569771 Ha after   99 iterations (in       0.40 seconds).
+SCF Change: DM 1.12631e-1; eev  3.02579e0 Ha; etot -1.34171e1 Ha
+Energy:   -1152.9636672657 Ha after  100 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.96366727,   -1150.59963006)
+SCF Change: DM 1.39955e-1; eev  2.27565e0 Ha; etot  2.36404e0 Ha
+Energy:   -1150.5996300632 Ha after  101 iterations (in       0.40 seconds).
+SCF Change: DM 1.09195e-1; eev  2.61863e0 Ha; etot -7.87368e-1 Ha
+Energy:   -1151.3869979981 Ha after  102 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.38699800,   -1148.34339076)
+SCF Change: DM 1.01505e-1; eev  2.48415e0 Ha; etot  3.04361e0 Ha
+Energy:   -1148.3433907615 Ha after  103 iterations (in       0.39 seconds).
+SCF Change: DM 1.56512e-1; eev  2.07659e0 Ha; etot -2.80854e0 Ha
+Energy:   -1151.1519263121 Ha after  104 iterations (in       0.39 seconds).
+SCF Change: DM 5.70172e-2; eev 7.36857e-1 Ha; etot -1.85526e0 Ha
+Energy:   -1153.0071833878 Ha after  105 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.00718339,   -1151.31774315)
+SCF Change: DM 1.32361e-1; eev  2.01411e0 Ha; etot  1.68944e0 Ha
+Energy:   -1151.3177431487 Ha after  106 iterations (in       0.36 seconds).
+SCF Change: DM 1.75803e-1; eev  5.81296e0 Ha; etot -1.92921e0 Ha
+Energy:   -1153.2469559128 Ha after  107 iterations (in       0.34 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.24695591,   -1151.00702641)
+SCF Change: DM 1.57764e-1; eev  5.73877e0 Ha; etot  2.23993e0 Ha
+Energy:   -1151.0070264146 Ha after  108 iterations (in       0.38 seconds).
+SCF Change: DM 1.40495e-1; eev  2.12018e0 Ha; etot -3.53409e0 Ha
+Energy:   -1154.5411187159 Ha after  109 iterations (in       0.35 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.54111872,   -1150.58685301)
+SCF Change: DM 1.47536e-1; eev  2.04341e0 Ha; etot  3.95427e0 Ha
+Energy:   -1150.5868530100 Ha after  110 iterations (in       0.34 seconds).
+SCF Change: DM 1.77454e-1; eev  2.68111e0 Ha; etot -4.06169e0 Ha
+Energy:   -1154.6485435836 Ha after  111 iterations (in       0.38 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.64854358,   -1149.91318499)
+SCF Change: DM 9.45087e-2; eev  2.62132e0 Ha; etot  4.73536e0 Ha
+Energy:   -1149.9131849898 Ha after  112 iterations (in       0.41 seconds).
+SCF Change: DM 2.68211e-2; eev  3.30427e0 Ha; etot -2.26821e0 Ha
+Energy:   -1152.1813928161 Ha after  113 iterations (in       0.38 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.18139282,   -1151.04645574)
+SCF Change: DM 1.12565e-1; eev  3.24874e0 Ha; etot  1.13494e0 Ha
+Energy:   -1151.0464557405 Ha after  114 iterations (in       0.38 seconds).
+SCF Change: DM 1.11635e-1; eev  7.33668e0 Ha; etot -4.33976e0 Ha
+Energy:   -1155.3862191596 Ha after  115 iterations (in       0.39 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.38621916,   -1146.28629718)
+SCF Change: DM 1.21093e-1; eev  7.22159e0 Ha; etot  9.09992e0 Ha
+Energy:   -1146.2862971844 Ha after  116 iterations (in       0.40 seconds).
+SCF Change: DM 1.22331e-1; eev  2.19235e0 Ha; etot -8.41995e0 Ha
+Energy:   -1154.7062431382 Ha after  117 iterations (in       0.45 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.70624314,   -1152.18524182)
+SCF Change: DM 1.25871e-1; eev  2.29830e0 Ha; etot  2.52100e0 Ha
+Energy:   -1152.1852418225 Ha after  118 iterations (in       0.42 seconds).
+SCF Change: DM 1.20114e-1; eev  1.17038e0 Ha; etot -2.72695e0 Ha
+Energy:   -1154.9121886155 Ha after  119 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.91218862,   -1152.03837912)
+SCF Change: DM 1.64099e-1; eev  2.19192e0 Ha; etot  2.87381e0 Ha
+Energy:   -1152.0383791240 Ha after  120 iterations (in       0.39 seconds).
+SCF Change: DM 2.03933e-1; eev 8.57596e-1 Ha; etot -1.20023e0 Ha
+Energy:   -1153.2386110500 Ha after  121 iterations (in       0.36 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.23861105,   -1150.11155031)
+SCF Change: DM 1.86088e-1; eev  1.29956e0 Ha; etot  3.12706e0 Ha
+Energy:   -1150.1115503147 Ha after  122 iterations (in       0.37 seconds).
+SCF Change: DM 1.02678e-1; eev  3.22171e0 Ha; etot -1.68869e0 Ha
+Energy:   -1151.8002385630 Ha after  123 iterations (in       0.34 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.80023856,   -1148.67914534)
+SCF Change: DM 9.73565e-2; eev  2.74863e0 Ha; etot  3.12109e0 Ha
+Energy:   -1148.6791453386 Ha after  124 iterations (in       0.37 seconds).
+SCF Change: DM 8.01495e-2; eev  2.26492e0 Ha; etot -3.08117e0 Ha
+Energy:   -1151.7603146740 Ha after  125 iterations (in       0.34 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.76031467,   -1150.82837457)
+SCF Change: DM 7.88780e-2; eev  2.11864e0 Ha; etot 9.31940e-1 Ha
+Energy:   -1150.8283745689 Ha after  126 iterations (in       0.38 seconds).
+SCF Change: DM 7.62688e-2; eev  1.85825e0 Ha; etot -1.24246e0 Ha
+Energy:   -1152.0708335353 Ha after  127 iterations (in       0.39 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.07083354,   -1151.10861644)
+SCF Change: DM 6.97725e-2; eev  1.66148e0 Ha; etot 9.62217e-1 Ha
+Energy:   -1151.1086164386 Ha after  128 iterations (in       0.38 seconds).
+SCF Change: DM 7.78493e-2; eev  2.00047e0 Ha; etot -2.01471e0 Ha
+Energy:   -1153.1233289388 Ha after  129 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.12332894,   -1149.83308760)
+SCF Change: DM 1.25567e-1; eev  2.83141e0 Ha; etot  3.29024e0 Ha
+Energy:   -1149.8330876035 Ha after  130 iterations (in       0.39 seconds).
+SCF Change: DM 1.11311e-1; eev  3.04539e0 Ha; etot -6.25009e-1 Ha
+Energy:   -1150.4580970388 Ha after  131 iterations (in       0.43 seconds).
+SCF Change: DM 1.20706e-2; eev  1.29455e0 Ha; etot -2.68635e-1 Ha
+Energy:   -1150.7267323214 Ha after  132 iterations (in       0.39 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.72673232,   -1148.63761665)
+SCF Change: DM 1.09968e-2; eev  1.15385e0 Ha; etot  2.08912e0 Ha
+Energy:   -1148.6376166480 Ha after  133 iterations (in       0.42 seconds).
+SCF Change: DM 9.64012e-3; eev  1.05111e0 Ha; etot -1.91895e0 Ha
+Energy:   -1150.5565652220 Ha after  134 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.55656522,   -1149.30088243)
+SCF Change: DM 6.15064e-3; eev 7.47850e-1 Ha; etot  1.25568e0 Ha
+Energy:   -1149.3008824292 Ha after  135 iterations (in       0.42 seconds).
+SCF Change: DM 9.66604e-2; eev  1.92391e0 Ha; etot -9.53485e-1 Ha
+Energy:   -1150.2543669885 Ha after  136 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.25436699,   -1145.71438634)
+SCF Change: DM 9.55669e-2; eev  1.82523e0 Ha; etot  4.53998e0 Ha
+Energy:   -1145.7143863425 Ha after  137 iterations (in       0.42 seconds).
+SCF Change: DM 2.61083e-2; eev  1.43510e0 Ha; etot -4.01933e0 Ha
+Energy:   -1149.7337130230 Ha after  138 iterations (in       0.43 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1149.73371302,   -1148.38353650)
+SCF Change: DM 6.46320e-2; eev  2.65015e0 Ha; etot  1.35018e0 Ha
+Energy:   -1148.3835365041 Ha after  139 iterations (in       0.39 seconds).
+SCF Change: DM 1.69696e-1; eev  1.07120e1 Ha; etot -3.76342e0 Ha
+Energy:   -1152.1469515601 Ha after  140 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.14695156,   -1129.97353719)
+SCF Change: DM 1.43778e-1; eev  1.00231e1 Ha; etot  2.21734e1 Ha
+Energy:   -1129.9735371884 Ha after  141 iterations (in       0.43 seconds).
+SCF Change: DM 1.25291e-1; eev  3.54029e0 Ha; etot -2.42624e1 Ha
+Energy:   -1154.2359312942 Ha after  142 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.23593129,   -1148.81051057)
+SCF Change: DM 4.95578e-2; eev  3.41630e0 Ha; etot  5.42542e0 Ha
+Energy:   -1148.8105105717 Ha after  143 iterations (in       0.43 seconds).
+SCF Change: DM 9.57924e-2; eev  1.67077e0 Ha; etot -3.03502e0 Ha
+Energy:   -1151.8455282714 Ha after  144 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.84552827,   -1151.80561944)
+SCF Change: DM 8.02474e-2; eev  1.79369e0 Ha; etot 3.99088e-2 Ha
+Energy:   -1151.8056194354 Ha after  145 iterations (in       0.48 seconds).
+SCF Change: DM 9.02320e-2; eev  1.97790e0 Ha; etot -1.79437e-1 Ha
+Energy:   -1151.9850568708 Ha after  146 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.98505687,   -1150.09640079)
+SCF Change: DM 4.52848e-2; eev  1.85226e0 Ha; etot  1.88866e0 Ha
+Energy:   -1150.0964007929 Ha after  147 iterations (in       0.36 seconds).
+SCF Change: DM 3.97925e-2; eev  1.37968e0 Ha; etot -5.59260e0 Ha
+Energy:   -1155.6889975764 Ha after  148 iterations (in       0.35 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.68899758,   -1151.95971993)
+SCF Change: DM 3.44318e-2; eev  1.41973e0 Ha; etot  3.72928e0 Ha
+Energy:   -1151.9597199301 Ha after  149 iterations (in       0.36 seconds).
+SCF Change: DM 1.96716e-1; eev  8.41561e0 Ha; etot -3.05801e0 Ha
+Energy:   -1155.0177309529 Ha after  150 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.01773095,   -1118.38759022)
+SCF Change: DM 1.99296e-1; eev  8.38389e0 Ha; etot  3.66301e1 Ha
+Energy:   -1118.3875902187 Ha after  151 iterations (in       0.38 seconds).
+SCF Change: DM 1.37634e-1; eev  6.68777e0 Ha; etot -3.86309e1 Ha
+Energy:   -1157.0184649054 Ha after  152 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1157.01846491,   -1148.99185058)
+SCF Change: DM 1.54554e-1; eev  6.82647e0 Ha; etot  8.02661e0 Ha
+Energy:   -1148.9918505778 Ha after  153 iterations (in       0.41 seconds).
+SCF Change: DM 1.10045e-1; eev  2.54312e0 Ha; etot -4.89098e0 Ha
+Energy:   -1153.8828313666 Ha after  154 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.88283137,   -1151.60260254)
+SCF Change: DM 1.02172e-1; eev  2.57107e0 Ha; etot  2.28023e0 Ha
+Energy:   -1151.6026025389 Ha after  155 iterations (in       0.39 seconds).
+SCF Change: DM 1.16316e-1; eev  1.20871e0 Ha; etot -1.83815e0 Ha
+Energy:   -1153.4407549170 Ha after  156 iterations (in       0.44 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.44075492,   -1150.63882877)
+SCF Change: DM 1.13939e-1; eev  1.16411e0 Ha; etot  2.80193e0 Ha
+Energy:   -1150.6388287739 Ha after  157 iterations (in       0.40 seconds).
+SCF Change: DM 1.55073e-2; eev 5.59818e-1 Ha; etot -2.53764e0 Ha
+Energy:   -1153.1764710395 Ha after  158 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.17647104,   -1152.52196750)
+SCF Change: DM 1.12319e-2; eev 4.78022e-1 Ha; etot 6.54504e-1 Ha
+Energy:   -1152.5219675019 Ha after  159 iterations (in       0.38 seconds).
+SCF Change: DM 2.45360e-2; eev 7.37888e-1 Ha; etot -4.10213e-1 Ha
+Energy:   -1152.9321801993 Ha after  160 iterations (in       0.36 seconds).
+SCF Change: DM 2.36869e-1; eev  9.77615e0 Ha; etot -8.60699e-1 Ha
+Energy:   -1153.7928792728 Ha after  161 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.79287927,   -1107.54086270)
+SCF Change: DM 2.22585e-1; eev  9.64168e0 Ha; etot  4.62520e1 Ha
+Energy:   -1107.5408627039 Ha after  162 iterations (in       0.41 seconds).
+SCF Change: DM 3.82517e-1; eev  9.89697e0 Ha; etot -4.62606e1 Ha
+Energy:   -1153.8015037223 Ha after  163 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.80150372,   -1103.93369480)
+SCF Change: DM 3.72031e-1; eev  9.93983e0 Ha; etot  4.98678e1 Ha
+Energy:   -1103.9336947993 Ha after  164 iterations (in       0.41 seconds).
+SCF Change: DM 1.39637e-1; eev  3.67650e0 Ha; etot -5.21209e1 Ha
+Energy:   -1156.0546115049 Ha after  165 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1156.05461150,   -1129.64732003)
+SCF Change: DM 1.59214e-1; eev  3.73832e0 Ha; etot  2.64073e1 Ha
+Energy:   -1129.6473200299 Ha after  166 iterations (in       0.40 seconds).
+SCF Change: DM 1.05541e-1; eev  1.96329e0 Ha; etot -2.31448e1 Ha
+Energy:   -1152.7921681521 Ha after  167 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.79216815,   -1151.58890041)
+SCF Change: DM 1.03829e-1; eev  2.05564e0 Ha; etot  1.20327e0 Ha
+Energy:   -1151.5889004119 Ha after  168 iterations (in       0.38 seconds).
+SCF Change: DM 1.05332e-1; eev  1.15840e0 Ha; etot -2.16141e0 Ha
+Energy:   -1153.7503132263 Ha after  169 iterations (in       0.35 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.75031323,   -1153.69505119)
+SCF Change: DM 2.86790e-2; eev 9.88402e-1 Ha; etot 5.52620e-2 Ha
+Energy:   -1153.6950511863 Ha after  170 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.69505119,   -1151.92981734)
+SCF Change: DM 1.05830e-1; eev  1.49887e0 Ha; etot  1.76523e0 Ha
+Energy:   -1151.9298173424 Ha after  171 iterations (in       0.33 seconds).
+SCF Change: DM 1.30483e-1; eev  1.60652e0 Ha; etot -1.76507e0 Ha
+Energy:   -1153.6948855239 Ha after  172 iterations (in       0.33 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.69488552,   -1150.98999532)
+SCF Change: DM 1.41737e-1; eev  1.50947e0 Ha; etot  2.70489e0 Ha
+Energy:   -1150.9899953202 Ha after  173 iterations (in       0.39 seconds).
+SCF Change: DM 1.04280e-1; eev  2.11965e0 Ha; etot -4.33792e0 Ha
+Energy:   -1155.3279110361 Ha after  174 iterations (in       0.39 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.32791104,   -1148.86894208)
+SCF Change: DM 6.82204e-2; eev  1.97708e0 Ha; etot  6.45897e0 Ha
+Energy:   -1148.8689420801 Ha after  175 iterations (in       0.35 seconds).
+SCF Change: DM 4.27021e-1; eev  1.14237e1 Ha; etot -4.20667e0 Ha
+Energy:   -1153.0756091787 Ha after  176 iterations (in       0.33 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.07560918,   -1101.69914457)
+SCF Change: DM 4.04411e-1; eev  1.13770e1 Ha; etot  5.13765e1 Ha
+Energy:   -1101.6991445658 Ha after  177 iterations (in       0.36 seconds).
+SCF Change: DM 1.12761e-1; eev  3.97818e0 Ha; etot -4.98874e1 Ha
+Energy:   -1151.5865368399 Ha after  178 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.58653684,   -1139.42491320)
+SCF Change: DM 1.03541e-1; eev  3.90656e0 Ha; etot  1.21616e1 Ha
+Energy:   -1139.4249132025 Ha after  179 iterations (in       0.41 seconds).
+SCF Change: DM 7.46649e-2; eev  5.32496e0 Ha; etot -1.10183e1 Ha
+Energy:   -1150.4431743834 Ha after  180 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.44317438,   -1142.53927619)
+SCF Change: DM 4.48334e-2; eev  4.54229e0 Ha; etot  7.90390e0 Ha
+Energy:   -1142.5392761860 Ha after  181 iterations (in       0.42 seconds).
+SCF Change: DM 3.17269e-2; eev  2.48221e0 Ha; etot -8.52604e0 Ha
+Energy:   -1151.0653114639 Ha after  182 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.06531146,   -1147.61445303)
+SCF Change: DM 2.30073e-2; eev  1.86575e0 Ha; etot  3.45086e0 Ha
+Energy:   -1147.6144530326 Ha after  183 iterations (in       0.41 seconds).
+SCF Change: DM 1.26842e-1; eev  5.92785e0 Ha; etot -1.87950e0 Ha
+Energy:   -1149.4939517256 Ha after  184 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1149.49395173,   -1144.33602653)
+SCF Change: DM 1.52740e-1; eev  5.44202e0 Ha; etot  5.15793e0 Ha
+Energy:   -1144.3360265292 Ha after  185 iterations (in       0.38 seconds).
+SCF Change: DM 1.86499e-1; eev  3.58883e0 Ha; etot -7.12120e0 Ha
+Energy:   -1151.4572275842 Ha after  186 iterations (in       0.34 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.45722758,   -1151.23714870)
+SCF Change: DM 1.85970e-1; eev  3.18814e0 Ha; etot 2.20079e-1 Ha
+Energy:   -1151.2371487025 Ha after  187 iterations (in       0.37 seconds).
+SCF Change: DM 1.19847e-1; eev  3.14704e0 Ha; etot -7.48428e-1 Ha
+Energy:   -1151.9855770332 Ha after  188 iterations (in       0.36 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.98557703,   -1148.97991780)
+SCF Change: DM 1.00672e-1; eev  2.99495e0 Ha; etot  3.00566e0 Ha
+Energy:   -1148.9799178025 Ha after  189 iterations (in       0.38 seconds).
+SCF Change: DM 3.93354e-2; eev  1.94061e0 Ha; etot -3.04673e0 Ha
+Energy:   -1152.0266498401 Ha after  190 iterations (in       0.34 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.02664984,   -1150.38441513)
+SCF Change: DM 3.30496e-2; eev  1.69672e0 Ha; etot  1.64223e0 Ha
+Energy:   -1150.3844151338 Ha after  191 iterations (in       0.39 seconds).
+SCF Change: DM 2.91256e-2; eev  2.05465e0 Ha; etot -9.06882e-1 Ha
+Energy:   -1151.2912971412 Ha after  192 iterations (in       0.36 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.29129714,   -1150.53480895)
+SCF Change: DM 1.90138e-2; eev  1.93242e0 Ha; etot 7.56488e-1 Ha
+Energy:   -1150.5348089460 Ha after  193 iterations (in       0.35 seconds).
+SCF Change: DM 9.91732e-2; eev  1.51640e0 Ha; etot -8.65243e-1 Ha
+Energy:   -1151.4000518867 Ha after  194 iterations (in       0.40 seconds).
+SCF Change: DM 4.30053e-1; eev  1.11773e1 Ha; etot -1.40906e0 Ha
+Energy:   -1152.8091132828 Ha after  195 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.80911328,   -1114.20237941)
+SCF Change: DM 3.89875e-1; eev  1.09682e1 Ha; etot  3.86067e1 Ha
+Energy:   -1114.2023794122 Ha after  196 iterations (in       0.38 seconds).
+SCF Change: DM 2.27416e-1; eev  8.35620e0 Ha; etot -3.81646e1 Ha
+Energy:   -1152.3670122715 Ha after  197 iterations (in       0.33 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.36701227,   -1137.71027079)
+SCF Change: DM 1.82920e-1; eev  8.21860e0 Ha; etot  1.46567e1 Ha
+Energy:   -1137.7102707864 Ha after  198 iterations (in       0.36 seconds).
+SCF Change: DM 8.39478e-2; eev  1.92833e0 Ha; etot -1.29315e1 Ha
+Energy:   -1150.6417208179 Ha after  199 iterations (in       0.33 seconds).
+SCF Change: DM 3.63930e-2; eev 8.47103e-1 Ha; etot -1.87139e-1 Ha
+Energy:   -1150.8288593732 Ha after  200 iterations (in       0.36 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1150.82885937,   -1150.51983267)
+SCF Change: DM 2.35038e-2; eev 7.83261e-1 Ha; etot 3.09027e-1 Ha
+Energy:   -1150.5198326663 Ha after  201 iterations (in       0.41 seconds).
+SCF Change: DM 1.76966e-1; eev  6.97750e0 Ha; etot -1.08316e0 Ha
+Energy:   -1151.6029891117 Ha after  202 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.60298911,   -1137.94615161)
+SCF Change: DM 2.35701e-1; eev  7.31402e0 Ha; etot  1.36568e1 Ha
+Energy:   -1137.9461516086 Ha after  203 iterations (in       0.35 seconds).
+SCF Change: DM 1.45436e-1; eev  2.21779e0 Ha; etot -1.59649e1 Ha
+Energy:   -1153.9110029401 Ha after  204 iterations (in       0.38 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.91100294,   -1149.81436667)
+SCF Change: DM 1.23752e-1; eev  2.23480e0 Ha; etot  4.09664e0 Ha
+Energy:   -1149.8143666743 Ha after  205 iterations (in       0.37 seconds).
+SCF Change: DM 1.40847e-1; eev  2.94244e0 Ha; etot -3.24593e0 Ha
+Energy:   -1153.0603007831 Ha after  206 iterations (in       0.41 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.06030078,   -1148.81579029)
+SCF Change: DM 1.25471e-1; eev  2.73407e0 Ha; etot  4.24451e0 Ha
+Energy:   -1148.8157902859 Ha after  207 iterations (in       0.41 seconds).
+SCF Change: DM 5.50669e-2; eev  2.65144e0 Ha; etot -3.35965e0 Ha
+Energy:   -1152.1754435920 Ha after  208 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.17544359,   -1149.83339386)
+SCF Change: DM 3.57066e-2; eev  2.17232e0 Ha; etot  2.34205e0 Ha
+Energy:   -1149.8333938629 Ha after  209 iterations (in       0.38 seconds).
+SCF Change: DM 1.08350e-1; eev  3.30076e0 Ha; etot -1.67074e0 Ha
+Energy:   -1151.5041339706 Ha after  210 iterations (in       0.40 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1151.50413397,   -1145.20642643)
+SCF Change: DM 1.06651e-1; eev  3.47397e0 Ha; etot  6.29771e0 Ha
+Energy:   -1145.2064264252 Ha after  211 iterations (in       0.41 seconds).
+SCF Change: DM 5.17832e-2; eev  1.21339e0 Ha; etot -6.81732e0 Ha
+Energy:   -1152.0237512747 Ha after  212 iterations (in       0.41 seconds).
+SCF Change: DM 7.45699e-2; eev  2.34717e0 Ha; etot -3.67840e0 Ha
+Energy:   -1155.7021492944 Ha after  213 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.70214929,   -1153.28672483)
+SCF Change: DM 1.05131e-1; eev  2.29102e0 Ha; etot  2.41542e0 Ha
+Energy:   -1153.2867248253 Ha after  214 iterations (in       0.41 seconds).
+SCF Change: DM 2.23261e-1; eev  8.67654e0 Ha; etot -8.95810e-1 Ha
+Energy:   -1154.1825349290 Ha after  215 iterations (in       0.42 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1154.18253493,   -1128.95125258)
+SCF Change: DM 2.40407e-1; eev  8.61603e0 Ha; etot  2.52313e1 Ha
+Energy:   -1128.9512525771 Ha after  216 iterations (in       0.42 seconds).
+SCF Change: DM 1.06307e-1; eev  2.07089e0 Ha; etot -2.67580e1 Ha
+Energy:   -1155.7092722546 Ha after  217 iterations (in       0.38 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.70927225,   -1153.41374487)
+SCF Change: DM 9.50859e-2; eev  2.05726e0 Ha; etot  2.29553e0 Ha
+Energy:   -1153.4137448736 Ha after  218 iterations (in       0.36 seconds).
+SCF Change: DM 1.12229e-1; eev  3.99023e0 Ha; etot -1.01953e-1 Ha
+Energy:   -1153.5156982606 Ha after  219 iterations (in       0.35 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1153.51569826,   -1143.45629500)
+SCF Change: DM 5.79856e-2; eev  3.88133e0 Ha; etot  1.00594e1 Ha
+Energy:   -1143.4562950039 Ha after  220 iterations (in       0.37 seconds).
+SCF Change: DM 5.91230e-2; eev  1.32596e0 Ha; etot -1.16901e1 Ha
+Energy:   -1155.1463671977 Ha after  221 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1155.14636720,   -1151.79239765)
+SCF Change: DM 1.62426e-1; eev 8.60832e-1 Ha; etot  3.35397e0 Ha
+Energy:   -1151.7923976505 Ha after  222 iterations (in       0.43 seconds).
+SCF Change: DM 1.00727e-1; eev  1.08153e0 Ha; etot -8.21674e-1 Ha
+Energy:   -1152.6140713064 Ha after  223 iterations (in       0.39 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.61407131,   -1152.48540612)
+SCF Change: DM 9.25761e-2; eev  1.30356e0 Ha; etot 1.28665e-1 Ha
+Energy:   -1152.4854061152 Ha after  224 iterations (in       0.37 seconds).
+Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
+Prev_Energies: (  -1152.48540612,   -1152.17428037)
+SCF Change: DM 6.00274e-2; eev 7.59734e-1 Ha; etot 3.11126e-1 Ha
+Energy:   -1152.1742803728 Ha after  225 iterations (in       0.41 seconds).
+SCF Change: DM 1.10209e-1; eev  1.26640e0 Ha; etot -3.44803e0 Ha
+Energy:   -1155.6223085115 Ha after  226 iterations (in       0.41 seconds).

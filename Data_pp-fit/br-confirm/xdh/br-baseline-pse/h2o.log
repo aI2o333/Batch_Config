@@ -1,0 +1,1396 @@
+=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: xygjos
+Print level:                3
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/symei/def2-TZVPP-ECP28MWB
+The pruning method is nwchem
+The radial grid generation method is treutler
+ERI Type: ri_v
+Turn on the basis pair symmetry for RI 3D-tensors
+The spheric-GTO auxiliary basis set is taken from /home/symei/def2-SV(P)-JKFIT
+Spin polarization: Off
+Charge:   0; Spin:   1
+min_num_angular_points: 110
+max_num_angular_points: 590
+hardness: 3
+Grid generation level: 3
+Even tempered basis generation: false
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+Initial guess is prepared by (sad).
+It is a finite cluster calculation
+the scf functional for 'xygjos' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+the post-scf functional 'xygjos' is employed, which contains
+The density functional 'Slater exchange' belongs to the 'LDA' family and is defined in the reference(s):
+(0): P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+(1): F. Bloch.,  Z. Phys. 57, 545 (1929)
+The density functional 'Becke 88' belongs to the 'GGA' family and is defined in the reference(s):
+(0): A. D. Becke.,  Phys. Rev. A 38, 3098 (1988)
+The density functional 'Vosko, Wilk & Nusair (VWN5_RPA)' belongs to the 'LDA' family and is defined in the reference(s):
+(0): S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+The density functional 'Lee, Yang & Parr' belongs to the 'GGA' family and is defined in the reference(s):
+(0): C. Lee, W. Yang, and R. G. Parr.,  Phys. Rev. B 37, 785 (1988)
+(1): B. Miehlich, A. Savin, H. Stoll, and H. Preuss.,  Chem. Phys. Lett. 157, 200 (1989)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 23, natm: 3 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 60,final natm: 6
+numbasis: 59, num_auxbas: 113
+Molecule_name: h2o
+job_type = "SinglePoint"
+print_level = 3
+basis_path = "/home/symei/def2-TZVPP-ECP28MWB"
+basis_type = "spheric"
+auxbas_path = "/home/symei/def2-SV(P)-JKFIT"
+auxbas_type = "spheric"
+use_auxbas = true
+even_tempered_basis = false
+etb_start_atom_number = 1
+etb_beta = 1.0
+ri_k_only = false
+auxbasis_response = false
+use_isdf = false
+isdf_k_only = false
+isdf_k_mu = 8
+isdf_new = false
+eri_type = "ri_v"
+use_ri_symm = true
+xc = "xygjos"
+post_xc = []
+post_correlation = []
+post_ai_correction = "none"
+charge = 0.0
+spin = 1.0
+spin_channel = 1
+spin_polarization = false
+frozen_core_postscf = 2
+frequency_points = 20
+lambda_points = 20
+freq_grid_type = 0
+freq_cut_off = 10.0
+radial_precision = 0.000000000001
+min_num_angular_points = 110
+max_num_angular_points = 590
+grid_gen_level = 3
+hardness = 3
+pruning = "nwchem"
+rad_grid_method = "treutler"
+external_grids = "grids"
+mixer = "diis"
+mix_param = 0.2
+num_max_diis = 8
+start_diis_cycle = 1
+start_check_oscillation = 20
+max_scf_cycle = 100
+scf_acc_rho = 0.00000001
+scf_acc_eev = 0.000001
+scf_acc_etot = 0.00000001
+restart = false
+chkfile = "none"
+chkfile_type = "hdf5"
+guessfile = "none"
+guessfile_type = "none"
+external_init_guess = false
+initial_guess = "sad"
+noiter = false
+check_stab = false
+use_dm_only = false
+use_ri_vj = true
+fciqmc_dump = false
+outputs = []
+cube_orb_setting = [3.0, 80.0]
+cube_orb_indices = []
+atom_sad = false
+occupation_type = "INTEGER"
+frac_tolerant = 0.001
+deep_pot = false
+bench_eps = false
+num_threads = 4
+batch_size = 64
+nforce_displacement = 0.0013
+force_state_occupation = []
+auxiliary_reference_states = []
+pt2_mpi_mode = 0
+
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:       9.16188621 Hartree
+no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Detailed time report:
+ri_v      |:    0.002 s for for RI dot aux_v^{-1/2}
+inv_sqrt  |:    0.024 s for for the sqrt inverse of aux_ij
+all ri    |:    0.035 s for for the total evaluations of ri3fn
+aux_ij    |:    0.002 s for for the coulomb matrix of auxiliary basis
+prim ri   |:    0.007 s for for the pure three-center integrals
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00226461 with the total number of basis functions:     59
+Grid size: 34310
+Generate SAD of O
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 11, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 36,final natm: 2
+numbasis: 31, num_auxbas: 77
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:       0.00000000 Hartree
+no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Detailed time report:
+prim ri   |:    0.002 s for for the pure three-center integrals
+ri_v      |:    0.000 s for for RI dot aux_v^{-1/2}
+all ri    |:    0.006 s for for the total evaluations of ri3fn
+inv_sqrt  |:    0.002 s for for the sqrt inverse of aux_ij
+aux_ij    |:    0.002 s for for the coulomb matrix of auxiliary basis
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03024690 with the total number of basis functions:     31
+Grid size: 14262
+Initial guess from SAP
+The evaluation of vmat costs             0.01 seconds
+Detailed time report:
+ISDF      |:    0.000 s for ISDF initialization
+Overall   |:    0.050 s for SCF Preparation
+CInt      |:    0.007 s for Two, Three, and Four-center integrals
+InitGuess |:    0.011 s for Prepare initial guess
+DFT Grids |:    0.031 s for Initialization of the tabulated Grids and AOs
+Exc:       0.00000000, Vxc:       0.00000000
+The total energy:       -74.2820198992 Ha by the initial guess
+Exc:       0.00000000, Vxc:       0.00000000
+Energy:     -74.2872999342 Ha after    1 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 9.02252e-4; eev 6.31761e-2 Ha; etot -8.74496e-3 Ha
+Energy:     -74.2960448966 Ha after    2 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 2.08873e-4; eev 6.44051e-2 Ha; etot -1.92038e-3 Ha
+Energy:     -74.2979652749 Ha after    3 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 3.22454e-4; eev 2.58484e-2 Ha; etot 5.04814e-3 Ha
+Energy:     -74.2929171387 Ha after    4 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.07550e-4; eev 2.73102e-2 Ha; etot 5.28350e-4 Ha
+Energy:     -74.2923887888 Ha after    5 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.18276e-4; eev 7.85281e-3 Ha; etot -2.09252e-3 Ha
+Energy:     -74.2944813093 Ha after    6 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 5.25462e-5; eev 1.14238e-2 Ha; etot -4.01433e-5 Ha
+Energy:     -74.2945214526 Ha after    7 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 2.08690e-5; eev 4.54780e-4 Ha; etot 5.63383e-4 Ha
+Energy:     -74.2939580697 Ha after    8 iterations (in       0.01 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.01s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 6.19281e-6; eev 1.33109e-3 Ha; etot -1.07044e-7 Ha
+Energy:     -74.2939581768 Ha after    9 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 4.83224e-7; eev 3.12969e-5 Ha; etot -3.14560e-8 Ha
+Energy:     -74.2939582082 Ha after   10 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 9.21400e-8; eev 1.80770e-6 Ha; etot -2.44142e-11 Ha
+Energy:     -74.2939582082 Ha after   11 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 4.50030e-9; eev 4.91248e-7 Ha; etot -8.95284e-13 Ha
+Energy:     -74.2939582082 Ha after   12 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 5.73443e-10; eev 2.73511e-8 Ha; etot -4.26326e-14 Ha
+Energy:     -74.2939582082 Ha after   13 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.34533e-11; eev 6.17544e-10 Ha; etot 1.13687e-13 Ha
+Energy:     -74.2939582082 Ha after   14 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+SCF is converged after   14 iterations.
+   State    Occupation        Eigenvalue
+       0       2.00000        -20.808801
+       1       2.00000         -1.307445
+       2       1.33333         -0.422627
+       3       1.33333         -0.422627
+       4       1.33333         -0.422627
+       5       0.00000          0.474123
+       6       0.00000          0.558941
+       7       0.00000          0.558941
+the job spends             0.08 seconds
+Generate SAD of H
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 6, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 12,final natm: 2
+numbasis: 14, num_auxbas: 18
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:       0.00000000 Hartree
+no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Detailed time report:
+ri_v      |:    0.000 s for for RI dot aux_v^{-1/2}
+prim ri   |:    0.000 s for for the pure three-center integrals
+all ri    |:    0.000 s for for the total evaluations of ri3fn
+inv_sqrt  |:    0.000 s for for the sqrt inverse of aux_ij
+aux_ij    |:    0.000 s for for the coulomb matrix of auxiliary basis
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.10940728 with the total number of basis functions:     14
+Grid size: 10024
+Initial guess from SAP
+The evaluation of vmat costs             0.00 seconds
+Detailed time report:
+InitGuess |:    0.004 s for Prepare initial guess
+DFT Grids |:    0.007 s for Initialization of the tabulated Grids and AOs
+Overall   |:    0.011 s for SCF Preparation
+ISDF      |:    0.000 s for ISDF initialization
+CInt      |:    0.001 s for Two, Three, and Four-center integrals
+Exc:       0.00000000, Vxc:       0.00000000
+The total energy:        -0.4746750264 Ha by the initial guess
+Exc:       0.00000000, Vxc:       0.00000000
+Energy:      -0.4947605578 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (2.42831e-3, 0.00000e0); eev 1.75389e-1 Ha; etot -7.45427e-3 Ha
+Energy:      -0.5022148265 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    2 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (4.89184e-4, 0.00000e0); eev 6.79785e-2 Ha; etot 1.31784e-3 Ha
+Energy:      -0.5008969838 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    3 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (6.14473e-5, 0.00000e0); eev 1.58155e-2 Ha; etot 9.31515e-4 Ha
+Energy:      -0.4999654685 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    4 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (3.39240e-5, 0.00000e0); eev 1.39012e-3 Ha; etot 1.87791e-4 Ha
+Energy:      -0.4997776776 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    5 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (1.39081e-5, 0.00000e0); eev 7.49941e-4 Ha; etot -4.66356e-6 Ha
+Energy:      -0.4997823411 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    6 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (3.24050e-6, 0.00000e0); eev 4.38958e-4 Ha; etot -1.82058e-5 Ha
+Energy:      -0.4998005469 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    7 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (3.23524e-7, 0.00000e0); eev 1.46853e-4 Ha; etot -9.28526e-6 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    8 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (1.39114e-7, 0.00000e0); eev 8.51566e-6 Ha; etot -2.91847e-11 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    9 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (4.82128e-8, 0.00000e0); eev 1.22527e-6 Ha; etot -2.64561e-12 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   10 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM (4.02202e-14, 0.00000e0); eev 2.50295e-12 Ha; etot -5.83977e-14 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   11 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+SCF is converged after   11 iterations.
+Spin-up eigenvalues
+ 
+   State    Occupation        Eigenvalue
+       0       1.00000         -0.499810
+       1       0.00000          0.354348
+       2       0.00000          0.738499
+       3       0.00000          0.738499
+ 
+Spin-down eigenvalues
+ 
+   State    Occupation        Eigenvalue
+the number of eigenvalues in 1 spin channel is 1
+the job spends             0.03 seconds
+total electron number:       9.99999962
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.04 seconds, respectively
+Exc:      -7.34979950, Vxc:      -4.70846338
+Initial guess HF energy:     -76.4338224501562138
+Initial density matrix by Atom SAD:
+                 0,           1,           2,           3,           4
+    0     0.402336,    0.612850,   -0.059879,   -0.119119,   -0.029896
+    1     0.612850,    0.951229,   -0.166791,   -0.267623,   -0.075891
+    2    -0.059879,   -0.166791,    0.331355,    0.385012,    0.133230
+    3    -0.119119,   -0.267623,    0.385012,    0.461028,    0.169928
+    4    -0.029896,   -0.075891,    0.133230,    0.169928,    0.081619
+    5     0.000000,    0.000000,   -0.000000,    0.000000,    0.000000
+    6    -0.000000,   -0.000000,    0.000000,   -0.000000,   -0.000000
+    7    -0.014817,   -0.034757,    0.051327,    0.118850,    0.134449
+    8    -0.000000,   -0.000000,   -0.000000,    0.000000,    0.000000
+    9     0.000000,    0.000000,   -0.000000,   -0.000000,   -0.000000
+   10    -0.010520,   -0.026406,    0.043767,    0.093773,    0.100419
+   11     0.000000,    0.000000,   -0.000000,    0.000000,    0.000000
+   12     0.000000,    0.000000,   -0.000000,   -0.000000,   -0.000000
+   13    -0.009825,   -0.023148,    0.035410,    0.061214,    0.052457
+   14     0.000000,    0.000000,   -0.000000,   -0.000000,   -0.000000
+   15     0.000000,    0.000000,   -0.000000,    0.000000,    0.000000
+   16     0.000151,    0.000327,   -0.000406,   -0.001091,   -0.001351
+   17    -0.000000,    0.000000,   -0.000000,   -0.000000,   -0.000000
+   18     0.000246,    0.000911,   -0.002343,   -0.002329,   -0.000217
+   19    -0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   20    -0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   21     0.000091,    0.000332,   -0.000770,   -0.002295,   -0.003042
+   22     0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   23     0.001205,    0.002564,   -0.003284,   -0.003941,   -0.001423
+   24    -0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   25     0.000000,    0.000000,   -0.000000,   -0.000000,    0.000000
+   26     0.000000,    0.000000,   -0.000000,   -0.000000,   -0.000000
+   27     0.000014,   -0.000026,    0.000196,    0.000353,    0.000334
+   28    -0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   29    -0.000016,   -0.000101,    0.000330,    0.000274,   -0.000070
+   30     0.000000,    0.000000,   -0.000000,   -0.000000,   -0.000000
+   31    -0.011865,   -0.028194,    0.045541,    0.041160,   -0.005379
+   32    -0.005959,   -0.014452,    0.024566,    0.013409,   -0.019892
+   33    -0.000984,   -0.001515,    0.000350,   -0.002221,   -0.005180
+   34    -0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   35    -0.002076,   -0.004708,    0.006993,    0.006381,   -0.000766
+   36    -0.002050,   -0.004647,    0.006827,    0.007679,    0.002064
+   37     0.000000,    0.000000,   -0.000000,   -0.000000,    0.000000
+   38    -0.000502,   -0.001476,    0.003238,    0.001075,   -0.003903
+   39    -0.001423,   -0.003628,    0.006429,    0.007842,    0.003249
+   40     0.000000,    0.000000,    0.000000,    0.000000,    0.000000
+   41    -0.001329,   -0.002613,    0.002727,    0.002904,    0.000389
+   42    -0.000264,   -0.000570,    0.000735,    0.001209,    0.000955
+   43     0.000000,    0.000000,    0.000000,    0.000000,   -0.000000
+   44     0.000682,    0.001324,   -0.001349,   -0.001040,    0.000584
+   45    -0.011865,   -0.028194,    0.045541,    0.041160,   -0.005379
+   46    -0.005959,   -0.014452,    0.024566,    0.013409,   -0.019892
+   47    -0.000984,   -0.001515,    0.000350,   -0.002221,   -0.005180
+   48    -0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   49     0.002076,    0.004708,   -0.006993,   -0.006381,    0.000766
+   50    -0.002050,   -0.004647,    0.006827,    0.007679,    0.002064
+   51     0.000000,    0.000000,   -0.000000,   -0.000000,    0.000000
+   52     0.000502,    0.001476,   -0.003238,   -0.001075,    0.003903
+   53    -0.001423,   -0.003628,    0.006429,    0.007842,    0.003249
+   54    -0.000000,   -0.000000,    0.000000,   -0.000000,   -0.000000
+   55     0.001329,    0.002613,   -0.002727,   -0.002904,   -0.000389
+   56    -0.000264,   -0.000570,    0.000735,    0.001209,    0.000955
+   57     0.000000,    0.000000,   -0.000000,    0.000000,    0.000000
+   58     0.000682,    0.001324,   -0.001349,   -0.001040,    0.000584
+                 5,           6,           7,           8,           9
+    0     0.000000,   -0.000000,   -0.014817,   -0.000000,    0.000000
+    1     0.000000,   -0.000000,   -0.034757,   -0.000000,    0.000000
+    2    -0.000000,    0.000000,    0.051327,   -0.000000,   -0.000000
+    3     0.000000,   -0.000000,    0.118850,    0.000000,   -0.000000
+    4     0.000000,   -0.000000,    0.134449,    0.000000,   -0.000000
+    5     0.553650,   -0.000000,   -0.000000,    0.432665,    0.000000
+    6    -0.000000,    0.405301,   -0.000000,   -0.000000,    0.275849
+    7    -0.000000,   -0.000000,    0.470561,    0.000000,   -0.000000
+    8     0.432665,   -0.000000,    0.000000,    0.338118,    0.000000
+    9     0.000000,    0.275849,   -0.000000,    0.000000,    0.187744
+   10    -0.000000,    0.000000,    0.343490,   -0.000000,    0.000000
+   11     0.241618,   -0.000000,    0.000000,    0.188819,    0.000000
+   12     0.000000,    0.099182,    0.000000,    0.000000,    0.067504
+   13    -0.000000,    0.000000,    0.160766,   -0.000000,    0.000000
+   14     0.000000,   -0.000000,   -0.000000,    0.000000,   -0.000000
+   15    -0.000000,   -0.009131,    0.000000,   -0.000000,   -0.006214
+   16    -0.000000,    0.000000,   -0.004890,   -0.000000,    0.000000
+   17    -0.004714,   -0.000000,   -0.000000,   -0.003684,   -0.000000
+   18     0.000000,   -0.000000,    0.002577,    0.000000,    0.000000
+   19    -0.000000,    0.000000,   -0.000000,   -0.000000,    0.000000
+   20    -0.000000,   -0.006659,   -0.000000,   -0.000000,   -0.004532
+   21     0.000000,   -0.000000,   -0.011235,    0.000000,   -0.000000
+   22    -0.012338,    0.000000,    0.000000,   -0.009642,   -0.000000
+   23    -0.000000,    0.000000,   -0.000898,   -0.000000,    0.000000
+   24    -0.000000,   -0.001163,   -0.000000,   -0.000000,   -0.000792
+   25    -0.000000,   -0.000000,    0.000000,   -0.000000,   -0.000000
+   26    -0.000000,   -0.001098,    0.000000,   -0.000000,   -0.000747
+   27     0.000000,   -0.000000,    0.001069,    0.000000,   -0.000000
+   28     0.001126,   -0.000000,    0.000000,    0.000880,    0.000000
+   29     0.000000,   -0.000000,   -0.000769,    0.000000,   -0.000000
+   30    -0.002776,   -0.000000,    0.000000,   -0.002169,   -0.000000
+   31     0.000000,   -0.119072,   -0.089460,    0.000000,   -0.081041
+   32    -0.000000,   -0.147164,   -0.117336,   -0.000000,   -0.100161
+   33     0.000000,   -0.029795,   -0.021627,    0.000000,   -0.020279
+   34     0.010830,   -0.000000,   -0.000000,    0.008464,   -0.000000
+   35     0.000000,   -0.011104,   -0.013507,    0.000000,   -0.007557
+   36     0.000000,   -0.013714,   -0.001748,    0.000000,   -0.009334
+   37     0.022631,    0.000000,    0.000000,    0.017685,    0.000000
+   38    -0.000000,   -0.012612,   -0.020662,   -0.000000,   -0.008584
+   39    -0.000000,   -0.018153,    0.003685,   -0.000000,   -0.012355
+   40     0.004587,    0.000000,   -0.000000,    0.003585,    0.000000
+   41     0.000000,   -0.005944,   -0.002493,    0.000000,   -0.004045
+   42     0.000000,   -0.002042,    0.002789,    0.000000,   -0.001390
+   43     0.003347,    0.000000,   -0.000000,    0.002615,    0.000000
+   44    -0.000000,    0.002573,    0.004391,   -0.000000,    0.001751
+   45     0.000000,    0.119072,   -0.089460,    0.000000,    0.081041
+   46    -0.000000,    0.147164,   -0.117336,   -0.000000,    0.100161
+   47    -0.000000,    0.029795,   -0.021627,   -0.000000,    0.020279
+   48     0.010830,    0.000000,    0.000000,    0.008464,    0.000000
+   49     0.000000,   -0.011104,    0.013507,    0.000000,   -0.007557
+   50    -0.000000,    0.013714,   -0.001748,   -0.000000,    0.009334
+   51     0.022631,   -0.000000,    0.000000,    0.017685,   -0.000000
+   52     0.000000,   -0.012612,    0.020662,    0.000000,   -0.008584
+   53    -0.000000,    0.018153,    0.003685,   -0.000000,    0.012355
+   54    -0.004587,    0.000000,   -0.000000,   -0.003585,    0.000000
+   55     0.000000,   -0.005944,    0.002493,    0.000000,   -0.004045
+   56    -0.000000,    0.002042,    0.002789,   -0.000000,    0.001390
+   57     0.003347,   -0.000000,    0.000000,    0.002615,   -0.000000
+   58     0.000000,   -0.002573,    0.004391,    0.000000,   -0.001751
+                10,          11,          12,          13,          14
+    0    -0.010520,    0.000000,    0.000000,   -0.009825,    0.000000
+    1    -0.026406,    0.000000,    0.000000,   -0.023148,    0.000000
+    2     0.043767,   -0.000000,   -0.000000,    0.035410,   -0.000000
+    3     0.093773,    0.000000,   -0.000000,    0.061214,   -0.000000
+    4     0.100419,    0.000000,   -0.000000,    0.052457,   -0.000000
+    5    -0.000000,    0.241618,    0.000000,   -0.000000,    0.000000
+    6     0.000000,   -0.000000,    0.099182,    0.000000,   -0.000000
+    7     0.343490,    0.000000,    0.000000,    0.160766,   -0.000000
+    8    -0.000000,    0.188819,    0.000000,   -0.000000,    0.000000
+    9     0.000000,    0.000000,    0.067504,    0.000000,   -0.000000
+   10     0.250860,   -0.000000,    0.000000,    0.117692,   -0.000000
+   11    -0.000000,    0.105444,    0.000000,   -0.000000,    0.000000
+   12     0.000000,    0.000000,    0.024271,    0.000000,   -0.000000
+   13     0.117692,   -0.000000,    0.000000,    0.055912,   -0.000000
+   14    -0.000000,    0.000000,   -0.000000,   -0.000000,    0.000000
+   15    -0.000000,   -0.000000,   -0.002234,   -0.000000,    0.000000
+   16    -0.003567,   -0.000000,   -0.000000,   -0.001664,    0.000000
+   17    -0.000000,   -0.002057,   -0.000000,   -0.000000,   -0.000000
+   18     0.001830,    0.000000,    0.000000,    0.000737,    0.000000
+   19    -0.000000,   -0.000000,    0.000000,   -0.000000,   -0.000000
+   20    -0.000000,   -0.000000,   -0.001630,    0.000000,    0.000000
+   21    -0.008193,    0.000000,   -0.000000,   -0.003813,    0.000000
+   22     0.000000,   -0.005384,   -0.000000,    0.000000,   -0.000000
+   23    -0.000715,   -0.000000,    0.000000,   -0.000484,    0.000000
+   24    -0.000000,   -0.000000,   -0.000285,   -0.000000,    0.000000
+   25     0.000000,   -0.000000,   -0.000000,    0.000000,   -0.000000
+   26     0.000000,   -0.000000,   -0.000269,   -0.000000,    0.000000
+   27     0.000782,    0.000000,   -0.000000,    0.000369,   -0.000000
+   28     0.000000,    0.000491,    0.000000,    0.000000,    0.000000
+   29    -0.000553,    0.000000,   -0.000000,   -0.000240,    0.000000
+   30     0.000000,   -0.001211,   -0.000000,    0.000000,   -0.000000
+   31    -0.064250,   -0.000000,   -0.029138,   -0.027510,    0.000000
+   32    -0.084938,   -0.000000,   -0.036013,   -0.038025,    0.000000
+   33    -0.015738,    0.000000,   -0.007291,   -0.007235,    0.000000
+   34    -0.000000,    0.004726,    0.000000,   -0.000000,    0.000000
+   35    -0.009699,    0.000000,   -0.002717,   -0.004146,    0.000000
+   36    -0.001144,    0.000000,   -0.003356,   -0.000209,    0.000000
+   37     0.000000,    0.009876,    0.000000,    0.000000,    0.000000
+   38    -0.014977,   -0.000000,   -0.003086,   -0.006757,    0.000000
+   39     0.002805,   -0.000000,   -0.004442,    0.001590,    0.000000
+   40    -0.000000,    0.002002,    0.000000,   -0.000000,    0.000000
+   41    -0.001765,    0.000000,   -0.001455,   -0.000684,    0.000000
+   42     0.002044,    0.000000,   -0.000500,    0.000977,    0.000000
+   43    -0.000000,    0.001460,    0.000000,   -0.000000,    0.000000
+   44     0.003171,   -0.000000,    0.000630,    0.001398,   -0.000000
+   45    -0.064250,    0.000000,    0.029138,   -0.027510,   -0.000000
+   46    -0.084938,   -0.000000,    0.036013,   -0.038025,   -0.000000
+   47    -0.015738,   -0.000000,    0.007291,   -0.007235,   -0.000000
+   48     0.000000,    0.004726,    0.000000,    0.000000,    0.000000
+   49     0.009699,    0.000000,   -0.002717,    0.004146,    0.000000
+   50    -0.001144,   -0.000000,    0.003356,   -0.000209,   -0.000000
+   51     0.000000,    0.009876,   -0.000000,    0.000000,    0.000000
+   52     0.014977,    0.000000,   -0.003086,    0.006757,    0.000000
+   53     0.002805,   -0.000000,    0.004442,    0.001590,   -0.000000
+   54    -0.000000,   -0.002002,    0.000000,   -0.000000,   -0.000000
+   55     0.001765,    0.000000,   -0.001455,    0.000684,    0.000000
+   56     0.002044,   -0.000000,    0.000500,    0.000977,   -0.000000
+   57     0.000000,    0.001460,   -0.000000,    0.000000,    0.000000
+   58     0.003171,    0.000000,   -0.000630,    0.001398,    0.000000
+                15,          16,          17,          18,          19
+    0     0.000000,    0.000151,   -0.000000,    0.000246,   -0.000000
+    1     0.000000,    0.000327,    0.000000,    0.000911,   -0.000000
+    2    -0.000000,   -0.000406,   -0.000000,   -0.002343,    0.000000
+    3     0.000000,   -0.001091,   -0.000000,   -0.002329,    0.000000
+    4     0.000000,   -0.001351,   -0.000000,   -0.000217,    0.000000
+    5    -0.000000,   -0.000000,   -0.004714,    0.000000,   -0.000000
+    6    -0.009131,    0.000000,   -0.000000,   -0.000000,    0.000000
+    7     0.000000,   -0.004890,   -0.000000,    0.002577,   -0.000000
+    8    -0.000000,   -0.000000,   -0.003684,    0.000000,   -0.000000
+    9    -0.006214,    0.000000,   -0.000000,    0.000000,    0.000000
+   10    -0.000000,   -0.003567,   -0.000000,    0.001830,   -0.000000
+   11    -0.000000,   -0.000000,   -0.002057,    0.000000,   -0.000000
+   12    -0.002234,   -0.000000,   -0.000000,    0.000000,    0.000000
+   13    -0.000000,   -0.001664,   -0.000000,    0.000737,   -0.000000
+   14     0.000000,    0.000000,   -0.000000,    0.000000,   -0.000000
+   15     0.000206,   -0.000000,    0.000000,    0.000000,   -0.000000
+   16    -0.000000,    0.000051,    0.000000,   -0.000028,    0.000000
+   17     0.000000,    0.000000,    0.000040,   -0.000000,    0.000000
+   18     0.000000,   -0.000028,   -0.000000,    0.000035,   -0.000000
+   19    -0.000000,    0.000000,    0.000000,   -0.000000,    0.000000
+   20     0.000150,    0.000000,    0.000000,   -0.000000,   -0.000000
+   21     0.000000,    0.000117,    0.000000,   -0.000065,    0.000000
+   22     0.000000,   -0.000000,    0.000105,   -0.000000,    0.000000
+   23    -0.000000,    0.000008,    0.000000,    0.000021,   -0.000000
+   24     0.000026,    0.000000,    0.000000,   -0.000000,   -0.000000
+   25     0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   26     0.000025,   -0.000000,    0.000000,    0.000000,   -0.000000
+   27     0.000000,   -0.000011,   -0.000000,    0.000005,   -0.000000
+   28    -0.000000,   -0.000000,   -0.000010,   -0.000000,   -0.000000
+   29     0.000000,    0.000008,   -0.000000,   -0.000008,    0.000000
+   30     0.000000,   -0.000000,    0.000024,    0.000000,    0.000000
+   31     0.002683,    0.000951,    0.000000,   -0.000934,    0.000000
+   32     0.003315,    0.001234,    0.000000,   -0.000942,   -0.000000
+   33     0.000671,    0.000226,    0.000000,   -0.000140,   -0.000000
+   34    -0.000000,    0.000000,   -0.000092,    0.000000,   -0.000000
+   35     0.000250,    0.000144,    0.000000,   -0.000142,    0.000000
+   36     0.000309,    0.000021,    0.000000,   -0.000066,   -0.000000
+   37    -0.000000,   -0.000000,   -0.000193,    0.000000,   -0.000000
+   38     0.000284,    0.000217,    0.000000,   -0.000157,    0.000000
+   39     0.000409,   -0.000036,    0.000000,   -0.000028,   -0.000000
+   40    -0.000000,   -0.000000,   -0.000039,    0.000000,   -0.000000
+   41     0.000134,    0.000027,    0.000000,   -0.000037,    0.000000
+   42     0.000046,   -0.000029,   -0.000000,    0.000012,   -0.000000
+   43    -0.000000,    0.000000,   -0.000028,   -0.000000,   -0.000000
+   44    -0.000058,   -0.000046,    0.000000,    0.000039,   -0.000000
+   45    -0.002683,    0.000951,   -0.000000,   -0.000934,    0.000000
+   46    -0.003315,    0.001234,    0.000000,   -0.000942,    0.000000
+   47    -0.000671,    0.000226,    0.000000,   -0.000140,    0.000000
+   48    -0.000000,   -0.000000,   -0.000092,    0.000000,   -0.000000
+   49     0.000250,   -0.000144,   -0.000000,    0.000142,   -0.000000
+   50    -0.000309,    0.000021,   -0.000000,   -0.000066,    0.000000
+   51     0.000000,   -0.000000,   -0.000193,    0.000000,   -0.000000
+   52     0.000284,   -0.000217,   -0.000000,    0.000157,   -0.000000
+   53    -0.000409,   -0.000036,    0.000000,   -0.000028,    0.000000
+   54    -0.000000,    0.000000,    0.000039,   -0.000000,    0.000000
+   55     0.000134,   -0.000027,   -0.000000,    0.000037,   -0.000000
+   56    -0.000046,   -0.000029,   -0.000000,    0.000012,    0.000000
+   57     0.000000,   -0.000000,   -0.000028,    0.000000,   -0.000000
+   58     0.000058,   -0.000046,   -0.000000,    0.000039,   -0.000000
+                20,          21,          22,          23,          24
+    0    -0.000000,    0.000091,    0.000000,    0.001205,   -0.000000
+    1    -0.000000,    0.000332,   -0.000000,    0.002564,   -0.000000
+    2     0.000000,   -0.000770,    0.000000,   -0.003284,    0.000000
+    3     0.000000,   -0.002295,    0.000000,   -0.003941,    0.000000
+    4     0.000000,   -0.003042,    0.000000,   -0.001423,    0.000000
+    5    -0.000000,    0.000000,   -0.012338,   -0.000000,   -0.000000
+    6    -0.006659,   -0.000000,    0.000000,    0.000000,   -0.001163
+    7    -0.000000,   -0.011235,    0.000000,   -0.000898,   -0.000000
+    8    -0.000000,    0.000000,   -0.009642,   -0.000000,   -0.000000
+    9    -0.004532,   -0.000000,   -0.000000,    0.000000,   -0.000792
+   10    -0.000000,   -0.008193,    0.000000,   -0.000715,   -0.000000
+   11    -0.000000,    0.000000,   -0.005384,   -0.000000,   -0.000000
+   12    -0.001630,   -0.000000,   -0.000000,    0.000000,   -0.000285
+   13     0.000000,   -0.003813,    0.000000,   -0.000484,   -0.000000
+   14     0.000000,    0.000000,   -0.000000,    0.000000,    0.000000
+   15     0.000150,    0.000000,    0.000000,   -0.000000,    0.000026
+   16     0.000000,    0.000117,   -0.000000,    0.000008,    0.000000
+   17     0.000000,    0.000000,    0.000105,    0.000000,    0.000000
+   18    -0.000000,   -0.000065,   -0.000000,    0.000021,   -0.000000
+   19    -0.000000,    0.000000,    0.000000,   -0.000000,   -0.000000
+   20     0.000109,    0.000000,    0.000000,   -0.000000,    0.000019
+   21     0.000000,    0.000269,   -0.000000,    0.000017,    0.000000
+   22     0.000000,   -0.000000,    0.000275,    0.000000,    0.000000
+   23    -0.000000,    0.000017,    0.000000,    0.000034,   -0.000000
+   24     0.000019,    0.000000,    0.000000,   -0.000000,    0.000003
+   25     0.000000,   -0.000000,    0.000000,    0.000000,    0.000000
+   26     0.000018,   -0.000000,    0.000000,   -0.000000,    0.000003
+   27     0.000000,   -0.000025,   -0.000000,   -0.000003,    0.000000
+   28    -0.000000,   -0.000000,   -0.000025,   -0.000000,   -0.000000
+   29     0.000000,    0.000019,   -0.000000,   -0.000003,    0.000000
+   30     0.000000,   -0.000000,    0.000062,    0.000000,    0.000000
+   31     0.001956,    0.002216,   -0.000000,   -0.000378,    0.000342
+   32     0.002418,    0.002855,   -0.000000,   -0.000146,    0.000422
+   33     0.000490,    0.000521,   -0.000000,    0.000013,    0.000085
+   34    -0.000000,    0.000000,   -0.000241,   -0.000000,   -0.000000
+   35     0.000182,    0.000335,   -0.000000,   -0.000059,    0.000032
+   36     0.000225,    0.000052,   -0.000000,   -0.000067,    0.000039
+   37    -0.000000,    0.000000,   -0.000504,   -0.000000,   -0.000000
+   38     0.000207,    0.000501,   -0.000000,   -0.000015,    0.000036
+   39     0.000298,   -0.000079,    0.000000,   -0.000066,    0.000052
+   40    -0.000000,    0.000000,   -0.000102,   -0.000000,   -0.000000
+   41     0.000098,    0.000064,   -0.000000,   -0.000026,    0.000017
+   42     0.000034,   -0.000066,    0.000000,   -0.000010,    0.000006
+   43    -0.000000,    0.000000,   -0.000075,   -0.000000,   -0.000000
+   44    -0.000042,   -0.000108,    0.000000,    0.000010,   -0.000007
+   45    -0.001956,    0.002216,   -0.000000,   -0.000378,   -0.000342
+   46    -0.002418,    0.002855,    0.000000,   -0.000146,   -0.000422
+   47    -0.000490,    0.000521,    0.000000,    0.000013,   -0.000085
+   48    -0.000000,    0.000000,   -0.000241,   -0.000000,   -0.000000
+   49     0.000182,   -0.000335,    0.000000,    0.000059,    0.000032
+   50    -0.000225,    0.000052,    0.000000,   -0.000067,   -0.000039
+   51    -0.000000,   -0.000000,   -0.000504,   -0.000000,   -0.000000
+   52     0.000207,   -0.000501,   -0.000000,    0.000015,    0.000036
+   53    -0.000298,   -0.000079,    0.000000,   -0.000066,   -0.000052
+   54     0.000000,    0.000000,    0.000102,    0.000000,    0.000000
+   55     0.000098,   -0.000064,   -0.000000,    0.000026,    0.000017
+   56    -0.000034,   -0.000066,    0.000000,   -0.000010,   -0.000006
+   57    -0.000000,   -0.000000,   -0.000075,   -0.000000,   -0.000000
+   58     0.000042,   -0.000108,    0.000000,    0.000010,    0.000007
+                25,          26,          27,          28,          29
+    0     0.000000,    0.000000,    0.000014,   -0.000000,   -0.000016
+    1     0.000000,    0.000000,   -0.000026,   -0.000000,   -0.000101
+    2    -0.000000,   -0.000000,    0.000196,    0.000000,    0.000330
+    3    -0.000000,   -0.000000,    0.000353,    0.000000,    0.000274
+    4     0.000000,   -0.000000,    0.000334,    0.000000,   -0.000070
+    5    -0.000000,   -0.000000,    0.000000,    0.001126,    0.000000
+    6    -0.000000,   -0.001098,   -0.000000,   -0.000000,   -0.000000
+    7     0.000000,    0.000000,    0.001069,    0.000000,   -0.000769
+    8    -0.000000,   -0.000000,    0.000000,    0.000880,    0.000000
+    9    -0.000000,   -0.000747,   -0.000000,    0.000000,   -0.000000
+   10     0.000000,    0.000000,    0.000782,    0.000000,   -0.000553
+   11    -0.000000,   -0.000000,    0.000000,    0.000491,    0.000000
+   12    -0.000000,   -0.000269,   -0.000000,    0.000000,   -0.000000
+   13     0.000000,   -0.000000,    0.000369,    0.000000,   -0.000240
+   14    -0.000000,    0.000000,   -0.000000,    0.000000,    0.000000
+   15     0.000000,    0.000025,    0.000000,   -0.000000,    0.000000
+   16    -0.000000,   -0.000000,   -0.000011,   -0.000000,    0.000008
+   17     0.000000,    0.000000,   -0.000000,   -0.000010,   -0.000000
+   18     0.000000,    0.000000,    0.000005,   -0.000000,   -0.000008
+   19     0.000000,   -0.000000,   -0.000000,   -0.000000,    0.000000
+   20     0.000000,    0.000018,    0.000000,   -0.000000,    0.000000
+   21    -0.000000,   -0.000000,   -0.000025,   -0.000000,    0.000019
+   22     0.000000,    0.000000,   -0.000000,   -0.000025,   -0.000000
+   23     0.000000,   -0.000000,   -0.000003,   -0.000000,   -0.000003
+   24     0.000000,    0.000003,    0.000000,   -0.000000,    0.000000
+   25     0.000000,    0.000000,    0.000000,   -0.000000,   -0.000000
+   26     0.000000,    0.000003,    0.000000,   -0.000000,    0.000000
+   27     0.000000,    0.000000,    0.000002,    0.000000,   -0.000002
+   28    -0.000000,   -0.000000,    0.000000,    0.000002,    0.000000
+   29    -0.000000,    0.000000,   -0.000002,    0.000000,    0.000002
+   30     0.000000,    0.000000,   -0.000000,   -0.000006,   -0.000000
+   31    -0.000000,    0.000323,   -0.000190,    0.000000,    0.000216
+   32    -0.000000,    0.000399,   -0.000258,   -0.000000,    0.000239
+   33    -0.000000,    0.000081,   -0.000049,    0.000000,    0.000039
+   34    -0.000000,   -0.000000,    0.000000,    0.000022,    0.000000
+   35    -0.000000,    0.000030,   -0.000029,    0.000000,    0.000033
+   36     0.000000,    0.000037,   -0.000002,    0.000000,    0.000012
+   37    -0.000000,   -0.000000,    0.000000,    0.000046,    0.000000
+   38    -0.000000,    0.000034,   -0.000046,   -0.000000,    0.000041
+   39     0.000000,    0.000049,    0.000010,    0.000000,    0.000002
+   40    -0.000000,   -0.000000,    0.000000,    0.000009,    0.000000
+   41    -0.000000,    0.000016,   -0.000005,    0.000000,    0.000008
+   42     0.000000,    0.000006,    0.000006,    0.000000,   -0.000004
+   43    -0.000000,   -0.000000,    0.000000,    0.000007,    0.000000
+   44     0.000000,   -0.000007,    0.000010,   -0.000000,   -0.000009
+   45    -0.000000,   -0.000323,   -0.000190,    0.000000,    0.000216
+   46    -0.000000,   -0.000399,   -0.000258,   -0.000000,    0.000239
+   47    -0.000000,   -0.000081,   -0.000049,   -0.000000,    0.000039
+   48    -0.000000,   -0.000000,    0.000000,    0.000022,    0.000000
+   49     0.000000,    0.000030,    0.000029,   -0.000000,   -0.000033
+   50    -0.000000,   -0.000037,   -0.000002,    0.000000,    0.000012
+   51    -0.000000,    0.000000,    0.000000,    0.000046,    0.000000
+   52     0.000000,    0.000034,    0.000046,    0.000000,   -0.000041
+   53    -0.000000,   -0.000049,    0.000010,   -0.000000,    0.000002
+   54     0.000000,    0.000000,   -0.000000,   -0.000009,   -0.000000
+   55     0.000000,    0.000016,    0.000005,   -0.000000,   -0.000008
+   56     0.000000,   -0.000006,    0.000006,    0.000000,   -0.000004
+   57    -0.000000,    0.000000,    0.000000,    0.000007,    0.000000
+   58     0.000000,    0.000007,    0.000010,    0.000000,   -0.000009
+                30,          31,          32,          33,          34
+    0     0.000000,   -0.011865,   -0.005959,   -0.000984,   -0.000000
+    1     0.000000,   -0.028194,   -0.014452,   -0.001515,   -0.000000
+    2    -0.000000,    0.045541,    0.024566,    0.000350,    0.000000
+    3    -0.000000,    0.041160,    0.013409,   -0.002221,    0.000000
+    4    -0.000000,   -0.005379,   -0.019892,   -0.005180,    0.000000
+    5    -0.002776,    0.000000,   -0.000000,    0.000000,    0.010830
+    6    -0.000000,   -0.119072,   -0.147164,   -0.029795,   -0.000000
+    7     0.000000,   -0.089460,   -0.117336,   -0.021627,   -0.000000
+    8    -0.002169,    0.000000,   -0.000000,    0.000000,    0.008464
+    9    -0.000000,   -0.081041,   -0.100161,   -0.020279,   -0.000000
+   10     0.000000,   -0.064250,   -0.084938,   -0.015738,   -0.000000
+   11    -0.001211,   -0.000000,   -0.000000,    0.000000,    0.004726
+   12    -0.000000,   -0.029138,   -0.036013,   -0.007291,    0.000000
+   13     0.000000,   -0.027510,   -0.038025,   -0.007235,   -0.000000
+   14    -0.000000,    0.000000,    0.000000,    0.000000,    0.000000
+   15     0.000000,    0.002683,    0.003315,    0.000671,   -0.000000
+   16    -0.000000,    0.000951,    0.001234,    0.000226,    0.000000
+   17     0.000024,    0.000000,    0.000000,    0.000000,   -0.000092
+   18     0.000000,   -0.000934,   -0.000942,   -0.000140,    0.000000
+   19     0.000000,    0.000000,   -0.000000,   -0.000000,   -0.000000
+   20     0.000000,    0.001956,    0.002418,    0.000490,   -0.000000
+   21    -0.000000,    0.002216,    0.002855,    0.000521,    0.000000
+   22     0.000062,   -0.000000,   -0.000000,   -0.000000,   -0.000241
+   23     0.000000,   -0.000378,   -0.000146,    0.000013,   -0.000000
+   24     0.000000,    0.000342,    0.000422,    0.000085,   -0.000000
+   25     0.000000,   -0.000000,   -0.000000,   -0.000000,   -0.000000
+   26     0.000000,    0.000323,    0.000399,    0.000081,   -0.000000
+   27    -0.000000,   -0.000190,   -0.000258,   -0.000049,    0.000000
+   28    -0.000006,    0.000000,   -0.000000,    0.000000,    0.000022
+   29    -0.000000,    0.000216,    0.000239,    0.000039,    0.000000
+   30     0.000014,    0.000000,    0.000000,   -0.000000,   -0.000054
+   31     0.000000,    0.061435,    0.071921,    0.013339,    0.000000
+   32     0.000000,    0.071921,    0.087002,    0.016531,    0.000000
+   33    -0.000000,    0.013339,    0.016531,    0.003210,    0.000000
+   34    -0.000054,    0.000000,    0.000000,    0.000000,    0.000212
+   35    -0.000000,    0.007279,    0.008378,    0.001510,    0.000000
+   36     0.000000,    0.005563,    0.006227,    0.001149,    0.000000
+   37    -0.000113,   -0.000000,   -0.000000,    0.000000,    0.000443
+   38     0.000000,    0.008568,    0.010363,    0.001923,    0.000000
+   39     0.000000,    0.005659,    0.006366,    0.001216,   -0.000000
+   40    -0.000023,   -0.000000,   -0.000000,    0.000000,    0.000090
+   41     0.000000,    0.002740,    0.003130,    0.000579,    0.000000
+   42     0.000000,    0.000144,    0.000096,    0.000026,    0.000000
+   43    -0.000017,    0.000000,    0.000000,    0.000000,    0.000065
+   44     0.000000,   -0.001907,   -0.002242,   -0.000408,   -0.000000
+   45    -0.000000,   -0.008529,   -0.014549,   -0.004168,    0.000000
+   46    -0.000000,   -0.014549,   -0.019869,   -0.005106,   -0.000000
+   47    -0.000000,   -0.004168,   -0.005106,   -0.001170,   -0.000000
+   48    -0.000054,   -0.000000,   -0.000000,    0.000000,    0.000212
+   49     0.000000,   -0.000755,   -0.000315,    0.000122,   -0.000000
+   50    -0.000000,   -0.002495,   -0.003732,   -0.000867,   -0.000000
+   51    -0.000113,   -0.000000,   -0.000000,    0.000000,    0.000443
+   52    -0.000000,   -0.001157,   -0.001204,   -0.000069,    0.000000
+   53     0.000000,   -0.005008,   -0.006817,   -0.001453,   -0.000000
+   54     0.000023,    0.000000,    0.000000,   -0.000000,   -0.000090
+   55     0.000000,    0.000753,    0.001186,    0.000295,    0.000000
+   56     0.000000,   -0.001056,   -0.001387,   -0.000274,   -0.000000
+   57    -0.000017,    0.000000,   -0.000000,    0.000000,    0.000065
+   58     0.000000,   -0.000395,   -0.000374,   -0.000029,   -0.000000
+                35,          36,          37,          38,          39
+    0    -0.002076,   -0.002050,    0.000000,   -0.000502,   -0.001423
+    1    -0.004708,   -0.004647,    0.000000,   -0.001476,   -0.003628
+    2     0.006993,    0.006827,   -0.000000,    0.003238,    0.006429
+    3     0.006381,    0.007679,   -0.000000,    0.001075,    0.007842
+    4    -0.000766,    0.002064,    0.000000,   -0.003903,    0.003249
+    5     0.000000,    0.000000,    0.022631,   -0.000000,   -0.000000
+    6    -0.011104,   -0.013714,    0.000000,   -0.012612,   -0.018153
+    7    -0.013507,   -0.001748,    0.000000,   -0.020662,    0.003685
+    8     0.000000,    0.000000,    0.017685,   -0.000000,   -0.000000
+    9    -0.007557,   -0.009334,    0.000000,   -0.008584,   -0.012355
+   10    -0.009699,   -0.001144,    0.000000,   -0.014977,    0.002805
+   11     0.000000,    0.000000,    0.009876,   -0.000000,   -0.000000
+   12    -0.002717,   -0.003356,    0.000000,   -0.003086,   -0.004442
+   13    -0.004146,   -0.000209,    0.000000,   -0.006757,    0.001590
+   14     0.000000,    0.000000,    0.000000,    0.000000,    0.000000
+   15     0.000250,    0.000309,   -0.000000,    0.000284,    0.000409
+   16     0.000144,    0.000021,   -0.000000,    0.000217,   -0.000036
+   17     0.000000,    0.000000,   -0.000193,    0.000000,    0.000000
+   18    -0.000142,   -0.000066,    0.000000,   -0.000157,   -0.000028
+   19     0.000000,   -0.000000,   -0.000000,    0.000000,   -0.000000
+   20     0.000182,    0.000225,   -0.000000,    0.000207,    0.000298
+   21     0.000335,    0.000052,    0.000000,    0.000501,   -0.000079
+   22    -0.000000,   -0.000000,   -0.000504,   -0.000000,    0.000000
+   23    -0.000059,   -0.000067,   -0.000000,   -0.000015,   -0.000066
+   24     0.000032,    0.000039,   -0.000000,    0.000036,    0.000052
+   25    -0.000000,    0.000000,   -0.000000,   -0.000000,    0.000000
+   26     0.000030,    0.000037,   -0.000000,    0.000034,    0.000049
+   27    -0.000029,   -0.000002,    0.000000,   -0.000046,    0.000010
+   28     0.000000,    0.000000,    0.000046,   -0.000000,    0.000000
+   29     0.000033,    0.000012,    0.000000,    0.000041,    0.000002
+   30    -0.000000,    0.000000,   -0.000113,    0.000000,    0.000000
+   31     0.007279,    0.005563,   -0.000000,    0.008568,    0.005659
+   32     0.008378,    0.006227,   -0.000000,    0.010363,    0.006366
+   33     0.001510,    0.001149,    0.000000,    0.001923,    0.001216
+   34     0.000000,    0.000000,    0.000443,    0.000000,   -0.000000
+   35     0.000914,    0.000610,   -0.000000,    0.001082,    0.000549
+   36     0.000610,    0.000624,   -0.000000,    0.000622,    0.000731
+   37    -0.000000,   -0.000000,    0.000925,   -0.000000,   -0.000000
+   38     0.001082,    0.000622,   -0.000000,    0.001392,    0.000505
+   39     0.000549,    0.000731,   -0.000000,    0.000505,    0.000954
+   40     0.000000,   -0.000000,    0.000188,   -0.000000,   -0.000000
+   41     0.000315,    0.000277,   -0.000000,    0.000345,    0.000303
+   42    -0.000013,    0.000068,   -0.000000,   -0.000052,    0.000121
+   43     0.000000,   -0.000000,    0.000137,    0.000000,   -0.000000
+   44    -0.000245,   -0.000144,   -0.000000,   -0.000304,   -0.000115
+   45     0.000755,   -0.002495,    0.000000,    0.001157,   -0.005008
+   46     0.000315,   -0.003732,   -0.000000,    0.001204,   -0.006817
+   47    -0.000122,   -0.000867,   -0.000000,    0.000069,   -0.001453
+   48     0.000000,   -0.000000,    0.000443,   -0.000000,   -0.000000
+   49    -0.000306,    0.000141,    0.000000,   -0.000391,    0.000446
+   50    -0.000141,   -0.000305,    0.000000,   -0.000231,   -0.000498
+   51     0.000000,    0.000000,    0.000925,   -0.000000,   -0.000000
+   52    -0.000391,    0.000231,    0.000000,   -0.000607,    0.000625
+   53    -0.000446,   -0.000498,   -0.000000,   -0.000625,   -0.000673
+   54     0.000000,   -0.000000,   -0.000188,    0.000000,    0.000000
+   55     0.000011,    0.000125,    0.000000,    0.000025,    0.000230
+   56    -0.000125,   -0.000070,   -0.000000,   -0.000179,   -0.000062
+   57     0.000000,    0.000000,    0.000137,   -0.000000,    0.000000
+   58    -0.000104,    0.000030,    0.000000,   -0.000144,    0.000116
+                40,          41,          42,          43,          44
+    0     0.000000,   -0.001329,   -0.000264,    0.000000,    0.000682
+    1     0.000000,   -0.002613,   -0.000570,    0.000000,    0.001324
+    2     0.000000,    0.002727,    0.000735,    0.000000,   -0.001349
+    3     0.000000,    0.002904,    0.001209,    0.000000,   -0.001040
+    4     0.000000,    0.000389,    0.000955,   -0.000000,    0.000584
+    5     0.004587,    0.000000,    0.000000,    0.003347,   -0.000000
+    6     0.000000,   -0.005944,   -0.002042,    0.000000,    0.002573
+    7    -0.000000,   -0.002493,    0.002789,   -0.000000,    0.004391
+    8     0.003585,    0.000000,    0.000000,    0.002615,   -0.000000
+    9     0.000000,   -0.004045,   -0.001390,    0.000000,    0.001751
+   10    -0.000000,   -0.001765,    0.002044,   -0.000000,    0.003171
+   11     0.002002,    0.000000,    0.000000,    0.001460,   -0.000000
+   12     0.000000,   -0.001455,   -0.000500,    0.000000,    0.000630
+   13    -0.000000,   -0.000684,    0.000977,   -0.000000,    0.001398
+   14     0.000000,    0.000000,    0.000000,    0.000000,   -0.000000
+   15    -0.000000,    0.000134,    0.000046,   -0.000000,   -0.000058
+   16    -0.000000,    0.000027,   -0.000029,    0.000000,   -0.000046
+   17    -0.000039,    0.000000,   -0.000000,   -0.000028,    0.000000
+   18     0.000000,   -0.000037,    0.000012,   -0.000000,    0.000039
+   19    -0.000000,    0.000000,   -0.000000,   -0.000000,   -0.000000
+   20    -0.000000,    0.000098,    0.000034,   -0.000000,   -0.000042
+   21     0.000000,    0.000064,   -0.000066,    0.000000,   -0.000108
+   22    -0.000102,   -0.000000,    0.000000,   -0.000075,    0.000000
+   23    -0.000000,   -0.000026,   -0.000010,   -0.000000,    0.000010
+   24    -0.000000,    0.000017,    0.000006,   -0.000000,   -0.000007
+   25    -0.000000,   -0.000000,    0.000000,   -0.000000,    0.000000
+   26    -0.000000,    0.000016,    0.000006,   -0.000000,   -0.000007
+   27     0.000000,   -0.000005,    0.000006,    0.000000,    0.000010
+   28     0.000009,    0.000000,    0.000000,    0.000007,   -0.000000
+   29     0.000000,    0.000008,   -0.000004,    0.000000,   -0.000009
+   30    -0.000023,    0.000000,    0.000000,   -0.000017,    0.000000
+   31    -0.000000,    0.002740,    0.000144,    0.000000,   -0.001907
+   32    -0.000000,    0.003130,    0.000096,    0.000000,   -0.002242
+   33     0.000000,    0.000579,    0.000026,    0.000000,   -0.000408
+   34     0.000090,    0.000000,    0.000000,    0.000065,   -0.000000
+   35     0.000000,    0.000315,   -0.000013,    0.000000,   -0.000245
+   36    -0.000000,    0.000277,    0.000068,   -0.000000,   -0.000144
+   37     0.000188,   -0.000000,   -0.000000,    0.000137,   -0.000000
+   38    -0.000000,    0.000345,   -0.000052,    0.000000,   -0.000304
+   39    -0.000000,    0.000303,    0.000121,   -0.000000,   -0.000115
+   40     0.000038,   -0.000000,   -0.000000,    0.000028,   -0.000000
+   41    -0.000000,    0.000130,    0.000019,    0.000000,   -0.000079
+   42    -0.000000,    0.000019,    0.000027,   -0.000000,    0.000011
+   43     0.000028,    0.000000,   -0.000000,    0.000020,   -0.000000
+   44    -0.000000,   -0.000079,    0.000011,   -0.000000,    0.000068
+   45     0.000000,   -0.000753,   -0.001056,    0.000000,   -0.000395
+   46    -0.000000,   -0.001186,   -0.001387,    0.000000,   -0.000374
+   47    -0.000000,   -0.000295,   -0.000274,    0.000000,   -0.000029
+   48     0.000090,   -0.000000,    0.000000,    0.000065,   -0.000000
+   49    -0.000000,    0.000011,    0.000125,   -0.000000,    0.000104
+   50     0.000000,   -0.000125,   -0.000070,    0.000000,    0.000030
+   51     0.000188,    0.000000,    0.000000,    0.000137,   -0.000000
+   52     0.000000,    0.000025,    0.000179,    0.000000,    0.000144
+   53    -0.000000,   -0.000230,   -0.000062,   -0.000000,    0.000116
+   54    -0.000038,    0.000000,   -0.000000,   -0.000028,    0.000000
+   55     0.000000,    0.000044,    0.000041,   -0.000000,    0.000003
+   56    -0.000000,   -0.000041,    0.000007,   -0.000000,    0.000036
+   57     0.000028,    0.000000,    0.000000,    0.000020,   -0.000000
+   58    -0.000000,   -0.000003,    0.000036,   -0.000000,    0.000036
+                45,          46,          47,          48,          49
+    0    -0.011865,   -0.005959,   -0.000984,   -0.000000,    0.002076
+    1    -0.028194,   -0.014452,   -0.001515,   -0.000000,    0.004708
+    2     0.045541,    0.024566,    0.000350,    0.000000,   -0.006993
+    3     0.041160,    0.013409,   -0.002221,    0.000000,   -0.006381
+    4    -0.005379,   -0.019892,   -0.005180,    0.000000,    0.000766
+    5     0.000000,   -0.000000,   -0.000000,    0.010830,    0.000000
+    6     0.119072,    0.147164,    0.029795,    0.000000,   -0.011104
+    7    -0.089460,   -0.117336,   -0.021627,    0.000000,    0.013507
+    8     0.000000,   -0.000000,   -0.000000,    0.008464,    0.000000
+    9     0.081041,    0.100161,    0.020279,    0.000000,   -0.007557
+   10    -0.064250,   -0.084938,   -0.015738,    0.000000,    0.009699
+   11     0.000000,   -0.000000,   -0.000000,    0.004726,    0.000000
+   12     0.029138,    0.036013,    0.007291,    0.000000,   -0.002717
+   13    -0.027510,   -0.038025,   -0.007235,    0.000000,    0.004146
+   14    -0.000000,   -0.000000,   -0.000000,    0.000000,    0.000000
+   15    -0.002683,   -0.003315,   -0.000671,   -0.000000,    0.000250
+   16     0.000951,    0.001234,    0.000226,   -0.000000,   -0.000144
+   17    -0.000000,    0.000000,    0.000000,   -0.000092,   -0.000000
+   18    -0.000934,   -0.000942,   -0.000140,    0.000000,    0.000142
+   19     0.000000,    0.000000,    0.000000,   -0.000000,   -0.000000
+   20    -0.001956,   -0.002418,   -0.000490,   -0.000000,    0.000182
+   21     0.002216,    0.002855,    0.000521,    0.000000,   -0.000335
+   22    -0.000000,    0.000000,    0.000000,   -0.000241,    0.000000
+   23    -0.000378,   -0.000146,    0.000013,   -0.000000,    0.000059
+   24    -0.000342,   -0.000422,   -0.000085,   -0.000000,    0.000032
+   25    -0.000000,   -0.000000,   -0.000000,   -0.000000,    0.000000
+   26    -0.000323,   -0.000399,   -0.000081,   -0.000000,    0.000030
+   27    -0.000190,   -0.000258,   -0.000049,    0.000000,    0.000029
+   28     0.000000,   -0.000000,   -0.000000,    0.000022,   -0.000000
+   29     0.000216,    0.000239,    0.000039,    0.000000,   -0.000033
+   30    -0.000000,   -0.000000,   -0.000000,   -0.000054,    0.000000
+   31    -0.008529,   -0.014549,   -0.004168,   -0.000000,   -0.000755
+   32    -0.014549,   -0.019869,   -0.005106,   -0.000000,   -0.000315
+   33    -0.004168,   -0.005106,   -0.001170,    0.000000,    0.000122
+   34     0.000000,   -0.000000,   -0.000000,    0.000212,   -0.000000
+   35     0.000755,    0.000315,   -0.000122,    0.000000,   -0.000306
+   36    -0.002495,   -0.003732,   -0.000867,   -0.000000,    0.000141
+   37     0.000000,   -0.000000,   -0.000000,    0.000443,    0.000000
+   38     0.001157,    0.001204,    0.000069,   -0.000000,   -0.000391
+   39    -0.005008,   -0.006817,   -0.001453,   -0.000000,    0.000446
+   40     0.000000,   -0.000000,   -0.000000,    0.000090,   -0.000000
+   41    -0.000753,   -0.001186,   -0.000295,   -0.000000,    0.000011
+   42    -0.001056,   -0.001387,   -0.000274,    0.000000,    0.000125
+   43     0.000000,    0.000000,    0.000000,    0.000065,   -0.000000
+   44    -0.000395,   -0.000374,   -0.000029,   -0.000000,    0.000104
+   45     0.061435,    0.071921,    0.013339,    0.000000,   -0.007279
+   46     0.071921,    0.087002,    0.016531,   -0.000000,   -0.008378
+   47     0.013339,    0.016531,    0.003210,   -0.000000,   -0.001510
+   48     0.000000,   -0.000000,   -0.000000,    0.000212,    0.000000
+   49    -0.007279,   -0.008378,   -0.001510,    0.000000,    0.000914
+   50     0.005563,    0.006227,    0.001149,   -0.000000,   -0.000610
+   51    -0.000000,   -0.000000,   -0.000000,    0.000443,    0.000000
+   52    -0.008568,   -0.010363,   -0.001923,    0.000000,    0.001082
+   53     0.005659,    0.006366,    0.001216,   -0.000000,   -0.000549
+   54     0.000000,    0.000000,    0.000000,   -0.000090,   -0.000000
+   55    -0.002740,   -0.003130,   -0.000579,    0.000000,    0.000315
+   56     0.000144,    0.000096,    0.000026,   -0.000000,    0.000013
+   57    -0.000000,   -0.000000,   -0.000000,    0.000065,    0.000000
+   58    -0.001907,   -0.002242,   -0.000408,    0.000000,    0.000245
+                50,          51,          52,          53,          54
+    0    -0.002050,    0.000000,    0.000502,   -0.001423,   -0.000000
+    1    -0.004647,    0.000000,    0.001476,   -0.003628,   -0.000000
+    2     0.006827,   -0.000000,   -0.003238,    0.006429,    0.000000
+    3     0.007679,   -0.000000,   -0.001075,    0.007842,   -0.000000
+    4     0.002064,    0.000000,    0.003903,    0.003249,   -0.000000
+    5    -0.000000,    0.022631,    0.000000,   -0.000000,   -0.004587
+    6     0.013714,   -0.000000,   -0.012612,    0.018153,    0.000000
+    7    -0.001748,    0.000000,    0.020662,    0.003685,   -0.000000
+    8    -0.000000,    0.017685,    0.000000,   -0.000000,   -0.003585
+    9     0.009334,   -0.000000,   -0.008584,    0.012355,    0.000000
+   10    -0.001144,    0.000000,    0.014977,    0.002805,   -0.000000
+   11    -0.000000,    0.009876,    0.000000,   -0.000000,   -0.002002
+   12     0.003356,   -0.000000,   -0.003086,    0.004442,    0.000000
+   13    -0.000209,    0.000000,    0.006757,    0.001590,   -0.000000
+   14    -0.000000,    0.000000,    0.000000,   -0.000000,   -0.000000
+   15    -0.000309,    0.000000,    0.000284,   -0.000409,   -0.000000
+   16     0.000021,   -0.000000,   -0.000217,   -0.000036,    0.000000
+   17    -0.000000,   -0.000193,   -0.000000,    0.000000,    0.000039
+   18    -0.000066,    0.000000,    0.000157,   -0.000028,   -0.000000
+   19     0.000000,   -0.000000,   -0.000000,    0.000000,    0.000000
+   20    -0.000225,   -0.000000,    0.000207,   -0.000298,    0.000000
+   21     0.000052,   -0.000000,   -0.000501,   -0.000079,    0.000000
+   22     0.000000,   -0.000504,   -0.000000,    0.000000,    0.000102
+   23    -0.000067,   -0.000000,    0.000015,   -0.000066,    0.000000
+   24    -0.000039,   -0.000000,    0.000036,   -0.000052,    0.000000
+   25    -0.000000,   -0.000000,    0.000000,   -0.000000,    0.000000
+   26    -0.000037,    0.000000,    0.000034,   -0.000049,    0.000000
+   27    -0.000002,    0.000000,    0.000046,    0.000010,   -0.000000
+   28     0.000000,    0.000046,    0.000000,   -0.000000,   -0.000009
+   29     0.000012,    0.000000,   -0.000041,    0.000002,   -0.000000
+   30    -0.000000,   -0.000113,   -0.000000,    0.000000,    0.000023
+   31    -0.002495,   -0.000000,   -0.001157,   -0.005008,    0.000000
+   32    -0.003732,   -0.000000,   -0.001204,   -0.006817,    0.000000
+   33    -0.000867,    0.000000,   -0.000069,   -0.001453,   -0.000000
+   34    -0.000000,    0.000443,    0.000000,   -0.000000,   -0.000090
+   35    -0.000141,    0.000000,   -0.000391,   -0.000446,    0.000000
+   36    -0.000305,    0.000000,    0.000231,   -0.000498,   -0.000000
+   37     0.000000,    0.000925,    0.000000,   -0.000000,   -0.000188
+   38    -0.000231,   -0.000000,   -0.000607,   -0.000625,    0.000000
+   39    -0.000498,   -0.000000,    0.000625,   -0.000673,    0.000000
+   40     0.000000,    0.000188,    0.000000,   -0.000000,   -0.000038
+   41    -0.000125,    0.000000,    0.000025,   -0.000230,    0.000000
+   42    -0.000070,    0.000000,    0.000179,   -0.000062,   -0.000000
+   43     0.000000,    0.000137,    0.000000,   -0.000000,   -0.000028
+   44     0.000030,   -0.000000,    0.000144,    0.000116,    0.000000
+   45     0.005563,   -0.000000,   -0.008568,    0.005659,    0.000000
+   46     0.006227,   -0.000000,   -0.010363,    0.006366,    0.000000
+   47     0.001149,   -0.000000,   -0.001923,    0.001216,    0.000000
+   48    -0.000000,    0.000443,    0.000000,   -0.000000,   -0.000090
+   49    -0.000610,    0.000000,    0.001082,   -0.000549,   -0.000000
+   50     0.000624,   -0.000000,   -0.000622,    0.000731,    0.000000
+   51    -0.000000,    0.000925,    0.000000,   -0.000000,   -0.000188
+   52    -0.000622,    0.000000,    0.001392,   -0.000505,   -0.000000
+   53     0.000731,   -0.000000,   -0.000505,    0.000954,    0.000000
+   54     0.000000,   -0.000188,   -0.000000,    0.000000,    0.000038
+   55    -0.000277,    0.000000,    0.000345,   -0.000303,   -0.000000
+   56     0.000068,   -0.000000,    0.000052,    0.000121,   -0.000000
+   57    -0.000000,    0.000137,    0.000000,   -0.000000,   -0.000028
+   58    -0.000144,    0.000000,    0.000304,   -0.000115,   -0.000000
+                55,          56,          57,          58
+    0     0.001329,   -0.000264,    0.000000,    0.000682
+    1     0.002613,   -0.000570,    0.000000,    0.001324
+    2    -0.002727,    0.000735,   -0.000000,   -0.001349
+    3    -0.002904,    0.001209,    0.000000,   -0.001040
+    4    -0.000389,    0.000955,    0.000000,    0.000584
+    5     0.000000,   -0.000000,    0.003347,    0.000000
+    6    -0.005944,    0.002042,   -0.000000,   -0.002573
+    7     0.002493,    0.002789,    0.000000,    0.004391
+    8     0.000000,   -0.000000,    0.002615,    0.000000
+    9    -0.004045,    0.001390,   -0.000000,   -0.001751
+   10     0.001765,    0.002044,    0.000000,    0.003171
+   11     0.000000,   -0.000000,    0.001460,    0.000000
+   12    -0.001455,    0.000500,   -0.000000,   -0.000630
+   13     0.000684,    0.000977,    0.000000,    0.001398
+   14     0.000000,   -0.000000,    0.000000,    0.000000
+   15     0.000134,   -0.000046,    0.000000,    0.000058
+   16    -0.000027,   -0.000029,   -0.000000,   -0.000046
+   17    -0.000000,   -0.000000,   -0.000028,   -0.000000
+   18     0.000037,    0.000012,    0.000000,    0.000039
+   19    -0.000000,    0.000000,   -0.000000,   -0.000000
+   20     0.000098,   -0.000034,   -0.000000,    0.000042
+   21    -0.000064,   -0.000066,   -0.000000,   -0.000108
+   22    -0.000000,    0.000000,   -0.000075,    0.000000
+   23     0.000026,   -0.000010,   -0.000000,    0.000010
+   24     0.000017,   -0.000006,   -0.000000,    0.000007
+   25     0.000000,    0.000000,   -0.000000,    0.000000
+   26     0.000016,   -0.000006,    0.000000,    0.000007
+   27     0.000005,    0.000006,    0.000000,    0.000010
+   28    -0.000000,    0.000000,    0.000007,    0.000000
+   29    -0.000008,   -0.000004,    0.000000,   -0.000009
+   30     0.000000,    0.000000,   -0.000017,    0.000000
+   31     0.000753,   -0.001056,    0.000000,   -0.000395
+   32     0.001186,   -0.001387,   -0.000000,   -0.000374
+   33     0.000295,   -0.000274,    0.000000,   -0.000029
+   34     0.000000,   -0.000000,    0.000065,   -0.000000
+   35     0.000011,   -0.000125,    0.000000,   -0.000104
+   36     0.000125,   -0.000070,    0.000000,    0.000030
+   37     0.000000,   -0.000000,    0.000137,    0.000000
+   38     0.000025,   -0.000179,   -0.000000,   -0.000144
+   39     0.000230,   -0.000062,    0.000000,    0.000116
+   40     0.000000,   -0.000000,    0.000028,   -0.000000
+   41     0.000044,   -0.000041,    0.000000,   -0.000003
+   42     0.000041,    0.000007,    0.000000,    0.000036
+   43    -0.000000,   -0.000000,    0.000020,   -0.000000
+   44     0.000003,    0.000036,   -0.000000,    0.000036
+   45    -0.002740,    0.000144,   -0.000000,   -0.001907
+   46    -0.003130,    0.000096,   -0.000000,   -0.002242
+   47    -0.000579,    0.000026,   -0.000000,   -0.000408
+   48     0.000000,   -0.000000,    0.000065,    0.000000
+   49     0.000315,    0.000013,    0.000000,    0.000245
+   50    -0.000277,    0.000068,   -0.000000,   -0.000144
+   51     0.000000,   -0.000000,    0.000137,    0.000000
+   52     0.000345,    0.000052,    0.000000,    0.000304
+   53    -0.000303,    0.000121,   -0.000000,   -0.000115
+   54    -0.000000,   -0.000000,   -0.000028,   -0.000000
+   55     0.000130,   -0.000019,    0.000000,    0.000079
+   56    -0.000019,    0.000027,   -0.000000,    0.000011
+   57     0.000000,   -0.000000,    0.000020,    0.000000
+   58     0.000079,    0.000011,    0.000000,    0.000068
+Detailed time report:
+DFT Grids |:    0.298 s for Initialization of the tabulated Grids and AOs
+ISDF      |:    0.000 s for ISDF initialization
+CInt      |:    0.043 s for Two, Three, and Four-center integrals
+Overall   |:    0.506 s for SCF Preparation
+InitGuess |:    0.165 s for Prepare initial guess
+total electron number:       9.99999954
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.87103031, Vxc:      -5.04928087
+The total energy:       -76.3155112580 Ha by the initial guess
+total electron number:       9.99999911
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.05877409, Vxc:      -4.51917483
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+Energy:     -76.0532982516 Ha after    1 iterations (in       0.03 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+total electron number:       9.99999965
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -8.31622348, Vxc:      -5.34008809
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+SCF Change: DM 1.45787e-2; eev  2.41413e0 Ha; etot 3.69253e-1 Ha
+Energy:     -75.6840451331 Ha after    2 iterations (in       0.02 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+total electron number:       9.99999939
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.56148535, Vxc:      -4.84699370
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+SCF Change: DM 6.13446e-4; eev 1.22527e-1 Ha; etot -7.82324e-1 Ha
+Energy:     -76.4663687016 Ha after    3 iterations (in       0.02 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+total electron number:       9.99999939
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.55983844, Vxc:      -4.84580471
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+SCF Change: DM 6.09219e-5; eev 1.02274e-2 Ha; etot -3.26662e-4 Ha
+Energy:     -76.4666953632 Ha after    4 iterations (in       0.02 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+total electron number:       9.99999939
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.55747102, Vxc:      -4.84426117
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+SCF Change: DM 1.13907e-5; eev 9.09955e-4 Ha; etot -9.46531e-6 Ha
+Energy:     -76.4667048285 Ha after    5 iterations (in       0.02 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+total electron number:       9.99999939
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.55729745, Vxc:      -4.84414762
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+SCF Change: DM 1.24438e-6; eev 1.42800e-4 Ha; etot -3.44718e-7 Ha
+Energy:     -76.4667051732 Ha after    6 iterations (in       0.02 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+total electron number:       9.99999939
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.55725276, Vxc:      -4.84411837
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+SCF Change: DM 1.69470e-7; eev 2.87588e-5 Ha; etot -5.01686e-9 Ha
+Energy:     -76.4667051782 Ha after    7 iterations (in       0.02 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+total electron number:       9.99999939
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.55724638, Vxc:      -4.84411421
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+SCF Change: DM 1.13938e-8; eev 2.05104e-6 Ha; etot -5.81935e-11 Ha
+Energy:     -76.4667051783 Ha after    8 iterations (in       0.02 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+total electron number:       9.99999939
+The evaluation of Vj, Vk and Vxc matrices cost       0.00,       0.00 and       0.02 seconds, respectively
+Exc:      -7.55724674, Vxc:      -4.84411445
+Hamiltonian: generation by       0.02s and DIIS extrapolation by       0.00s
+SCF Change: DM 9.36250e-10; eev 6.95293e-8 Ha; etot -3.97904e-13 Ha
+Energy:     -76.4667051783 Ha after    9 iterations (in       0.02 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.02s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+SCF is converged after    9 iterations.
+   State    Occupation        Eigenvalue
+       0       2.00000        -19.126903
+       1       2.00000         -1.014279
+       2       2.00000         -0.534776
+       3       2.00000         -0.391856
+       4       2.00000         -0.316957
+       5       0.00000          0.013865
+       6       0.00000          0.090182
+       7       0.00000          0.357000
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+generate RI3MO only for occ_range:0..5, vir_range:5..59
+Finish the RI3MO generation
+Exc_scf: (-7.557246762274982,0.2),Exc_pos: (-2.1335673342801336,0.7731)
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.37694819,      -0.28616327,      -0.09078493
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.124881650096 Ha
+E[XYGJOS]=:     -76.28695724 Ha, Ex[HF]:      -8.93221051 Ha, Ec[PT2  ]:      -0.37694819 Ha
+Detailed time report:
+ao2mo     |:    0.003 s for for the generation of RI3MO
+xc_energy |:    0.052 s for for x_hf, xc_scf, xc_xdh
+c_r5dft   |:    0.002 s for for advanced correlations
+Mulliken population:
+ 0-O-S-0              0.79185
+ 0-O-S-0              1.17854
+ 0-O-S-0              0.60510
+ 0-O-S-0              0.84415
+ 0-O-S-0              0.33906
+ 0-O-P-0              0.75839
+ 0-O-P-1              0.54162
+ 0-O-P-2              0.63135
+ 0-O-P-0              0.69109
+ 0-O-P-1              0.48302
+ 0-O-P-2              0.57352
+ 0-O-P-0              0.46547
+ 0-O-P-1              0.16362
+ 0-O-P-2              0.31526
+ 0-O-D-0              0.00000
+ 0-O-D-1              0.00185
+ 0-O-D-2              0.00030
+ 0-O-D-3              0.00024
+ 0-O-D-4              0.00032
+ 0-O-D-0             -0.00000
+ 0-O-D-1              0.00530
+ 0-O-D-2              0.00177
+ 0-O-D-3              0.00162
+ 0-O-D-4              0.00092
+ 0-O-F-0              0.00015
+ 0-O-F-1              0.00000
+ 0-O-F-2             -0.00006
+ 0-O-F-3             -0.00002
+ 0-O-F-4              0.00001
+ 0-O-F-5              0.00020
+ 0-O-F-6              0.00009
+ 1-H-S-0              0.26611
+ 1-H-S-0              0.38367
+ 1-H-S-0              0.04857
+ 1-H-P-0              0.00465
+ 1-H-P-1              0.01030
+ 1-H-P-2              0.00769
+ 1-H-P-0              0.03325
+ 1-H-P-1              0.01391
+ 1-H-P-2              0.02489
+ 1-H-D-0              0.00246
+ 1-H-D-1              0.00263
+ 1-H-D-2              0.00171
+ 1-H-D-3              0.00118
+ 1-H-D-4              0.00161
+ 2-H-S-0              0.26611
+ 2-H-S-0              0.38367
+ 2-H-S-0              0.04857
+ 2-H-P-0              0.00465
+ 2-H-P-1              0.01030
+ 2-H-P-2              0.00769
+ 2-H-P-0              0.03325
+ 2-H-P-1              0.01391
+ 2-H-P-2              0.02489
+ 2-H-D-0              0.00246
+ 2-H-D-1              0.00263
+ 2-H-D-2              0.00171
+ 2-H-D-3              0.00118
+ 2-H-D-4              0.00161
+Mulliken population analysis:
+  0-O  :  -0.394750
+  1-H  :   0.197375
+  2-H  :   0.197375
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -76.4667051783 Ha
+The (R)-xDH energy    :     -76.2869572445 Ha
+Detailed time report:
+Overall   |:    1.256 s for the whole job
+PT2       |:    0.057 s for the PT2 evaluation
+SCF       |:    0.744 s for the scf procedure

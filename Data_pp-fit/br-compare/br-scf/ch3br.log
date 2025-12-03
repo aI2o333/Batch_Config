@@ -1,0 +1,116 @@
+=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: xygjos
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/symei/def2-TZVPP
+The pruning method is nwchem
+The radial grid generation method is treutler
+ERI Type: ri_v
+Turn on the basis pair symmetry for RI 3D-tensors
+The spheric-GTO auxiliary basis set is taken from /home/symei/def2-SV(P)-JKFIT
+Spin polarization: Off
+Charge:   0; Spin:   1
+min_num_angular_points: 110
+max_num_angular_points: 590
+hardness: 3
+Grid generation level: 3
+Even tempered basis generation: false
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-8 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      250
+The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+Initial guess is prepared by (sad).
+It is a finite cluster calculation
+the scf functional for 'xygjos' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+the post-scf functional 'xygjos' is employed, which contains
+The density functional 'Slater exchange' belongs to the 'LDA' family and is defined in the reference(s):
+(0): P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+(1): F. Bloch.,  Z. Phys. 57, 545 (1929)
+The density functional 'Becke 88' belongs to the 'GGA' family and is defined in the reference(s):
+(0): A. D. Becke.,  Phys. Rev. A 38, 3098 (1988)
+The density functional 'Vosko, Wilk & Nusair (VWN5_RPA)' belongs to the 'LDA' family and is defined in the reference(s):
+(0): S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+The density functional 'Lee, Yang & Parr' belongs to the 'GGA' family and is defined in the reference(s):
+(0): C. Lee, W. Yang, and R. G. Parr.,  Phys. Rev. B 37, 785 (1988)
+(1): B. Miehlich, A. Savin, H. Stoll, and H. Preuss.,  Chem. Phys. Lett. 157, 200 (1989)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 45, natm: 5 for standard basis sets
+First valence state for the frozen-core algorithm:    10
+final nbas: 148,final natm: 10
+numbasis: 121, num_auxbas: 395
+Molecule_name: ch3br
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      88.57707971 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00057445 with the total number of basis functions:    121
+Grid size: 64878
+Generate SAD of C
+Generate SAD of H
+Generate SAD of Br
+Initial guess HF energy:   -2614.2169139414195342
+The total energy:     -2614.0054365621 Ha by the initial guess
+Energy:   -2613.9078222272 Ha after    1 iterations (in       0.10 seconds).
+SCF Change: DM 8.17940e-3; eev  1.57134e0 Ha; etot 3.49673e-1 Ha
+Energy:   -2613.5581489772 Ha after    2 iterations (in       0.11 seconds).
+SCF Change: DM 1.20068e-3; eev 2.64675e-1 Ha; etot -5.54206e-1 Ha
+Energy:   -2614.1123549816 Ha after    3 iterations (in       0.11 seconds).
+SCF Change: DM 4.51567e-4; eev 1.24671e-1 Ha; etot -2.59816e-3 Ha
+Energy:   -2614.1149531370 Ha after    4 iterations (in       0.10 seconds).
+SCF Change: DM 4.54479e-5; eev 1.78909e-2 Ha; etot -5.89619e-4 Ha
+Energy:   -2614.1155427564 Ha after    5 iterations (in       0.10 seconds).
+SCF Change: DM 9.97819e-6; eev 3.01252e-3 Ha; etot -8.53297e-6 Ha
+Energy:   -2614.1155512894 Ha after    6 iterations (in       0.10 seconds).
+SCF Change: DM 2.98478e-6; eev 6.21935e-4 Ha; etot -4.53225e-7 Ha
+Energy:   -2614.1155517426 Ha after    7 iterations (in       0.13 seconds).
+SCF Change: DM 2.98851e-7; eev 4.85268e-5 Ha; etot -1.87479e-8 Ha
+Energy:   -2614.1155517614 Ha after    8 iterations (in       0.14 seconds).
+SCF Change: DM 3.31359e-8; eev 7.59714e-6 Ha; etot -2.28738e-10 Ha
+Energy:   -2614.1155517616 Ha after    9 iterations (in       0.12 seconds).
+SCF Change: DM 8.69602e-9; eev 1.90382e-6 Ha; etot -2.09184e-11 Ha
+Energy:   -2614.1155517616 Ha after   10 iterations (in       0.10 seconds).
+SCF Change: DM 6.00548e-10; eev 1.36199e-7 Ha; etot -1.22782e-11 Ha
+Energy:   -2614.1155517616 Ha after   11 iterations (in       0.11 seconds).
+SCF Change: DM 7.49311e-11; eev 1.58812e-8 Ha; etot 5.45697e-12 Ha
+Energy:   -2614.1155517616 Ha after   12 iterations (in       0.10 seconds).
+SCF Change: DM 6.79375e-12; eev 8.34889e-10 Ha; etot 4.54747e-12 Ha
+Energy:   -2614.1155517616 Ha after   13 iterations (in       0.10 seconds).
+SCF is converged after   13 iterations.
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.63417304,      -0.46515113,      -0.16902192
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.202991951131 Ha
+E[XYGJOS]=:   -2612.57136169 Ha, Ex[HF]:     -95.79663867 Ha, Ec[PT2  ]:      -0.63417304 Ha
+Mulliken population analysis:
+  0-C  :  -0.318367
+  1-H  :   0.151259
+  2-H  :   0.151278
+  3-H  :   0.151278
+  4-Br :  -0.135448
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :   -2614.1155517616 Ha
+The (R)-xDH energy    :   -2612.5713616910 Ha
+Detailed time report:
+SCF       |:    3.340 s for the scf procedure
+PT2       |:    0.196 s for the PT2 evaluation
+Overall   |:    3.989 s for the whole job

@@ -1,0 +1,55 @@
+Sender: LSF System <lsfadmin@xc05n07>
+Subject: Job 413948: <o-all-10> in cluster <xdft1> Done
+
+Job <o-all-10> was submitted from host <xn01> by user <symei> in cluster <xdft1> at Fri Nov 14 00:30:52 2025
+Job was executed on host(s) <8*xc05n07>, in queue <small>, as user <symei> in cluster <xdft1> at Fri Nov 14 00:30:53 2025
+</share/home/symei> was used as the home directory.
+</share/home/symei/comp/pp-fit/optuna_rms/br-all-10/c4> was used as the working directory.
+Started at Fri Nov 14 00:30:53 2025
+Terminated at Fri Nov 14 00:34:25 2025
+Results reported at Fri Nov 14 00:34:25 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -q small      # 替换为实际队列名（如 normal、cpu、gpu等）
+#BSUB -J o-all-10         # 作业名称
+#BSUB -n 8              # 申请 8 个 CPU 核心
+#BSUB -R "span[ptile=18]" # 限制在单节点运行
+#BSUB -o %J.out         # 输出日志文件
+#BSUB -e %J.err         # 错误日志文件
+
+export ROOT_PATH=/share/home/symei/pseudo_fitting
+export FITTING_PATH=${ROOT_PATH}/DFT_Fit
+export IGOR_MODULES_PATH=${ROOT_PATH}/Modules
+
+nohup python $FITTING_PATH/DFT_Fit.py br-fitting.ctl
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1322.97 sec.
+    Max Memory :                                 6069 MB
+    Average Memory :                             2273.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   17592186044415 MB
+    Max Processes :                              7
+    Max Threads :                                30
+    Run time :                                   212 sec.
+    Turnaround time :                            213 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <413948.err> for stderr output of this job.
+

@@ -1,0 +1,95 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: xygjos
+Print level:                1
+The number of threads used for parallelism:      8
+The spheric-GTO basis set is taken from /home/symei/TZVPP-28-o-all
+The spheric-GTO auxiliary basis set is taken from /home/symei/def2-SV(P)-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+C       -0.00000000      0.66236900      0.00000000
+H        0.92096300      1.23177500      0.00000000
+H       -0.92092000      1.23182700      0.00000000
+C       -0.00000000     -0.66236900      0.00000000
+H       -0.92096300     -1.23177500      0.00000000
+H        0.92092000     -1.23182700      0.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-8 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      250
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+=========================================================
+the scf functional for 'xygjos' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+the post-scf functional 'xygjos' is employed, which contains
+The density functional 'Slater exchange' belongs to the 'LDA' family and is defined in the reference(s):
+(0): P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+(1): F. Bloch.,  Z. Phys. 57, 545 (1929)
+The density functional 'Becke 88' belongs to the 'GGA' family and is defined in the reference(s):
+(0): A. D. Becke.,  Phys. Rev. A 38, 3098 (1988)
+The density functional 'Vosko, Wilk & Nusair (VWN5_RPA)' belongs to the 'LDA' family and is defined in the reference(s):
+(0): S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+The density functional 'Lee, Yang & Parr' belongs to the 'GGA' family and is defined in the reference(s):
+(0): C. Lee, W. Yang, and R. G. Parr.,  Phys. Rev. B 37, 785 (1988)
+(1): B. Miehlich, A. Savin, H. Stoll, and H. Preuss.,  Chem. Phys. Lett. 157, 200 (1989)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 46, natm: 6 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 120,final natm: 12
+numbasis: 118, num_auxbas: 222
+Molecule_name: c=c
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      33.48817116 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is singular:
+  Using 0 out of a possible 118 specified basis functions
+  Lowest remaining eigenvalue:       0.00000000
+Grid size: 67900
+
+=======================
+Generating SAD for atom: C
+=======================
+SAD generation for C complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):                      NaN
+
+thread 'main' panicked at /opt/rest_workspace/rest_tensors/src/matrix/matrix_blas_lapack.rs:192:23:
+ERROR:: Matr_A[118,0,T] * Matr_B[118,0,N] -> Matr_C[118,0]
+stack backtrace:
+   0:     0x55f38209ac72 - <std::sys::backtrace::BacktraceLock::print::DisplayBacktrace as core::fmt::Display>::fmt::hdcfcb6d4c8489523
+   1:     0x55f381a39ef3 - core::fmt::write::h8a494366950f23bb
+   2:     0x55f38209a62f - std::io::Write::write_fmt::h6556609fca33d0b1
+   3:     0x55f38209aad3 - std::sys::backtrace::BacktraceLock::print::hb2a626a81e06b2dc
+   4:     0x55f38209a128 - std::panicking::rust_panic_with_hook::h33ac55f64bbd807d
+   5:     0x55f3820d1858 - std::panicking::begin_panic_handler::{{closure}}::h30e7cb89678a57fe
+   6:     0x55f3820d17b9 - std::sys::backtrace::__rust_end_short_backtrace::hed60f27456c16ced
+   7:     0x55f3820d24ec - __rustc[de2ca18b4c54d5b8]::rust_begin_unwind
+   8:     0x55f381a3891f - core::panicking::panic_fmt::h62f63d096dd276af
+   9:     0x55f381bae921 - rest_tensors::matrix::matrix_blas_lapack::_dgemm::hdbd1d6d03acf8c96
+  10:     0x55f381c7ecb1 - rest_tensors::matrix::matrix_blas_lapack::_hamiltonian_fast_solver::h52c1a692164f5835
+  11:     0x55f381c7dca5 - pyrest::scf_io::diagonalize_hamiltonian_outside_fast::h4b1305fea0b9c891
+  12:     0x55f381c7d7c2 - pyrest::scf_io::diagonalize_hamiltonian_outside::h9b074931518707f7
+  13:     0x55f381b7eaa2 - pyrest::scf_io::SCF::diagonalize_hamiltonian::hac74897d021fa991
+  14:     0x55f381b5eada - pyrest::scf_io::initialize_scf::he9d2d86401a4d5e0
+  15:     0x55f381f71924 - pyrest::main_driver::main_driver::he8cfa641e1de9947
+  16:     0x55f3819ddde3 - std::sys::backtrace::__rust_begin_short_backtrace::ha2e6e17d358ce91a
+  17:     0x55f3819de285 - main
+  18:     0x2ab9ccafed90 - <unknown>
+  19:     0x2ab9ccafee40 - __libc_start_main
+  20:     0x55f3819ddd15 - _start
+  21:                0x0 - <unknown>

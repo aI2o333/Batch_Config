@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 793, in <module>
+    main()
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 778, in main
+    run_optimization(MainFit)                               #  Run optimization based on MainFit
+  File "/share/home/symei/pseudo_fitting/DFT_Fit/DFT_Fit.py", line 583, in run_optimization
+    from my_io import get_OptunaInfo
+ImportError: cannot import name 'get_OptunaInfo'

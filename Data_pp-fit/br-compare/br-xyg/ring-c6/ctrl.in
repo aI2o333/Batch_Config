@@ -1,0 +1,45 @@
+[ctrl]
+     xc =                        "xygjos" 
+     frozen_core_postscf =       21
+     basis_path =                "/home/symei/def2-TZVPP-mixed" # For serial type, path in your container should be used
+     auxbas_path =               "/home/symei/def2-SV(P)-JKFIT"# refer to option "bind" in "REST_Environment"
+     even_tempered_basis =       false
+     etb_start_atom_number =     1
+     etb_beta =                  1.0
+     initial_guess =             "sad"
+     chkfile_type =              "hdf5"
+     fchk =                      false
+     pruning =                   "nwchem"
+     radial_grid_method =        "treutler"
+     scf_acc_rho =               1.0e-8
+     scf_acc_eev =               1.0e-8
+     max_scf_cycle =             250
+
+    num_threads =           4
+    charge = 0.0000  
+    spin   = 1       
+    spin_polarization = false
+
+[geom]
+    name = "ring-c6"
+    unit = "angstrom"
+    position = '''
+    C      -1.45841400       0.11901200      -0.22744400
+    C      -0.83225100      -1.20340700       0.22746500
+    C       0.62610700      -1.32241700      -0.22747300
+    C       1.45840600      -0.11902100       0.22747200
+    C       0.83226500       1.20340000      -0.22745700
+    C      -0.62610800       1.32242800       0.22743700
+    H       1.06497600      -2.24936800       0.14938700
+    H      -0.87308600      -1.26245200       1.32068200
+    H      -1.41553300      -2.04694400      -0.14949000
+    H      -1.52999500       0.12480800      -1.32066400
+    H      -2.48055800       0.20239900       0.14956100
+    H       1.52991300      -0.12483700       1.32069800
+    H       2.48057400      -0.20240400      -0.14946400
+    H       1.41553100       2.04693900       0.14951900
+    H       0.87314200       1.26244400      -1.32067200
+    H      -0.65684000       1.38726500       1.32064700
+    H      -1.06496500       2.24935000      -0.14951000
+    H       0.65681200      -1.38716800      -1.32069100
+    '''

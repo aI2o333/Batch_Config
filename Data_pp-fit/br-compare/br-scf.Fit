@@ -1,0 +1,240 @@
+=>Fitting start from Sun Oct  5 20:26:03 2025
+=>This project aims to ::
+  pseudo fit 3g
+=>1) Project pool is "/share/home/symei/comp/pp-fit/br-compare/br-scf"
+=>2) Project batch type is "0" which to run all the jobs
+=>3) QC package employed is "rest"
+=>There are 1 <Macro-Path>s specified in br-scf.ctl :
+  Macro-Path :   <PATH1> = /share/home/symei/comp/ae-data
+=>Loaded ConfigIO.BatcList :
+==----------------------------------------------------------------------------==
+Index        Name                        Direction    JobInput         JobType
+--------------------------------------------------------------------------------
+  0th           h  /share/home/symei/comp/ae-da...           h      energy|scf
+  1th          br  /share/home/symei/comp/ae-da...          br      energy|scf
+  2th         br2  /share/home/symei/comp/ae-da...         br2      energy|scf
+  3th         ch4  /share/home/symei/comp/ae-da...         ch4      energy|scf
+  4th       ch3br  /share/home/symei/comp/ae-da...       ch3br      energy|scf
+  5th      ch2br2  /share/home/symei/comp/ae-da...      ch2br2      energy|scf
+  6th       chbr3  /share/home/symei/comp/ae-da...       chbr3      energy|scf
+  7th        cbr4  /share/home/symei/comp/ae-da...        cbr4      energy|scf
+  8th     ring-c6  /share/home/symei/comp/ae-da...     ring-c6      energy|scf
+  9th  ring-c6br1  /share/home/symei/comp/ae-da...  ring-c6br1      energy|scf
+ 10th         ccc  /share/home/symei/comp/ae-da...         ccc      energy|scf
+ 11th      cccbr1  /share/home/symei/comp/ae-da...      cccbr1      energy|scf
+ 12th         hbr  /share/home/symei/comp/ae-da...         hbr      energy|scf
+ 13th         c=c  /share/home/symei/comp/ae-da...         c=c      energy|scf
+ 14th      cbrcbr  /share/home/symei/comp/ae-da...      cbrcbr      energy|scf
+ 15th        cc=c  /share/home/symei/comp/ae-da...        cc=c      energy|scf
+ 16th    c-cbrcbr  /share/home/symei/comp/ae-da...    c-cbrcbr      energy|scf
+ 17th       cc=cc  /share/home/symei/comp/ae-da...       cc=cc      energy|scf
+ 18th  c-cbrcbr-c  /share/home/symei/comp/ae-da...  c-cbrcbr-c      energy|scf
+ 19th        nabr  /share/home/symei/comp/ae-da...        nabr      energy|scf
+ 20th        brcl  /share/home/symei/comp/ae-da...        brcl      energy|scf
+ 21th          cl  /share/home/symei/comp/ae-da...          cl      energy|scf
+ 22th          na  /share/home/symei/comp/ae-da...          na      energy|scf
+ 23th         h2o  /share/home/symei/comp/ae-da...         h2o      energy|scf
+ 24th        hobr  /share/home/symei/comp/ae-da...        hobr      energy|scf
+ 25th           p  /share/home/symei/comp/ae-da...           p      energy|scf
+ 26th        pbr3  /share/home/symei/comp/ae-da...        pbr3      energy|scf
+==----------------------------------------------------------------------------==
+=>Loaded ConfigIO.EngyList :
+==----------------------------------------------------------------------------==
+ Num. Ind. Sca. Ind. Sca. Ind. Sca. Ind. Sca.       Ref. Data  Weight
+--------------------------------------------------------------------------------
+    2    2 -1.0    1  2.0                         48.60595365    1.00
+    4    3 -1.0    2 -1.0    4  1.0   12  1.0     -4.19931047    1.00
+    4    4 -1.0    2 -1.0    5  1.0   12  1.0     -2.13503017    1.00
+    4    5 -1.0    2 -1.0    6  1.0   12  1.0      1.27409787    1.00
+    4    6 -1.0    2 -1.0    7  1.0   12  1.0      6.18840893    1.00
+    4    8 -1.0    2 -1.0    9  1.0   12  1.0     -9.61009157    1.00
+    4   10 -1.0    2 -1.0   11  1.0   12  1.0     -7.31778191    1.00
+    4    2 -1.0   23 -1.0   12  1.0   24  1.0     27.01734572    1.00
+    3   13 -1.0    2 -1.0   14  1.0              -26.68157993    1.00
+    3   15 -1.0    2 -1.0   16  1.0              -22.16367780    1.00
+    3   17 -1.0    2 -1.0   18  1.0              -23.30804118    1.00
+    3   12 -1.0    1  1.0    0  1.0               91.98031766    1.00
+    3   20 -1.0    1  1.0   21  1.0               52.15035817    1.00
+    3   19 -1.0    1  1.0   22  1.0               84.38164959    1.00
+    3   25 -1.0    1 -3.0   26  1.0             -188.68635960    1.00
+==----------------------------------------------------------------------------==
+=>No first-excitation PT2 data for training
+=>No second-excitation PT2 data for training
+=>No polar data for training
+=>No nmr data for training
+=>No geom data for training
+=>Optimization job is rest_pseudo
+=>This batch runs for rest
+=>The batch type is serial
+=>Initial Guess
+  2.87354124E+00  1.43477412E+00
+=>Optimization Algorithm employed is batch
+=>Pseudopotential fitting mod is mixed
+  Revised basis dir :/share/home/symei/def2-TZVPP-mixed/Br.json
+=>Testing parameters in this round
+  2.87354124E+00  1.43477412E+00
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :      -0.50217635
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>Error :: SCF doesn't sucess in br
+=>The SCF energy              :              NAN
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -5148.35942232
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -40.53917555
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -2614.11555176
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -5187.68863834
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -7761.25629213
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :  -10334.81611447
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -235.97180635
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -2809.55680519
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -119.19537711
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -2692.77672293
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -2574.78973813
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -78.62540448
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -5227.02734657
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -117.96017591
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -5266.35491827
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -157.29178523
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -5305.68835125
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -2736.56673125
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -3034.39111448
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -460.16702573
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -162.29127871
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :     -76.46670518
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -2649.99333453
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :    -341.28064913
+=>The direction of basis set is required
+=>Basis set dir: 
+=>This is a batch job for energy calculation
+=>The SCF energy              :   -8064.00428554
+=>Batch corresponds to these parameters ::
+  2.87354124E+00  1.43477412E+00
+==----------------------------------------------------------------------------==
+  An invalid result for the     0th reaction
+==----------------------------------------------------------------------------==
+==----------------------------------------------------------------------------==
+  An invalid result for the    11th reaction
+==----------------------------------------------------------------------------==
+==----------------------------------------------------------------------------==
+  An invalid result for the    12th reaction
+==----------------------------------------------------------------------------==
+==----------------------------------------------------------------------------==
+  An invalid result for the    13th reaction
+==----------------------------------------------------------------------------==
+==----------------------------------------------------------------------------==
+  An invalid result for the    14th reaction
+==----------------------------------------------------------------------------==
+==----------------------------------------------------------------------------==
+=>        AD =   10000.00000000;        wAD =   10000.00000000
+=>       MAD =   10000.00000000;       wMAD =   10000.00000000
+=>       RMS =   10000.00000000;       wRMS =   10000.00000000
+==----------------------------------------------------------------------------==
+=>Statistic result of energy :
+==----------------------------------------------------------------------------==
+                        Name       Reference    Calc. Result    Deviation Weight
+--------------------------------------------------------------------------------
+                1*2th->2*1th     48.60595365             NAN          NAN   1.00
+      1*3th+1*2th->1*4th+...     -4.19931047     -4.19931047        -0.00   1.00
+      1*4th+1*2th->1*5th+...     -2.13503017     -2.13503036        -0.00   1.00
+      1*5th+1*2th->1*6th+...      1.27409787      1.27409762        -0.00   1.00
+      1*6th+1*2th->1*7th+...      6.18840893      6.18841031         0.00   1.00
+      1*8th+1*2th->1*9th+...     -9.61009157     -9.61009132         0.00   1.00
+      1*10th+1*2th->1*11t...     -7.31778191     -7.31778185         0.00   1.00
+      1*2th+1*23th->1*12t...     27.01734572     27.01734604         0.00   1.00
+        1*13th+1*2th->1*14th    -26.68157993    -26.68157999        -0.00   1.00
+        1*15th+1*2th->1*16th    -22.16367780    -22.16367767         0.00   1.00
+        1*17th+1*2th->1*18th    -23.30804118    -23.30804143        -0.00   1.00
+         1*12th->1*1th+1*0th     91.98031766             NAN          NAN   1.00
+        1*20th->1*1th+1*21th     52.15035817             NAN          NAN   1.00
+        1*19th->1*1th+1*22th     84.38164959             NAN          NAN   1.00
+        1*25th+3*1th->1*26th   -188.68635960             NAN          NAN   1.00
+--------------------------------------------------------------------------------
+        AD =         0.00000014
+       MAD =         0.00000029
+       RMS =         0.00000015
+       wAD =         0.00000014
+      wMAD =         0.00000029
+      wRMS =         0.00000015
+==----------------------------------------------------------------------------==
+=>Total job time:     284.30(wall)
+=>Fitting end at Sun Oct  5 20:30:48 2025
+=>----------------------------------------------------------------------------==
+  #Filename:  DFT_Fit
+  #Author  :  Igor Ying Zhang, Xin Xu
+  #Version :  0.3(20100731)
+  #Purpose :  DFT optimization using several algorithms

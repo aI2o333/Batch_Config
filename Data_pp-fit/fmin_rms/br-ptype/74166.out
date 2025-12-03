@@ -1,0 +1,56 @@
+Sender: LSF System <lsfadmin@xc05n06>
+Subject: Job 74166: <pseudo_fit_coeff> in cluster <xdft1> Exited
+
+Job <pseudo_fit_coeff> was submitted from host <xc03n08> by user <symei> in cluster <xdft1> at Tue Sep 16 16:09:44 2025
+Job was executed on host(s) <4*xc05n06>, in queue <small>, as user <symei> in cluster <xdft1> at Tue Sep 16 16:09:44 2025
+</share/home/symei> was used as the home directory.
+</share/home/symei/comp/pp-fit/br-ptype> was used as the working directory.
+Started at Tue Sep 16 16:09:44 2025
+Terminated at Tue Sep 16 19:43:54 2025
+Results reported at Tue Sep 16 19:43:54 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -q small      # 替换为实际队列名（如 normal、cpu、gpu等）
+#BSUB -J pseudo_fit_coeff      # 作业名称
+#BSUB -n 4              # 申请 8 个 CPU 核心
+#BSUB -R "span[ptile=16]" # 限制在单节点运行
+#BSUB -o %J.out         # 输出日志文件
+#BSUB -e %J.err         # 错误日志文件
+
+export ROOT_PATH=/share/home/symei/pseudo_fitting
+export FITTING_PATH=${ROOT_PATH}/codetest
+export IGOR_MODULES_PATH=${ROOT_PATH}/Modules
+
+nohup python $FITTING_PATH/DFT_Fit.py br-fitting.ctl
+
+------------------------------------------------------------
+
+TERM_OWNER: job killed by owner.
+Exited with exit code 143.
+
+Resource usage summary:
+
+    CPU time :                                   54086.00 sec.
+    Max Memory :                                 6184 MB
+    Average Memory :                             2215.11 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   17592186044415 MB
+    Max Processes :                              8
+    Max Threads :                                66
+    Run time :                                   12849 sec.
+    Turnaround time :                            12850 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <74166.err> for stderr output of this job.
+

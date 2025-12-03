@@ -1,0 +1,32 @@
+[ctrl]
+     xc =                        "xygjos" 
+     frozen_core_postscf =       21
+     basis_path =                "/home/symei/def2-TZVPP-mixed" # For serial type, path in your container should be used
+     auxbas_path =               "/home/symei/def2-SV(P)-JKFIT"# refer to option "bind" in "REST_Environment"
+     even_tempered_basis =       false
+     etb_start_atom_number =     1
+     etb_beta =                  1.0
+     initial_guess =             "sad"
+     chkfile_type =              "hdf5"
+     fchk =                      false
+     pruning =                   "nwchem"
+     radial_grid_method =        "treutler"
+     scf_acc_rho =               1.0e-8
+     scf_acc_eev =               1.0e-8
+     max_scf_cycle =             250
+
+    num_threads =           4
+    charge = 0.0000  
+    spin   = 1       
+    spin_polarization = false
+
+[geom]
+    name = "cbr4"
+    unit = "angstrom"
+    position = '''
+    C      -0.00000000      -0.00000400      -0.00000500
+    Br       0.00579400       1.79880600       0.76886500
+    Br      -1.59789300      -0.23190000      -1.10448200
+    Br       1.59667200      -0.24239800      -1.10399300
+    Br      -0.00457300      -1.32450800       1.43961000
+    '''

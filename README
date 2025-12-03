@@ -1,38 +1,185 @@
-#Filename:  Batch
-#Author  :  Igor Ying Zhang, Xin Xu 
-#Purpose :  Sophisticated batch of electronic-structure calculations
-#
-#Usage   :  Batch.py Config
-#
+#--------------------------------------------------------------------------
+#                          DFT_Fit.py
+#--------------------------------------------------------------------------
+def calc_statistic_pseudo(C, FitClass):
+#每一个形式为calc_statistic_xxx(C, FitClass)的函数(xxx=pseudo, xyg3, xmp2...)
+#都是先根据计算需求做相应的事情，最后返回误差值
+#这个赝势是代入run_optimization(FitClass)函数的
+#所以是每次根据误差优化，迭代后需要更新基组重新计算，所以写更新赝势基组的函数，调用计算的函数
+    def generate_pseudo_basis(C, type, AngM):产生赝势基组的函数，更新赝势基组
+    FitClass.run_RESTBatch()：根据新赝势重新计算能量结果
+    最后返回误差值：使用run_Statistic，通过FitClass里面的选项选择计算误差类型 (rms/mad/ad)。
+    FitClass里面的类型是通过my_io的get_PseudoCoeff(self)里面self.xx的类型来的
+    再执行FitClass.run_RESTBatch()
+    优化方法选择, 对于OptAlgo判断: batch/非batch: leastsq/rms/mad/ad
+    leastsq是优化算法，其他的都是计算误差类型，后面结合run_optimization(FitClass)函数来判断,比如说要用fmin_rms算法来优化赝势系数，这里先算rms误差，后面run_opt的时候
+    判断出前缀是fmin
+        if FitClass.OptAlgo[:5] == 'batch':
+        FitClass.get_OptResu(iop=1)
+        print_List(FitClass.IOut,FitClass.InitGuess,\
+            4,Info='Batch corresponds to these parameters ::')
+        FitClass.run_Statistic()
+    else:
+        FitClass.get_OptResu(iop=0)
+        AD, wAD,  MAD, wMAD,  RMS, wRMS = FitClass.run_Statistic()
+        if FitClass.OptAlgo == 'leastsq':
+            return array(FitClass.Result)
+        elif FitClass.OptAlgo[-3:] == 'rms':
+            return wRMS
+        elif FitClass.OptAlgo[-3:] == 'mad':
+            return wMAD
+        elif FitClass.OptAlgo[-2:] == 'ad':
+            return wAD
+        else:
+            print_Error
+run_optimization(FitClass)：开跑，优化函数
+main：MainFit   = ConfigIO(iout,fn=filename,bugctrl=iprint) ，ConfigIO是my_io里面的大类，判断任务类型是xyg3/xmp2/pseudo
+    读取路径
+    elif MainFit.OptJob.lower() == 'rest_pseudo':
+        MainFit.get_RESTIOCmd()
+        MainFit.get_OptInit()
+        MainFit.get_OptAlgo()
+        #MainFit.get_OptFunc()
+上述这四个函数来自my_io.ConfigIO类，分别获取RESTIO命令、优化初始值、优化算法和优化函数。
+*由于fit的参数是根据提供的分子反应的数据来的，没有一个固定的optfunc, 也没有run_optimization(FitClass)
+最后执行main()
+要测试的时候python DFT_Fit.py xxx.ctl(待定)(这样就是在登陆节点跑)
 
-This is a batch scheme to run a set of gaussian, qchem, or FHI-aims jobs.
+#--------------------------------------------------------------------------
+#                          my_io.py
+#--------------------------------------------------------------------------
+包含print_Error, print_List，print_xxx...
+包含my_plus, my_divide, my_vect_plus: 系列计算的函数
+#            *接下来的内容和函数都在ConfigIO类里面*
+*解释的时候使用br-series文件作为例子，说明该函数作用于解析文件哪一部分
+ConfigIO类：
+    __init__(self, iout, fn=None, bugctrl=0): 初始化函数，读取配置文件
+    get_ProjEnvr(self): 解析这一部分
+        #                "ProjDir"       "ProjCtrl"      "ProjTool"
+        __project__ ::   ./br-series       2                REST
+        # The project description
+        __title__ :: xxx
+    get_RESTIOCmd(self): 获取RESTIO命令，这里会调用相应版本的rest进行计算(如rest.avx512)
+        Obtain keywords for FHI-aims jobs:
+           1) __rest__ 
+           2) __rest_basis__ 
+           3) __rest_special_nproc__ 
+           4) __rest_batch_type__ 
+    get_PseudoCoeff(self): 获取赝势系数, 功能对应这一部分
+        # the highest calculated angular momentum
+        # Please write according to the index of l, the 1st line corresponding to l=0, 2nd line to l=1, etc.
+        # "PType" = "Coeff" : To fit the parameters of the coefficients of ECP.
+                "Gexp" : To fit the exponents of ECP.
+        #                       "PType"       "AngMom"
+        __pseudo_property__  ::   Coeff          0
+        __initial guess__ ::
+        # For pseudo fitting, initial_guess can be coefficients or exponents
+        # but the lengths of coefficients and exponents belongs to one angular momentum must be the same.
+        49.99429300    281.02531700   61.57332600   21.84204000   28.46819100    0.24371300   0.32080400
+    get_Batch(self): Obtain the batch job list
+        __batch__ ::    3   #这个数字算的东西不一样要改
+        #"Flag"         "DIR"                        "InpName"       "JobType
+              h    <PATH1>/br-simu                    h           energy
+             br    <PATH1>/br-simu                   br           energy
+            br2    <PATH1>/br-simu                  br2           energy
+    get_TrainSet(self): trainset这里一般是全电子或者高精度算法算的基准值，作为训练集，对应部分见下
+        __energy__ ::    15  627.51 #“15”如果reference变了也要改
+        2    br2       -1     br       2      0    1.000
+        4    ch4       -1     br2     -1      ch3br           1      hbr      1      0.000      1.000
+        4    ch3br     -1     br2     -1      ch2br2          1      hbr      1      0.000      1.000
+    run_RESTBatch(self): 字面意思，用来跑rest batch的，核数控制，路径控制，queue/series(调用了rest_manage里面的函数run_Job_(serial)), 计算能量类型
+    get_OptJob(self): 获取优化任务类型
+    get_OptInit(self): 获取优化初始值
+        Obtain initial parameters "InitPara" by "__initial guess__ ::"
+        *似乎与get_PseudoCoeff(self)重复了，后面再看
+    get_OptAlgo(self): 获取优化算法 optimization algorithm
+    # "There are about algorithms at present:                                    "
+    # "   0) batch    :: just batch the results based on intital guess           "
+    # "   1) leastsq  :: least square fit algorithm                              "
+    # "   2) fmin_rms :: downhill simplex algorithm based on RMS                 "
+    # "   3) fmin_mad :: downhill simplex algorithm based on MAD                 "
+    # "   4) fmin_cobyla_rms :: constrained optimization BY Linear algorithm     "
+    # "                         (COBYLA) based on RMS                            "
+    # "   5) fmin_cobyla_mad :: constrained optimization BY Linear algorithm     "
+    # "                         (COBYLA) based on MAD                            "
 
-All you need to do is to create a config file and batch it.
+        __optimization algorithm__ :: batch
+    get_OptFunc(self): 获取优化函数，赝势没用到
+        __optimization function__ :: 25
+        def opt_func(C,P):
+            '''\
+            The function for optimization, where C is the parameters
+            '''
+            #a1, a2, a3, a4, a5, a6, a7, a8, a9 = C                           # for XYGJ4OS
+            a1, a3, a4, a5, a8 = C                                            # for XYGJ4OS
+            a2  = 1. - a1
+            a6  = 0.
+            a7  = 0.
+            a9  = 0.
 
-There are about several input groups should be specified to handle the batch.
+            E_noXC, Ex_HF, Ex_LDA, dEx_B, Ec_VWN, dEc_LYP, Ec_PT21, aaaa, abab, bbbb = P
+            return E_noXC + a1*Ex_HF + a2*Ex_LDA + a3*dEx_B + a4*Ec_VWN + a5* dEc_LYP \
+                    + a6*Ec_PT21 + a7*aaaa + a8*abab + a9*bbbb
 
-Groups         Keywords                   Arguments
- Env_1)        "__project__ ::"           "ProjDir"  "ProjCtrl"
- Env_2)        "__title__ ::"
- Env_3)        "__macro_path__ ::"
+        def opt_func_constrained(C,P):
+            '''\
+            The constrained function for optimization, where C is the parameters
+            '''
+            con = 0.5
+            for a in C:
+                if a<0 or a>1:
+                con = -1
+                    break
+            return con
+    get_OptResu(self, iop=1): optimization result analysis
 
- Bat_1)        "__batch__ ::"             "NMole"
+#--------------------------------------------------------------------------
+#                          rest_manage.py
+#--------------------------------------------------------------------------
+包含RESTIO类，主要是看这两个函数
+run_Job_serial(self): 用serial方式跑的具体实施，其实就是在本地跑(如果不提交到bsub系统上去，这个本地=服务器的登陆节点；提交上去之后本地=服务器的计算节点，
+需要搭配一个把整个batch文件扔到服务器上的脚本)，搭配REST_Environment文件使用
+run_Job(self, nproc=1, cfg=None, script=None, cmd=None, qname=None): 用queue方式跑的具体实施，把ctl里面的每一个文件单独提交到服务器上去跑，并行
 
- Train_1)      "__energy__ ::"            "NEngy" "SEngy"
- Train_2)      "__polar__  ::"            "NResp" "SResp*3"
- Train_3)      "__nmr__    ::"            "NNMR"  "SNMR"
- Train_4)      "__geom__    ::"           "NGeom" "SGeom*3"
+#--------------------------------------------------------------------------
+#        当运行了python DFT_Fit.py xxx.ctl的时候，程序在经历什么
+#--------------------------------------------------------------------------
+argv[1]读取.ctl文件, 然后在ctl的目录下输出out文件
+MainFit   = ConfigIO(iout,fn=filename,bugctrl=iprint)       # Analysis config file
+创建ConfigIO类的实例MainFit，读取配置文件并解析内容
+    MainFit.get_ProjEnvr()
+    MainFit.get_Batch()
+    MainFit.get_TrainSet()
+    MainFit.get_OptJob()
+    elif MainFit.OptJob.lower() == 'rest_pseudo':
+    MainFit.get_RESTIOCmd()
+    MainFit.get_OptInit()
+    MainFit.get_OptAlgo()
+    #MainFit.get_OptFunc()
 
- Gau_1)        "__gaussian__ ::"
+    run_optimization(MainFit)
+    以leastsq为例，这里只讨论赝势，calc_statistic(_pseudo)=array(FitClass.Result)
+    迭代过程：residuals = calc_statistic(current_parameters, FitClass)=array(FitClass.Result)
+    有限差分法计算Jacobian矩阵J_ij=partial(residuals[i])/partial(C[j])
+    需要显式函数的不行，所以fmin_cobyla法不行
 
- Qch_1)        "__qchem__ ::"             "ParaOrSer" "QchCfg"
+    if FitClass.OptAlgo == 'leastsq':                                # leastsq algorithm
+        plsq    = opt.leastsq(calc_statistic,FitClass.InitGuess,args=tuple([FitClass]))
+        tmpresult   = [float(x) for x in plsq[0]]
+        print_List(FitClass.IOut,tmpresult,
+            4,Info='Optimized result by leastsq algorithm')
+        FitClass.InitGuess  = tmpresult[:]
+    这里calc_statistic 的参数来源：
+    C: 由 opt.leastsq 自动生成并传递，初始值为 FitClass.InitGuess(plsq的第二个参数)。
+    FitClass: 通过 args=tuple([FitClass]) 显式传递。
 
- Aim_1)        "__aims__   ::"            "Procs" "Threads" "NPN" "AimsCFG"
- Aim_2)        "__aims_basis__ ::"        "BasisDir"
- Aim_3)        "__aims_batch_type__ ::"   "BatchType" "BatchCmd" "BatchScriptName" "BatchQueueName"
 
-NOTE :
-       A)   Annotation is allowed, starting with '#'.
-       B)   Upper and lower cases are identical.
-       C)   Since the program rewinds the config file before searching keywords, the group order is immaterial.
-       D)   White spaces (NOT comma and others) are used to separate items.
+#--------------------------------------------------------------------------
+#                          REST_Environment
+#--------------------------------------------------------------------------
+使用 Singularity 容器运行 rest 程序，将输出重定向到文件 $1
+singularity exec --bind $(pwd):/data /share/apps/rust/rest/rest_mpi.sif bash -c "rest" > $1
+--bind $(pwd):/data 将当前工作目录挂载到容器的 /data 目录下，以便容器可以访问当前目录中的文件。
+/share/apps/rust/rest/rest_mpi.sif 是 Singularity 容器的路径，包含了运行 rest 程序所需的环境和依赖。
+bash -c "rest"	在容器内启动 Bash 并执行命令 rest
+将输出重定向到文件 $1，$1 是传递给脚本的第一个参数，通常是输出文件的路径。

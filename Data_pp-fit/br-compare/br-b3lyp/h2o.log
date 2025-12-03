@@ -1,0 +1,82 @@
+=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: b3lyp
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/symei/def2-TZVPP-mixed
+The pruning method is nwchem
+The radial grid generation method is treutler
+ERI Type: ri_v
+Turn on the basis pair symmetry for RI 3D-tensors
+The spheric-GTO auxiliary basis set is taken from /home/symei/def2-SV(P)-JKFIT
+Spin polarization: Off
+Charge:   0; Spin:   1
+min_num_angular_points: 110
+max_num_angular_points: 590
+hardness: 3
+Grid generation level: 3
+Even tempered basis generation: false
+SCF convergency thresholds: 1e-7 for density matrix
+                            1e-7 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      400
+The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+Initial guess is prepared by (sad).
+It is a finite cluster calculation
+the functional of 'b3lyp' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 23, natm: 3 for standard basis sets
+First valence state for the frozen-core algorithm:     1
+final nbas: 60,final natm: 6
+numbasis: 59, num_auxbas: 113
+Molecule_name: h2o
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:       9.16188621 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00226461 with the total number of basis functions:     59
+Grid size: 34310
+Generate SAD of O
+Generate SAD of H
+Initial guess HF energy:     -76.4338224501562138
+The total energy:       -76.3155112580 Ha by the initial guess
+Energy:     -76.0532982516 Ha after    1 iterations (in       0.03 seconds).
+SCF Change: DM 1.45787e-2; eev  2.41413e0 Ha; etot 3.69253e-1 Ha
+Energy:     -75.6840451331 Ha after    2 iterations (in       0.03 seconds).
+SCF Change: DM 6.13446e-4; eev 1.22527e-1 Ha; etot -7.82324e-1 Ha
+Energy:     -76.4663687016 Ha after    3 iterations (in       0.03 seconds).
+SCF Change: DM 6.09219e-5; eev 1.02274e-2 Ha; etot -3.26662e-4 Ha
+Energy:     -76.4666953632 Ha after    4 iterations (in       0.03 seconds).
+SCF Change: DM 1.13907e-5; eev 9.09955e-4 Ha; etot -9.46531e-6 Ha
+Energy:     -76.4667048285 Ha after    5 iterations (in       0.03 seconds).
+SCF Change: DM 1.24438e-6; eev 1.42800e-4 Ha; etot -3.44718e-7 Ha
+Energy:     -76.4667051732 Ha after    6 iterations (in       0.03 seconds).
+SCF Change: DM 1.69470e-7; eev 2.87588e-5 Ha; etot -5.01720e-9 Ha
+Energy:     -76.4667051782 Ha after    7 iterations (in       0.03 seconds).
+SCF Change: DM 1.13938e-8; eev 2.05104e-6 Ha; etot -5.81224e-11 Ha
+Energy:     -76.4667051783 Ha after    8 iterations (in       0.03 seconds).
+SCF Change: DM 9.36255e-10; eev 6.95293e-8 Ha; etot -3.55271e-13 Ha
+Energy:     -76.4667051783 Ha after    9 iterations (in       0.03 seconds).
+SCF is converged after    9 iterations.
+Mulliken population analysis:
+  0-O  :  -0.394750
+  1-H  :   0.197375
+  2-H  :   0.197375
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -76.4667051783 Ha
+Detailed time report:
+Overall   |:    1.237 s for the whole job
+SCF       |:    0.795 s for the scf procedure
